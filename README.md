@@ -1,7 +1,4 @@
 
-# linux-mint-dev-environment
+# Setting up my Linux Mint environment
 
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/PMassicotte/linux-mint-dev-environment/workflows/R-CMD-check/badge.svg)](https://github.com/PMassicotte/linux-mint-dev-environment/actions)
-<!-- badges: end -->
-
+Notes for myself for setting up my Linux Mint environment. 

@@ -1,0 +1,5 @@
+# Neovim
+
+- How to install neovim.
+- Config files on github.
+

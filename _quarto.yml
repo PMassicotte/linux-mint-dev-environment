@@ -1,0 +1,17 @@
+project:
+  type: book
+
+book:
+  title: "Setting up my working environement"
+  author: "Philippe Massicotte"
+  chapters:
+    - index.qmd
+    - terminal.qmd
+    - neovim.qmd
+    - installr.qmd
+
+format:
+  html:
+    page-layout: full
+    toc: true
+    toc-location: right

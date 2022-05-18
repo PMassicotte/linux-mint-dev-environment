@@ -4,21 +4,7 @@
     "href": "index.html",
     "title": "Setting up my working environement",
     "section": "",
-    "text": "These are simply a list of notes for my self to setup my development environment on Ubuntu derivative (like Linux Mint) so I do not have to spend much time when I format or setup a new computer."
-  },
-  {
-    "objectID": "installr.html",
-    "href": "installr.html",
-    "title": "3  Installing R",
-    "section": "",
-    "text": "These instructions are from how to setup R on Ubuntu.\nFirst, open sources.list:\nsudo nano /etc/apt/sources.list\nThen add this:\ndeb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev\nFinally, install R:\nsudo apt update\nsudo apt install r-base"
-  },
-  {
-    "objectID": "terminal.html",
-    "href": "terminal.html",
-    "title": "2  Terminal",
-    "section": "",
-    "text": "Setting up my terminal environment. The dimensions of my terminal is 150 columns by 35 rows."
+    "text": "Preface\nThese are simply a list of notes for my self to setup my development environment on Ubuntu derivative (like Linux Mint) so I do not have to spend much time when I format or setup a new computer."
   },
   {
     "objectID": "terminal.html#fonts",
@@ -35,38 +21,31 @@
     "text": "1.2 zsh\nsudo apt install zsh\n\n1.2.1 oh-my-zsh\nInstall oh-my-zsh\nsh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"\n\n\n1.2.2 power10k theme\nPowerlevel10k theme\ngit clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k\nThen, set ZSH_THEME=\"powerlevel10k/powerlevel10k\" in ~/.zshrc and configure the theme as follow:\np10k configure"
   },
   {
-    "objectID": "terminal.html#oh-my-zsh",
-    "href": "terminal.html#oh-my-zsh",
-    "title": "1  My terminal set-up",
-    "section": "1.3 oh-my-zsh",
-    "text": "1.3 oh-my-zsh\nInstall oh-my-zsh\nsh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"\n\n1.3.1 power10k theme\nPowerlevel10k theme\ngit clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k\nThen, set ZSH_THEME=\"powerlevel10k/powerlevel10k\" in ~/.zshrc and configure the theme as follow:\np10k configure"
-  },
-  {
-    "objectID": "terminal.html#tools",
-    "href": "terminal.html#tools",
-    "title": "1  My terminal set-up",
-    "section": "1.4 Tools",
-    "text": "1.4 Tools\nFor these tools, rust needs to be installed.\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\n\n1.4.1 exa\ncargo install exa \n\n\n1.4.2 bat\ncargo install bat \n\n\n1.4.3 Creating alias\nnano ~/.zshrc \nAdd these alias to the file.\nalias ls='exa --icons'\nalias l='exa'\nalias la='exa -a'\nalias ll='exa -lahF --icons'\nalias cat=bat\n\n\n1.4.4 fzf\nfzf is a comman-line fuzzy finder.\ngit clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf\n~/.fzf/install\n\n\n1.4.5 The Silver Searcher\nThe Silver Searcher\nsudo apt-get install silversearcher-ag"
-  },
-  {
-    "objectID": "neovim.html",
-    "href": "neovim.html",
-    "title": "3  Neovim",
-    "section": "",
-    "text": "How to install neovim.\nConfig files on github."
-  },
-  {
-    "objectID": "terminal.html#usefull-tools",
-    "href": "terminal.html#usefull-tools",
-    "title": "1  My terminal set-up",
-    "section": "1.3 Usefull tools",
-    "text": "1.3 Usefull tools\nFor these tools, rust needs to be installed.\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\n\n1.3.1 exa\ncargo install exa \n\n\n1.3.2 bat\ncargo install bat \n\n\n1.3.3 Creating alias\nnano ~/.zshrc \nAdd these alias to the file.\nalias ls='exa --icons'\nalias l='exa'\nalias la='exa -a'\nalias ll='exa -lahF --icons'\nalias cat=bat\n\n\n1.3.4 fzf\nfzf is a comman-line fuzzy finder.\ngit clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf\n~/.fzf/install\n\n\n1.3.5 The Silver Searcher\nThe Silver Searcher\nsudo apt-get install silversearcher-ag"
-  },
-  {
     "objectID": "terminal.html#useful-tools",
     "href": "terminal.html#useful-tools",
     "title": "1  My terminal set-up",
     "section": "1.3 Useful tools",
     "text": "1.3 Useful tools\nFor some of these tools, rust needs to be installed.\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\n\n1.3.1 tldr\ncargo install tldr\ntldr --update\n\n\n1.3.2 exa\ncargo install exa \n\n\n1.3.3 bat\ncargo install bat \n\n\n1.3.4 Creating alias\nnano ~/.zshrc \nAdd these alias to the file.\nalias ls='exa --icons'\nalias l='exa'\nalias la='exa -a'\nalias ll='exa -lahF --icons'\nalias cat=bat\n\n\n1.3.5 fzf\nfzf is a command-line fuzzy finder.\ngit clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf\n~/.fzf/install\nThen, set plugins=(fzf) in ~/.zshrc.\n\n\n1.3.6 The Silver Searcher\nThe Silver Searcher\nsudo apt-get install silversearcher-ag"
+  },
+  {
+    "objectID": "neovim.html",
+    "href": "neovim.html",
+    "title": "2  Neovim",
+    "section": "",
+    "text": "How to install neovim.\nConfig files on github."
+  },
+  {
+    "objectID": "installr.html",
+    "href": "installr.html",
+    "title": "3  Installing R",
+    "section": "",
+    "text": "These instructions are from how to setup R on Ubuntu.\nFirst, open sources.list:\nsudo nano /etc/apt/sources.list\nThen add this:\ndeb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev\nFinally, install R:\nsudo apt update\nsudo apt install r-base"
+  },
+  {
+    "objectID": "installr.html#installing-r-binaries-for-ubuntu",
+    "href": "installr.html#installing-r-binaries-for-ubuntu",
+    "title": "3  Installing R",
+    "section": "3.1 Installing R binaries for Ubuntu",
+    "text": "3.1 Installing R binaries for Ubuntu\nDirk Eddelbuettel made this nice tutorial on how to install R packages from binaries on Ubuntu. Installing the whole tidyverse takes only few seconds!"
   }
 ]

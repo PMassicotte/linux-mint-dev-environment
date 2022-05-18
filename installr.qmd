@@ -26,3 +26,8 @@ sudo apt update
 sudo apt install r-base
 ```
 
+## Installing R binaries for Ubuntu
+
+Dirk Eddelbuettel made this [nice tutorial](https://eddelbuettel.github.io/r2u/) on how to install R packages from binaries on Ubuntu. Installing the whole `tidyverse` takes only few seconds!
+
+![](https://eddelbuettel.github.io/r2u/assets/tidyverse_from_r2u_2022-05-04_17-09.gif)

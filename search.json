@@ -46,6 +46,13 @@
     "href": "installr.html",
     "title": "3  Installing R",
     "section": "",
-    "text": "First, open sources.list:\nsudo nano /etc/apt/sources.list\nThen add this:\ndeb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev\nFinally, install R:\nsudo apt update\nsudo apt install r-base"
+    "text": "These instructions are from how to setup R on Ubuntu.\nFirst, open sources.list:\nThen add this:\nFinally, install R:"
+  },
+  {
+    "objectID": "installr.html#installing-r-binaries-for-ubuntu",
+    "href": "installr.html#installing-r-binaries-for-ubuntu",
+    "title": "3  Installing R",
+    "section": "3.1 Installing R binaries for Ubuntu",
+    "text": "3.1 Installing R binaries for Ubuntu\nDirk Eddelbuettel made this nice tutorial on how to install R packages from binaries on Ubuntu. Installing the whole tidyverse takes only few seconds!"
   }
 ]

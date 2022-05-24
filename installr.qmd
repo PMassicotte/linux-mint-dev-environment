@@ -1,33 +1,41 @@
 # Installing R
 
-These instructions are from [how to setup R on Ubuntu](https://blog.zenggyu.com/en/post/2018-01-29/installing-r-r-packages-e-g-tidyverse-and-rstudio-on-ubuntu-linux/).
+## Installing the latest R version
+
+These instructions are from [how to set up R on Ubuntu](https://blog.zenggyu.com/en/post/2018-01-29/installing-r-r-packages-e-g-tidyverse-and-rstudio-on-ubuntu-linux/).
 
 First, open `sources.list`:
 
-```bash
+``` bash
 sudo nano /etc/apt/sources.list
 ```
 
 Then add this:
 
-```bash
+``` bash
 deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/
 ```
 
-```bash
+``` bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 sudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev
 ```
 
 Finally, install R:
 
-```bash
+``` bash
 sudo apt update
 sudo apt install r-base
 ```
 
 ## Installing R binaries for Ubuntu
 
-Dirk Eddelbuettel made this [nice tutorial](https://eddelbuettel.github.io/r2u/) on how to install R packages from binaries on Ubuntu. Installing the whole `tidyverse` takes only few seconds!
+After playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use [RStudio Package Manager](https://docs.rstudio.com/rpm/documentation/). To use it, simply add the following line as the primary library repository:
 
-![](https://eddelbuettel.github.io/r2u/assets/tidyverse_from_r2u_2022-05-04_17-09.gif)
+```bash
+https://packagemanager.rstudio.com/cran/__linux__/focal/latest
+```
+
+![](images/rspm.png)
+
+After that, simply use `install.packages()` as you would normally do.

@@ -172,7 +172,8 @@
         <nav id="TOC" role="doc-toc">
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#installing-r-binaries-for-ubuntu" class="nav-link active" data-scroll-target="#installing-r-binaries-for-ubuntu"> <span class="header-section-number">3.1</span> Installing R binaries for Ubuntu</a></li>
+<li><a href="#installing-the-latest-r-version" class="nav-link active" data-scroll-target="#installing-the-latest-r-version"> <span class="header-section-number">3.1</span> Installing the latest R version</a></li>
+<li><a href="#installing-r-binaries-for-ubuntu" class="nav-link" data-scroll-target="#installing-r-binaries-for-ubuntu"> <span class="header-section-number">3.2</span> Installing R binaries for Ubuntu</a></li>
 </ul>
 </nav>
     </div>
@@ -182,7 +183,9 @@
 <h1 class="title d-none d-lg-block display-7"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R</span></h1>
 </header>
 
-<p>These instructions are from <a href="https://blog.zenggyu.com/en/post/2018-01-29/installing-r-r-packages-e-g-tidyverse-and-rstudio-on-ubuntu-linux/">how to setup R on Ubuntu</a>.</p>
+<section id="installing-the-latest-r-version" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="installing-the-latest-r-version"><span class="header-section-number">3.1</span> Installing the latest R version</h2>
+<p>These instructions are from <a href="https://blog.zenggyu.com/en/post/2018-01-29/installing-r-r-packages-e-g-tidyverse-and-rstudio-on-ubuntu-linux/">how to set up R on Ubuntu</a>.</p>
 <p>First, open <code>sources.list</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano /etc/apt/sources.list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then add this:</p>
@@ -192,10 +195,13 @@
 <p>Finally, install R:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="installing-r-binaries-for-ubuntu" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="installing-r-binaries-for-ubuntu"><span class="header-section-number">3.1</span> Installing R binaries for Ubuntu</h2>
-<p>Dirk Eddelbuettel made this <a href="https://eddelbuettel.github.io/r2u/">nice tutorial</a> on how to install R packages from binaries on Ubuntu. Installing the whole <code>tidyverse</code> takes only few seconds!</p>
-<p><img src="https://eddelbuettel.github.io/r2u/assets/tidyverse_from_r2u_2022-05-04_17-09.gif" class="img-fluid"></p>
+</section>
+<section id="installing-r-binaries-for-ubuntu" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="installing-r-binaries-for-ubuntu"><span class="header-section-number">3.2</span> Installing R binaries for Ubuntu</h2>
+<p>After playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use <a href="https://docs.rstudio.com/rpm/documentation/">RStudio Package Manager</a>. To use it, simply add the following line as the primary library repository:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">https://packagemanager.rstudio.com/cran/__linux__/focal/latest</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="images/rspm.png" class="img-fluid"></p>
+<p>After that, simply use <code>install.packages()</code> as you would normally do.</p>
 
 
 </section>

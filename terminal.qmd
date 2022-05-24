@@ -103,3 +103,13 @@ Then, set `plugins=(fzf)` in `~/.zshrc`.
 ```bash
 sudo apt-get install silversearcher-ag
 ```
+
+### ripgrep
+
+https://github.com/BurntSushi/ripgrep
+
+Easier to use to me.
+
+```bash
+rg read.csv -g "*.R"
+```

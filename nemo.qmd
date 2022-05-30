@@ -1,0 +1,20 @@
+# Nemo
+
+## Opening the terminal in the current directory
+
+- This will make pressing `F4` top open the [Nemo file manager](https://github.com/linuxmint/nemo). 
+
+- [Information found here](https://forums.linuxmint.com/viewtopic.php?t=357973).
+
+Create this folder and this file:
+
+```bash
+mkdir -p ~/.gnome2/accels
+nvim ~/.gnome2/accels/nemo
+```
+
+Add this to the file:
+
+```bash
+(gtk_accel_path "<Actions>/DirViewActions/OpenInTerminal" "F4")
+```

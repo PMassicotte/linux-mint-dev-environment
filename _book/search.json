@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Setting up my working environement",
     "section": "",
-    "text": "Preface\nThese are simply a list of notes for my self to setup my development environment on Ubuntu derivative (like Linux Mint) so I do not have to spend much time when I format or setup a new computer."
+    "text": "These are simply a list of notes for my self to setup my development environment on Ubuntu derivative (like Linux Mint) so I do not have to spend much time when I format or setup a new computer."
   },
   {
     "objectID": "terminal.html#fonts",
@@ -39,14 +39,14 @@
     "href": "installr.html",
     "title": "3  Installing R",
     "section": "",
-    "text": "These instructions are from how to setup R on Ubuntu.\nFirst, open sources.list:\nsudo nano /etc/apt/sources.list\nThen add this:\ndeb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev\nFinally, install R:\nsudo apt update\nsudo apt install r-base"
+    "text": "These instructions are from how to set up R on Ubuntu.\nFirst, open sources.list:\nsudo nano /etc/apt/sources.list\nThen add this:\ndeb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev\nFinally, install R:\nsudo apt update\nsudo apt install r-base"
   },
   {
     "objectID": "installr.html#installing-r-binaries-for-ubuntu",
     "href": "installr.html#installing-r-binaries-for-ubuntu",
     "title": "3  Installing R",
     "section": "3.2 Installing R binaries for Ubuntu",
-    "text": "3.2 Installing R binaries for Ubuntu\nAfter playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use RStudio Package Manager. To use it, simply add the following line as the primary library repository:\nhttps://packagemanager.rstudio.com/cran/__linux__/focal/latest\n\nAfter that, simply use install.packages() as you would normally do."
+    "text": "3.2 Installing R binaries for Ubuntu\nAfter playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use RStudio Package Manager. To use it, simply add the following line as the primary library repository:\nhttps://packagemanager.rstudio.com/cran/__linux__/focal/latest\n\nAfter that, simply use install.packages() as you would normally do. If you want to change the location where packages are installed, I recommend this blog post."
   },
   {
     "objectID": "installr.html#installing-the-latest-r-version",
@@ -54,5 +54,19 @@
     "title": "3  Installing R",
     "section": "3.1 Installing the latest R version",
     "text": "3.1 Installing the latest R version\nThese instructions are from how to set up R on Ubuntu.\nFirst, open sources.list:\nsudo nano /etc/apt/sources.list\nThen add this:\ndeb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev\nFinally, install R:\nsudo apt update\nsudo apt install r-base"
+  },
+  {
+    "objectID": "terminal.html",
+    "href": "terminal.html",
+    "title": "1  My terminal set-up",
+    "section": "",
+    "text": "Setting up my terminal environment. The dimensions of my terminal is 150 columns by 35 rows."
+  },
+  {
+    "objectID": "nemo.html",
+    "href": "nemo.html",
+    "title": "4  Nemo",
+    "section": "",
+    "text": "This will make pressing F4 top open the Nemo file manager.\nInformation found here.\n\nCreate this folder and this file:\nmkdir -p ~/.gnome2/accels\nnvim ~/.gnome2/accels/nemo\nAdd this to the file:\n(gtk_accel_path \"<Actions>/DirViewActions/OpenInTerminal\" \"F4\")"
   }
 ]

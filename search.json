@@ -53,6 +53,13 @@
     "href": "installr.html#installing-r-binaries-for-ubuntu",
     "title": "3  Installing R",
     "section": "3.2 Installing R binaries for Ubuntu",
-    "text": "3.2 Installing R binaries for Ubuntu\nAfter playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use RStudio Package Manager. To use it, simply add the following line as the primary library repository:\nhttps://packagemanager.rstudio.com/cran/__linux__/focal/latest\n\nAfter that, simply use install.packages() as you would normally do."
+    "text": "3.2 Installing R binaries for Ubuntu\nAfter playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use RStudio Package Manager. To use it, simply add the following line as the primary library repository:\nhttps://packagemanager.rstudio.com/cran/__linux__/focal/latest\n\nAfter that, simply use install.packages() as you would normally do. If you want to change the location where packages are installed, I recommend this blog post."
+  },
+  {
+    "objectID": "nemo.html",
+    "href": "nemo.html",
+    "title": "4  Nemo",
+    "section": "",
+    "text": "This will make pressing F4 top open the Nemo file manager.\nInformation found here.\n\nCreate this folder and this file:\nmkdir -p ~/.gnome2/accels\nnvim ~/.gnome2/accels/nemo\nAdd this to the file:\n(gtk_accel_path \"<Actions>/DirViewActions/OpenInTerminal\" \"F4\")"
   }
 ]

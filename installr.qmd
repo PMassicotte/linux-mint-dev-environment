@@ -39,3 +39,18 @@ https://packagemanager.rstudio.com/cran/__linux__/focal/latest
 ![](images/rspm.png)
 
 After that, simply use `install.packages()` as you would normally do. If you want to change the location where packages are installed, I recommend this [blog post](https://zkamvar.netlify.app/blog/using-a-custom-library-in-r/).
+
+## RStudio
+
+### Installing themes
+
+```r
+devtools::install_github("gadenbuie/rsthemes")
+```
+
+These can be visualized with:
+
+```r
+rsthemes::try_rsthemes()
+```
+

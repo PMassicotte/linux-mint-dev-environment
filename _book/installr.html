@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.370">
+<meta name="generator" content="quarto-0.9.431">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -186,6 +186,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#installing-the-latest-r-version" id="toc-installing-the-latest-r-version" class="nav-link active" data-scroll-target="#installing-the-latest-r-version"> <span class="header-section-number">3.1</span> Installing the latest R version</a></li>
   <li><a href="#installing-r-binaries-for-ubuntu" id="toc-installing-r-binaries-for-ubuntu" class="nav-link" data-scroll-target="#installing-r-binaries-for-ubuntu"> <span class="header-section-number">3.2</span> Installing R binaries for Ubuntu</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"> <span class="header-section-number">3.3</span> RStudio</a>
+  <ul class="collapse">
+  <li><a href="#installing-themes" id="toc-installing-themes" class="nav-link" data-scroll-target="#installing-themes"> <span class="header-section-number">3.3.1</span> Installing themes</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -196,8 +200,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title">
 <h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R</span></h1>
 </div>
-
-
 
 
 
@@ -229,8 +231,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">https://packagemanager.rstudio.com/cran/__linux__/focal/latest</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="images/rspm.png" class="img-fluid"></p>
 <p>After that, simply use <code>install.packages()</code> as you would normally do. If you want to change the location where packages are installed, I recommend this <a href="https://zkamvar.netlify.app/blog/using-a-custom-library-in-r/">blog post</a>.</p>
+</section>
+<section id="rstudio" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">3.3</span> RStudio</h2>
+<section id="installing-themes" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="installing-themes"><span class="header-section-number">3.3.1</span> Installing themes</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"gadenbuie/rsthemes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These can be visualized with:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rsthemes<span class="sc">::</span><span class="fu">try_rsthemes</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

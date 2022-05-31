@@ -56,6 +56,13 @@
     "text": "3.2 Installing R binaries for Ubuntu\nAfter playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use RStudio Package Manager. To use it, simply add the following line as the primary library repository:\nhttps://packagemanager.rstudio.com/cran/__linux__/focal/latest\n\nAfter that, simply use install.packages() as you would normally do. If you want to change the location where packages are installed, I recommend this blog post."
   },
   {
+    "objectID": "installr.html#rstudio",
+    "href": "installr.html#rstudio",
+    "title": "3  Installing R",
+    "section": "3.3 RStudio",
+    "text": "3.3 RStudio\n\n3.3.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()"
+  },
+  {
     "objectID": "nemo.html",
     "href": "nemo.html",
     "title": "4  Nemo",

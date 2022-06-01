@@ -73,7 +73,14 @@
     "objectID": "installr.html#rstudio",
     "href": "installr.html#rstudio",
     "title": "3  Installing R",
-    "section": "3.3 RStudio",
-    "text": "3.3 RStudio\n\n3.3.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()"
+    "section": "3.4 RStudio",
+    "text": "3.4 RStudio\n\n3.4.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()"
+  },
+  {
+    "objectID": "installr.html#usubg-rig",
+    "href": "installr.html#usubg-rig",
+    "title": "3  Installing R",
+    "section": "3.3 Usubg rig",
+    "text": "3.3 Usubg rig\nrig a tool to manage different version of R installation on your computer.\nTo install it:\ncurl -Ls https://github.com/r-lib/rig/releases/download/v0.4.1/rig-linux-0.4.1.tar.gz | sudo tar xz -C /usr/\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0"
   }
 ]

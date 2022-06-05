@@ -46,7 +46,7 @@
     "href": "installr.html#installing-r-binaries-for-ubuntu",
     "title": "3  Installing R",
     "section": "3.2 Installing R binaries for Ubuntu",
-    "text": "3.2 Installing R binaries for Ubuntu\nAfter playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use RStudio Package Manager. To use it, simply add the following line as the primary library repository:\nhttps://packagemanager.rstudio.com/cran/__linux__/focal/latest\n\nAfter that, simply use install.packages() as you would normally do. If you want to change the location where packages are installed, I recommend this blog post."
+    "text": "3.2 Installing R binaries for Ubuntu\nAfter playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use RStudio Package Manager. To use it, simply add the following line as the primary library repository:\nhttps://packagemanager.rstudio.com/cran/__linux__/focal/latest\n\nAfter that, simply use install.packages() as you would normally do. If you want to change the location where packages are installed, I recommend this blog post.\n<<<<<<< HEAD ## renv\n\nhttps://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf\nhttps://github.com/grantmcdermott/renv-rspm\n\nAnother version here (for focal):\n\nhttps://github.com/rocker-org/rocker/tree/master/r-rspm/focal\n\nor\nif (Sys.info()[['sysname']] %in% c('Linux', 'Windows')) {\n  options(repos = c(RSPM = \"https://packagemanager.rstudio.com/all/__linux__/focal/latest\"))\n} else {\n  ## For Mac users, we'll default to installing from CRAN/MRAN instead, since\n  ## RSPM does not yet support Mac binaries.\n  options(repos = c(CRAN = \"https://cran.rstudio.com/\"))\n  # options(renv.config.mran.enabled = TRUE) ## TRUE by default\n}\noptions(renv.config.repos.override = getOption(\"repos\"))\nI think this is the thing I should use… However, it looks like that RSPM is not detecting that I am under a Ubuntu-based distro and do not redirect me on the binairy versions of the packages.\nif (Sys.info()[['sysname']] %in% c('Linux', 'Windows')) {\n  options(repos = c(CRAN = \"https://packagemanager.rstudio.com/all/latest\"))\n} else {\n  ## For Mac users, we'll default to installing from CRAN/MRAN instead, since\n  ## RSPM does not yet support Mac binaries.\n  options(repos = c(CRAN = \"https://cran.rstudio.com/\"))\n  # options(renv.config.mran.enabled = TRUE) ## TRUE by default\n}\noptions(renv.config.repos.override = getOption(\"repos\"))\nCan be set in .Rprofile of the current project or per user using usethis::edit_r_profile()."
   },
   {
     "objectID": "installr.html#installing-the-latest-r-version",
@@ -73,8 +73,8 @@
     "objectID": "installr.html#rstudio",
     "href": "installr.html#rstudio",
     "title": "3  Installing R",
-    "section": "3.5 RStudio",
-    "text": "3.5 RStudio\n\n3.5.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()"
+    "section": "3.4 RStudio",
+    "text": "3.4 RStudio\n\n3.4.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()"
   },
   {
     "objectID": "installr.html#usubg-rig",
@@ -89,5 +89,12 @@
     "title": "3  Installing R",
     "section": "3.3 renv",
     "text": "3.3 renv\n\nhttps://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf\nhttps://github.com/grantmcdermott/renv-rspm\n\nAnother version here (for focal):\n\nhttps://github.com/rocker-org/rocker/tree/master/r-rspm/focal\n\nor\nif (Sys.info()[['sysname']] %in% c('Linux', 'Windows')) {\n  options(repos = c(RSPM = \"https://packagemanager.rstudio.com/all/__linux__/focal/latest\"))\n} else {\n  ## For Mac users, we'll default to installing from CRAN/MRAN instead, since\n  ## RSPM does not yet support Mac binaries.\n  options(repos = c(CRAN = \"https://cran.rstudio.com/\"))\n  # options(renv.config.mran.enabled = TRUE) ## TRUE by default\n}\noptions(renv.config.repos.override = getOption(\"repos\"))\nI think this is the thing I should use… However, it looks like that RSPM is not detecting that I am under a Ubuntu-based distro and do not redirect me on the binairy versions of the packages.\nif (Sys.info()[['sysname']] %in% c('Linux', 'Windows')) {\n  options(repos = c(CRAN = \"https://packagemanager.rstudio.com/all/latest\"))\n} else {\n  ## For Mac users, we'll default to installing from CRAN/MRAN instead, since\n  ## RSPM does not yet support Mac binaries.\n  options(repos = c(CRAN = \"https://cran.rstudio.com/\"))\n  # options(renv.config.mran.enabled = TRUE) ## TRUE by default\n}\noptions(renv.config.repos.override = getOption(\"repos\"))\nCan be set in .Rprofile of the current project or per user using usethis::edit_r_profile()."
+  },
+  {
+    "objectID": "installr.html#using-rig",
+    "href": "installr.html#using-rig",
+    "title": "3  Installing R",
+    "section": "3.3 Using rig",
+    "text": "3.3 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\ncurl -Ls https://github.com/r-lib/rig/releases/download/v0.4.1/rig-linux-0.4.1.tar.gz | sudo tar xz -C /usr/\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0"
   }
 ]

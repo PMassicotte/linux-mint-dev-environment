@@ -1,0 +1,25 @@
+# QGIS and gdal
+
+Linux Mint is a bit behind for all the GIS stuff. I had problems (ex.: open cloud optimized geotiff on internet) with a old version of gdal that comes with Mint. 
+
+To update to a newer version of gdal, [install this PPA](https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable):
+
+```bash
+sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+sudo apt update
+```
+
+Then, the [latest version of QGIS](https://qgis.org/en/site/forusers/alldownloads.html
+):
+
+```bash
+wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
+
+sudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg
+
+sudo add-apt-repository "deb https://qgis.org/ubuntu $(lsb_release -c -s) main"
+
+sudo apt update
+
+sudo apt install qgis qgis-plugin-grass
+```

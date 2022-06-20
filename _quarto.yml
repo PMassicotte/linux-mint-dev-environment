@@ -9,6 +9,7 @@ book:
     - terminal.qmd
     - neovim.qmd
     - installr.qmd
+    - gis.qmd
     - nemo.qmd
 
 format:

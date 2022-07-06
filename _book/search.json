@@ -39,7 +39,7 @@
     "href": "installr.html",
     "title": "3  Installing R",
     "section": "",
-    "text": "These instructions are from how to set up R on Ubuntu.\nFirst, open sources.list:\nsudo nano /etc/apt/sources.list\nThen add this:\ndeb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev\nFinally, install R:\nsudo apt update\nsudo apt install r-base"
+    "text": "Note: Before installing R, make sure that you have the latest gdal, geos libraries installed so terra, sf and other R packages compile correctly."
   },
   {
     "objectID": "installr.html#installing-r-binaries-for-ubuntu",
@@ -102,6 +102,13 @@
     "href": "gis.html",
     "title": "4  QGIS and gdal",
     "section": "",
-    "text": "To update to a newer version of gdal, install this PPA:\nsudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable\nsudo apt update\nThen, the latest version of QGIS:\nwget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import\n\nsudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg\n\nsudo add-apt-repository \"deb https://qgis.org/ubuntu $(lsb_release -c -s) main\"\n\nsudo apt update\n\nsudo apt install qgis qgis-plugin-grass"
+    "text": "To update to a newer version of gdal, install this PPA:\nsudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable\nsudo apt update\nThen, the latest version of QGIS:\nwget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import\n\nsudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg\n\nsudo add-apt-repository \"deb https://qgis.org/ubuntu $(lsb_release -c -s) main\"\n\nsudo apt update\n\nsudo apt install qgis qgis-plugin-grass\nNot tested: use focal, because $(lsb_release -c -s) returns una as codename.\nsudo add-apt-repository \"deb https://qgis.org/ubuntu focal main\""
+  },
+  {
+    "objectID": "misc.html",
+    "href": "misc.html",
+    "title": "6  Misc",
+    "section": "",
+    "text": "https://raw.githubusercontent.com/hotice/webupd8/master/install-google-fonts\n\n# Original author: Michalis Georgiou <mechmg93@gmail.comr>\n# Modified by Andrew http://www.webupd8.org <andrew@webupd8.org>\n\n_wgeturl=\"https://github.com/google/fonts/archive/master.tar.gz\"\n_gf=\"google-fonts\"\n\n# install wget\nsudo apt-get install wget\n\n# make sure a file with the same name doesn't already exist\nrm -f $_gf.tar.gz\n\necho \"Connecting to Github server...\"\nwget $_wgeturl -O $_gf.tar.gz\n\necho \"Extracting the downloaded archive...\"\ntar -xf $_gf.tar.gz\n\necho \"Creating the /usr/share/fonts/truetype/$_gf folder\"\nsudo mkdir -p /usr/share/fonts/truetype/$_gf\n\necho \"Installing all .ttf fonts in /usr/share/fonts/truetype/$_gf\"\nfind $PWD/fonts-main/ -name \"*.ttf\" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \\; || return 1\n\necho \"Updating the font cache\"\nfc-cache -f > /dev/null\n\n# clean up, but only the .tar.gz, the user may need the folder\nrm -f $_gf.tar.gz\n\necho \"Done.\""
   }
 ]

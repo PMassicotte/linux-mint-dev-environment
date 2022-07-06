@@ -9,8 +9,7 @@ sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
 sudo apt update
 ```
 
-Then, the [latest version of QGIS](https://qgis.org/en/site/forusers/alldownloads.html
-):
+Then, the [latest version of QGIS](https://qgis.org/en/site/forusers/alldownloads.html):
 
 ```bash
 wget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import
@@ -23,3 +22,10 @@ sudo apt update
 
 sudo apt install qgis qgis-plugin-grass
 ```
+
+Not tested: use `focal`, because `$(lsb_release -c -s)` returns `una` as codename.
+
+```bash
+sudo add-apt-repository "deb https://qgis.org/ubuntu focal main"
+```
+

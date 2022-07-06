@@ -1,5 +1,7 @@
 # Installing R
 
+Note: Before installing R, make sure that you have the latest gdal, geos libraries installed so `terra`, `sf` and other R packages compile correctly.
+
 ## Installing the latest R version
 
 These instructions are from [how to set up R on Ubuntu](https://blog.zenggyu.com/en/post/2018-01-29/installing-r-r-packages-e-g-tidyverse-and-rstudio-on-ubuntu-linux/).

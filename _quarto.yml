@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Setting up my working environement"
+  title: "Setting up my working environment"
   author: "Philippe Massicotte"
   chapters:
     - index.qmd
@@ -11,6 +11,7 @@ book:
     - installr.qmd
     - gis.qmd
     - nemo.qmd
+    - misc.qmd
 
 format:
   html:

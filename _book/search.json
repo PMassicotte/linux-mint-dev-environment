@@ -46,7 +46,7 @@
     "href": "installr.html#installing-r-binaries-for-ubuntu",
     "title": "3  Installing R",
     "section": "3.2 Installing R binaries for Ubuntu",
-    "text": "3.2 Installing R binaries for Ubuntu\nAfter playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use RStudio Package Manager. To use it, simply add the following line as the primary library repository:\nhttps://packagemanager.rstudio.com/cran/__linux__/focal/latest\n\nAfter that, simply use install.packages() as you would normally do. If you want to change the location where packages are installed, I recommend this blog post."
+    "text": "3.2 Installing R binaries for Ubuntu\nhttps://enchufa2.github.io/rspm/\nThen paste this\nusethis::edit_r_profile()\nAnd add this:\nrspm::enable() # wrap it in suppressMessages() to avoid the initial message"
   },
   {
     "objectID": "installr.html#installing-the-latest-r-version",
@@ -73,8 +73,8 @@
     "objectID": "installr.html#rstudio",
     "href": "installr.html#rstudio",
     "title": "3  Installing R",
-    "section": "3.5 RStudio",
-    "text": "3.5 RStudio\n\n3.5.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()"
+    "section": "3.4 RStudio",
+    "text": "3.4 RStudio\n\n3.4.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()"
   },
   {
     "objectID": "installr.html#usubg-rig",
@@ -94,8 +94,8 @@
     "objectID": "installr.html#using-rig",
     "href": "installr.html#using-rig",
     "title": "3  Installing R",
-    "section": "3.4 Using rig",
-    "text": "3.4 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio <renv-lockfile>"
+    "section": "3.3 Using rig",
+    "text": "3.3 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio <renv-lockfile>"
   },
   {
     "objectID": "gis.html",

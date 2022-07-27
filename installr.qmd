@@ -32,55 +32,19 @@ sudo apt install r-base
 
 ## Installing R binaries for Ubuntu
 
-After playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use [RStudio Package Manager](https://docs.rstudio.com/rpm/documentation/). To use it, simply add the following line as the primary library repository:
+**https://enchufa2.github.io/rspm/**
 
-```bash
-https://packagemanager.rstudio.com/cran/__linux__/focal/latest
+Then paste this
+
+```r
+usethis::edit_r_profile()
 ```
 
-![](images/rspm.png)
+And add this:
 
-After that, simply use `install.packages()` as you would normally do. If you want to change the location where packages are installed, I recommend this [blog post](https://zkamvar.netlify.app/blog/using-a-custom-library-in-r/).
-
-## renv
-
-- https://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf
-
-- https://github.com/grantmcdermott/renv-rspm
-
-Another version here (for focal):
-
-- https://github.com/rocker-org/rocker/tree/master/r-rspm/focal
-
-or
-
+```r
+rspm::enable() # wrap it in suppressMessages() to avoid the initial message
 ```
-if (Sys.info()[['sysname']] %in% c('Linux', 'Windows')) {
-  options(repos = c(RSPM = "https://packagemanager.rstudio.com/all/__linux__/focal/latest"))
-} else {
-  ## For Mac users, we'll default to installing from CRAN/MRAN instead, since
-  ## RSPM does not yet support Mac binaries.
-  options(repos = c(CRAN = "https://cran.rstudio.com/"))
-  # options(renv.config.mran.enabled = TRUE) ## TRUE by default
-}
-options(renv.config.repos.override = getOption("repos"))
-```
-
-I think this is the thing I should use... However, it looks like that `RSPM` is not detecting that I am under a Ubuntu-based distro and do not redirect me on the binairy versions of the packages.
-
-```
-if (Sys.info()[['sysname']] %in% c('Linux', 'Windows')) {
-  options(repos = c(CRAN = "https://packagemanager.rstudio.com/all/latest"))
-} else {
-  ## For Mac users, we'll default to installing from CRAN/MRAN instead, since
-  ## RSPM does not yet support Mac binaries.
-  options(repos = c(CRAN = "https://cran.rstudio.com/"))
-  # options(renv.config.mran.enabled = TRUE) ## TRUE by default
-}
-options(renv.config.repos.override = getOption("repos"))
-```
-
-Can be set in `.Rprofile` of the current project or per user using `usethis::edit_r_profile()`.
 
 ## Using rig
 

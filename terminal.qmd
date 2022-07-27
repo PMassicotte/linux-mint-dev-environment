@@ -53,7 +53,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ### tldr
 
 ```bash
-cargo install tldr
+sudo apt install tldr
 tldr --update
 ```
 

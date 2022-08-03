@@ -1,1 +1,1 @@
-{"options":{"chapters":true},"headings":["installing-the-latest-r-version","installing-r-binaries-for-ubuntu","renv","using-rig","rstudio","installing-themes"],"entries":[]}
+{"options":{"chapters":true},"entries":[],"headings":["installing-the-latest-r-version","installing-r-binaries-for-ubuntu","renv","using-rig","rstudio","installing-themes","compiling-r-with-intel-mkl-math-libraries","install-intel-mkl","compile-and-install-r-with-mkl","ressources","benchmark"]}

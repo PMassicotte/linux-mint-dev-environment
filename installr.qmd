@@ -8,17 +8,17 @@ These instructions are from [how to set up R on Ubuntu](https://blog.zenggyu.com
 
 First, open `sources.list`:
 
-``` bash
+```bash
 sudo nano /etc/apt/sources.list
 ```
 
 Then add this:
 
-``` bash
+```bash
 deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/
 ```
 
-``` bash
+```bash
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 sudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev
 ```
@@ -124,5 +124,60 @@ These can be visualized with:
 
 ```r
 rsthemes::try_rsthemes()
+```
+
+## Compiling R with Intel MKL math libraries
+
+
+### Install Intel MKL
+
+```bash
+cd /tmp
+wget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
+
+sudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB
+sudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources.list.d/intel-mkl.list'
+
+sudo apt install intel-mkl-64bit-2020.1-102 
+
+source /opt/intel/mkl/bin/mklvars.sh intel64
+```
+
+## Compile and install R with MKL
+
+Download and decompress R source files.
+
+```bash
+tar -zxvf R-4.0.0.tar.gz
+```
+
+```bash
+./configure --enable-R-shlib --enable-threads=posix --with-lapack --with-blas="-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm"
+
+make -j24
+make pdf
+make info
+make install
+make install-info
+make install-pdf
+
+sudo make install
+```
+
+### Ressources
+
+- https://www.r-bloggers.com/compiling-r-3-0-1-with-mkl-support/
+- https://software.intel.com/content/www/us/en/develop/articles/installing-intel-free-libs-and-python-apt-repo.html
+- https://software.intel.com/content/www/us/en/develop/articles/using-intel-mkl-with-r.html
+
+
+### Benchmark
+
+```{r mkl_benchmark}
+#| echo: true
+#| message: false
+#| warning: false
+#| cache: true
+source("https://mac.r-project.org/benchmarks/R-benchmark-25.R")
 ```
 

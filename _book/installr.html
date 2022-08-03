@@ -197,11 +197,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#installing-the-latest-r-version" id="toc-installing-the-latest-r-version" class="nav-link active" data-scroll-target="#installing-the-latest-r-version"> <span class="header-section-number">3.1</span> Installing the latest R version</a></li>
   <li><a href="#installing-r-binaries-for-ubuntu" id="toc-installing-r-binaries-for-ubuntu" class="nav-link" data-scroll-target="#installing-r-binaries-for-ubuntu"> <span class="header-section-number">3.2</span> Installing R binaries for Ubuntu</a></li>
-  <li><a href="#renv" id="toc-renv" class="nav-link" data-scroll-target="#renv"> <span class="header-section-number">3.3</span> renv</a></li>
-  <li><a href="#using-rig" id="toc-using-rig" class="nav-link" data-scroll-target="#using-rig"> <span class="header-section-number">3.4</span> Using rig</a></li>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"> <span class="header-section-number">3.5</span> RStudio</a>
+  <li><a href="#using-rig" id="toc-using-rig" class="nav-link" data-scroll-target="#using-rig"> <span class="header-section-number">3.3</span> Using rig</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"> <span class="header-section-number">3.4</span> RStudio</a>
   <ul class="collapse">
-  <li><a href="#installing-themes" id="toc-installing-themes" class="nav-link" data-scroll-target="#installing-themes"> <span class="header-section-number">3.5.1</span> Installing themes</a></li>
+  <li><a href="#installing-themes" id="toc-installing-themes" class="nav-link" data-scroll-target="#installing-themes"> <span class="header-section-number">3.4.1</span> Installing themes</a></li>
   </ul></li>
   <li><a href="#compiling-r-with-intel-mkl-math-libraries" id="toc-compiling-r-with-intel-mkl-math-libraries" class="nav-link" data-scroll-target="#compiling-r-with-intel-mkl-math-libraries"> <span class="header-section-number">3.6</span> Compiling R with Intel MKL math libraries</a>
   <ul class="collapse">
@@ -250,62 +249,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="installing-r-binaries-for-ubuntu" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="installing-r-binaries-for-ubuntu"><span class="header-section-number">3.2</span> Installing R binaries for Ubuntu</h2>
-<p>After playing around, I found that the easiest way for me to install binary R packages on my Linux Mint system was to use <a href="https://docs.rstudio.com/rpm/documentation/">RStudio Package Manager</a>. To use it, simply add the following line as the primary library repository:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">https://packagemanager.rstudio.com/cran/__linux__/focal/latest</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="images/rspm.png" class="img-fluid"></p>
-<p>After that, simply use <code>install.packages()</code> as you would normally do. If you want to change the location where packages are installed, I recommend this <a href="https://zkamvar.netlify.app/blog/using-a-custom-library-in-r/">blog post</a>.</p>
+<p><strong>https://enchufa2.github.io/rspm/</strong></p>
+<p>Then paste this</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">edit_r_profile</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And add this:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rspm<span class="sc">::</span><span class="fu">enable</span>() <span class="co"># wrap it in suppressMessages() to avoid the initial message</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="renv" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="renv"><span class="header-section-number">3.3</span> renv</h2>
-<ul>
-<li><p>https://support.rstudio.com/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf</p></li>
-<li><p>https://github.com/grantmcdermott/renv-rspm</p></li>
-</ul>
-<p>Another version here (for focal):</p>
-<ul>
-<li>https://github.com/rocker-org/rocker/tree/master/r-rspm/focal</li>
-</ul>
-<p>or</p>
-<pre><code>if (Sys.info()[['sysname']] %in% c('Linux', 'Windows')) {
-  options(repos = c(RSPM = "https://packagemanager.rstudio.com/all/__linux__/focal/latest"))
-} else {
-  ## For Mac users, we'll default to installing from CRAN/MRAN instead, since
-  ## RSPM does not yet support Mac binaries.
-  options(repos = c(CRAN = "https://cran.rstudio.com/"))
-  # options(renv.config.mran.enabled = TRUE) ## TRUE by default
-}
-options(renv.config.repos.override = getOption("repos"))</code></pre>
-<p>I think this is the thing I should use… However, it looks like that <code>RSPM</code> is not detecting that I am under a Ubuntu-based distro and do not redirect me on the binairy versions of the packages.</p>
-<pre><code>if (Sys.info()[['sysname']] %in% c('Linux', 'Windows')) {
-  options(repos = c(CRAN = "https://packagemanager.rstudio.com/all/latest"))
-} else {
-  ## For Mac users, we'll default to installing from CRAN/MRAN instead, since
-  ## RSPM does not yet support Mac binaries.
-  options(repos = c(CRAN = "https://cran.rstudio.com/"))
-  # options(renv.config.mran.enabled = TRUE) ## TRUE by default
-}
-options(renv.config.repos.override = getOption("repos"))</code></pre>
-<p>Can be set in <code>.Rprofile</code> of the current project or per user using <code>usethis::edit_r_profile()</code>.</p>
-</section>
-<section id="using-rig" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="using-rig"><span class="header-section-number">3.4</span> Using rig</h2>
+<section id="using-rig" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="using-rig"><span class="header-section-number">3.3</span> Using rig</h2>
 <p><a href="https://github.com/r-lib/rig">rig</a> a tool to manage different version of R installation on your computer.</p>
 <p>To install it (note that the destination path is not the same as the one shown on the <code>rig</code> website because R was installed in <code>/usr/</code> and not <code>/usr/local/</code>):</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-Ls</span> curl <span class="at">-Ls</span> https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz <span class="kw">|</span> <span class="fu">sudo</span> tar xz <span class="at">-C</span> /usr/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-Ls</span> curl <span class="at">-Ls</span> https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz <span class="kw">|</span> <span class="fu">sudo</span> tar xz <span class="at">-C</span> /usr/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Once installed, one can install different versions of R like so:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add 4.1.0</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add 4.2.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add 4.1.0</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add 4.2.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Starting RStudio with a specific version of R can be done with:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> rstudio 4.1.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> rstudio 4.1.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It is also possible to start RStudio with a specific version of R that is defined in the <code>renv</code> lcok file:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> rstudio <span class="op">&lt;</span>renv-lockfile<span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> rstudio <span class="op">&lt;</span>renv-lockfile<span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="rstudio" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">3.5</span> RStudio</h2>
-<section id="installing-themes" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="installing-themes"><span class="header-section-number">3.5.1</span> Installing themes</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"gadenbuie/rsthemes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="rstudio" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">3.4</span> RStudio</h2>
+<section id="installing-themes" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="installing-themes"><span class="header-section-number">3.4.1</span> Installing themes</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"gadenbuie/rsthemes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>These can be visualized with:</p>
+<<<<<<< HEAD
 <div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>rsthemes<span class="sc">::</span><span class="fu">try_rsthemes</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
@@ -393,6 +362,9 @@ Overall mean (sum of I, II and III trimmed means/3)_ (sec):  0.132270881437073
                       --- End of test ---</code></pre>
 </div>
 </div>
+=======
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>rsthemes<span class="sc">::</span><span class="fu">try_rsthemes</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> 2d521be83f6a0b4f149c44e7bfb5b61e256fd12f
 
 
 </section>

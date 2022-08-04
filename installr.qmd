@@ -116,7 +116,7 @@ tar -zxvf R-4.0.0.tar.gz
 ```
 
 ```bash
-./configure --enable-R-shlib --enable-threads=posix --with-lapack --with-blas="-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm"
+./configure --enable-R-shlib --enable-threads=posix --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas="-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm"
 
 make -j24
 make pdf

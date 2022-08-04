@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -316,50 +316,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="benchmark" class="level3" data-number="3.6.2">
 <h3 data-number="3.6.2" class="anchored" data-anchor-id="benchmark"><span class="header-section-number">3.6.2</span> Benchmark</h3>
-<div class="cell" data-hash="installr_cache/html/mkl_benchmark_a887c7356ff2b46b6fe0fe56761dede0">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://mac.r-project.org/benchmarks/R-benchmark-25.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-
-   R Benchmark 2.5
-   ===============
-Number of times each test is run__________________________:  3
-
-   I. Matrix calculation
-   ---------------------
-Creation, transp., deformation of a 2500x2500 matrix (sec):  0.381666666666667 
-2400x2400 normal distributed random matrix ^1000____ (sec):  0.181 
-Sorting of 7,000,000 random values__________________ (sec):  0.580333333333333 
-2800x2800 cross-product matrix (b = a' * a)_________ (sec):  0.0820000000000001 
-Linear regr. over a 3000x3000 matrix (c = a \ b')___ (sec):  0.0630000000000006 
-                      --------------------------------------------
-                 Trimmed geom. mean (2 extremes eliminated):  0.178262045827045 
-
-   II. Matrix functions
-   --------------------
-FFT over 2,400,000 random values____________________ (sec):  0.116333333333333 
-Eigenvalues of a 640x640 random matrix______________ (sec):  0.167333333333332 
-Determinant of a 2500x2500 random matrix____________ (sec):  0.0523333333333333 
-Cholesky decomposition of a 3000x3000 matrix________ (sec):  0.106666666666667 
-Inverse of a 1600x1600 random matrix________________ (sec):  0.111333333333332 
-                      --------------------------------------------
-                Trimmed geom. mean (2 extremes eliminated):  0.111374568890322 
-
-   III. Programmation
-   ------------------
-3,500,000 Fibonacci numbers calculation (vector calc)(sec):  0.108333333333332 
-Creation of a 3000x3000 Hilbert matrix (matrix calc) (sec):  0.146666666666667 
-Grand common divisors of 400,000 pairs (recursion)__ (sec):  0.0996666666666665 
-Creation of a 500x500 Toeplitz matrix (loops)_______ (sec):  0.0233333333333322 
-Escoufier's method on a 45x45 matrix (mixed)________ (sec):  0.186 
-                      --------------------------------------------
-                Trimmed geom. mean (2 extremes eliminated):  0.116559538849438 
-
-
-Total time for all 15 tests_________________________ (sec):  2.406 
-Overall mean (sum of I, II and III trimmed means/3)_ (sec):  0.132270881437073 
-                      --- End of test ---</code></pre>
-</div>
+<div class="cell" data-hash="installr_cache/html/mkl_benchmark_cd352f94702b37a771180dbf934dd1f6">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># source("https://mac.r-project.org/benchmarks/R-benchmark-25.R")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

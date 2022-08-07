@@ -205,11 +205,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#compiling-r-with-intel-mkl-math-libraries" id="toc-compiling-r-with-intel-mkl-math-libraries" class="nav-link" data-scroll-target="#compiling-r-with-intel-mkl-math-libraries"> <span class="header-section-number">3.5</span> Compiling R with Intel MKL math libraries</a>
   <ul class="collapse">
   <li><a href="#install-intel-mkl" id="toc-install-intel-mkl" class="nav-link" data-scroll-target="#install-intel-mkl"> <span class="header-section-number">3.5.1</span> Install Intel MKL</a></li>
-  </ul></li>
-  <li><a href="#compile-and-install-r-with-mkl" id="toc-compile-and-install-r-with-mkl" class="nav-link" data-scroll-target="#compile-and-install-r-with-mkl"> <span class="header-section-number">3.6</span> Compile and install R with MKL</a>
-  <ul class="collapse">
-  <li><a href="#ressources" id="toc-ressources" class="nav-link" data-scroll-target="#ressources"> <span class="header-section-number">3.6.1</span> Ressources</a></li>
-  <li><a href="#benchmark" id="toc-benchmark" class="nav-link" data-scroll-target="#benchmark"> <span class="header-section-number">3.6.2</span> Benchmark</a></li>
+  <li><a href="#compile-r-with-mkl" id="toc-compile-r-with-mkl" class="nav-link" data-scroll-target="#compile-r-with-mkl"> <span class="header-section-number">3.5.2</span> Compile R with MKL</a></li>
+  <li><a href="#ressources" id="toc-ressources" class="nav-link" data-scroll-target="#ressources"> <span class="header-section-number">3.5.3</span> Ressources</a></li>
+  <li><a href="#benchmark" id="toc-benchmark" class="nav-link" data-scroll-target="#benchmark"> <span class="header-section-number">3.5.4</span> Benchmark</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -292,9 +290,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /opt/intel/mkl/bin/mklvars.sh intel64</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="compile-and-install-r-with-mkl" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="compile-and-install-r-with-mkl"><span class="header-section-number">3.6</span> Compile and install R with MKL</h2>
+<section id="compile-r-with-mkl" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="compile-r-with-mkl"><span class="header-section-number">3.5.2</span> Compile R with MKL</h3>
 <p>Download and decompress R source files.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> R-4.0.0.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--enable-R-shlib</span> <span class="at">--enable-threads</span><span class="op">=</span>posix <span class="at">--with-cairo</span> <span class="at">--with-libpng</span> <span class="at">--with-libtiff</span> <span class="at">--with-jpeglib</span> <span class="at">--with-lapack</span> <span class="at">--with-blas</span><span class="op">=</span><span class="st">"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm"</span></span>
@@ -307,16 +304,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install-pdf</span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="ressources" class="level3" data-number="3.6.1">
-<h3 data-number="3.6.1" class="anchored" data-anchor-id="ressources"><span class="header-section-number">3.6.1</span> Ressources</h3>
+</section>
+<section id="ressources" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="ressources"><span class="header-section-number">3.5.3</span> Ressources</h3>
 <ul>
 <li>https://www.r-bloggers.com/compiling-r-3-0-1-with-mkl-support/</li>
 <li>https://software.intel.com/content/www/us/en/develop/articles/installing-intel-free-libs-and-python-apt-repo.html</li>
 <li>https://software.intel.com/content/www/us/en/develop/articles/using-intel-mkl-with-r.html</li>
 </ul>
 </section>
-<section id="benchmark" class="level3" data-number="3.6.2">
-<h3 data-number="3.6.2" class="anchored" data-anchor-id="benchmark"><span class="header-section-number">3.6.2</span> Benchmark</h3>
+<section id="benchmark" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="benchmark"><span class="header-section-number">3.5.4</span> Benchmark</h3>
 <div class="cell" data-hash="installr_cache/html/mkl_benchmark_a887c7356ff2b46b6fe0fe56761dede0">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://mac.r-project.org/benchmarks/R-benchmark-25.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

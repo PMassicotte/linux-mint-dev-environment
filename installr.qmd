@@ -79,7 +79,6 @@ It is also possible to start RStudio with a specific version of R that is define
 rig rstudio <renv-lockfile> 
 ```
 
-
 ## RStudio
 
 ### Installing themes
@@ -111,7 +110,7 @@ sudo apt install intel-mkl-64bit-2020.1-102
 source /opt/intel/mkl/bin/mklvars.sh intel64
 ```
 
-## Compile and install R with MKL
+### Compile R with MKL
 
 Download and decompress R source files.
 

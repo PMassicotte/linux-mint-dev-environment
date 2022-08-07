@@ -32,9 +32,13 @@ sudo apt install r-base
 
 ## Installing R binaries for Ubuntu
 
-**https://enchufa2.github.io/rspm/**
+First, install [rspm](https://enchufa2.github.io/rspm/):
 
-Then paste this
+```r
+remotes::install_github("Enchufa2/rspm")
+```
+
+Then, edit `.Rprofile`:
 
 ```r
 usethis::edit_r_profile()

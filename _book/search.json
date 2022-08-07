@@ -60,7 +60,7 @@
     "href": "installr.html#installing-r-binaries-for-ubuntu",
     "title": "3  Installing R",
     "section": "3.2 Installing R binaries for Ubuntu",
-    "text": "3.2 Installing R binaries for Ubuntu\nhttps://enchufa2.github.io/rspm/\nThen paste this\nusethis::edit_r_profile()\nAnd add this:\nrspm::enable() # wrap it in suppressMessages() to avoid the initial message"
+    "text": "3.2 Installing R binaries for Ubuntu\nFirst, install rspm:\nremotes::install_github(\"Enchufa2/rspm\")\nThen, edit .Rprofile:\nusethis::edit_r_profile()\nAnd add this:\nrspm::enable() # wrap it in suppressMessages() to avoid the initial message"
   },
   {
     "objectID": "installr.html#using-rig",

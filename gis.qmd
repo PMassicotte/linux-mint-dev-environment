@@ -1,5 +1,7 @@
 # QGIS and gdal
 
+## QGIS
+
 Linux Mint is a bit behind for all the GIS stuff. I had problems (ex.: open cloud optimized geotiff on internet) with a old version of gdal that comes with Mint. 
 
 To update to a newer version of gdal, [install this PPA](https://launchpad.net/~ubuntugis/+archive/ubuntu/ubuntugis-unstable):
@@ -27,5 +29,15 @@ Not tested: use `focal`, because `$(lsb_release -c -s)` returns `una` as codenam
 
 ```bash
 sudo add-apt-repository "deb https://qgis.org/ubuntu focal main"
+```
+
+## GDAL
+
+Download the [latest version of gdal](https://gdal.org/download.html). Then configure and install:
+
+```bash
+./configure --with-python --with-pg --with-geos
+make -j24
+sudo make install
 ```
 

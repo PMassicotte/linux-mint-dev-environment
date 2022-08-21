@@ -41,3 +41,6 @@ make -j24
 sudo make install
 ```
 
+## See also
+
+- https://rtask.thinkr.fr/installation-of-r-4-2-on-ubuntu-22-04-lts-and-tips-for-spatial-packages/

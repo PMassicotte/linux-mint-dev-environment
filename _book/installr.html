@@ -207,7 +207,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#install-intel-mkl" id="toc-install-intel-mkl" class="nav-link" data-scroll-target="#install-intel-mkl"> <span class="header-section-number">3.5.1</span> Install Intel MKL</a></li>
   <li><a href="#compile-r-with-mkl" id="toc-compile-r-with-mkl" class="nav-link" data-scroll-target="#compile-r-with-mkl"> <span class="header-section-number">3.5.2</span> Compile R with MKL</a></li>
   <li><a href="#ressources" id="toc-ressources" class="nav-link" data-scroll-target="#ressources"> <span class="header-section-number">3.5.3</span> Ressources</a></li>
-  <li><a href="#benchmark" id="toc-benchmark" class="nav-link" data-scroll-target="#benchmark"> <span class="header-section-number">3.5.4</span> Benchmark</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -314,54 +313,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>https://software.intel.com/content/www/us/en/develop/articles/installing-intel-free-libs-and-python-apt-repo.html</li>
 <li>https://software.intel.com/content/www/us/en/develop/articles/using-intel-mkl-with-r.html</li>
 </ul>
-</section>
-<section id="benchmark" class="level3" data-number="3.5.4">
-<h3 data-number="3.5.4" class="anchored" data-anchor-id="benchmark"><span class="header-section-number">3.5.4</span> Benchmark</h3>
-<div class="cell" data-hash="installr_cache/html/mkl_benchmark_a887c7356ff2b46b6fe0fe56761dede0">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"https://mac.r-project.org/benchmarks/R-benchmark-25.R"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-
-   R Benchmark 2.5
-   ===============
-Number of times each test is run__________________________:  3
-
-   I. Matrix calculation
-   ---------------------
-Creation, transp., deformation of a 2500x2500 matrix (sec):  0.381333333333333 
-2400x2400 normal distributed random matrix ^1000____ (sec):  0.184 
-Sorting of 7,000,000 random values__________________ (sec):  0.574666666666666 
-2800x2800 cross-product matrix (b = a' * a)_________ (sec):  0.0969999999999998 
-Linear regr. over a 3000x3000 matrix (c = a \ b')___ (sec):  0.063 
-                      --------------------------------------------
-                 Trimmed geom. mean (2 extremes eliminated):  0.189509699225623 
-
-   II. Matrix functions
-   --------------------
-FFT over 2,400,000 random values____________________ (sec):  0.096666666666667 
-Eigenvalues of a 640x640 random matrix______________ (sec):  0.161333333333333 
-Determinant of a 2500x2500 random matrix____________ (sec):  0.047 
-Cholesky decomposition of a 3000x3000 matrix________ (sec):  0.115333333333333 
-Inverse of a 1600x1600 random matrix________________ (sec):  0.113000000000001 
-                      --------------------------------------------
-                Trimmed geom. mean (2 extremes eliminated):  0.108003213337304 
-
-   III. Programmation
-   ------------------
-3,500,000 Fibonacci numbers calculation (vector calc)(sec):  0.109000000000002 
-Creation of a 3000x3000 Hilbert matrix (matrix calc) (sec):  0.149 
-Grand common divisors of 400,000 pairs (recursion)__ (sec):  0.0966666666666664 
-Creation of a 500x500 Toeplitz matrix (loops)_______ (sec):  0.023666666666666 
-Escoufier's method on a 45x45 matrix (mixed)________ (sec):  0.191000000000003 
-                      --------------------------------------------
-                Trimmed geom. mean (2 extremes eliminated):  0.116224183319125 
-
-
-Total time for all 15 tests_________________________ (sec):  2.40266666666667 
-Overall mean (sum of I, II and III trimmed means/3)_ (sec):  0.133491887610545 
-                      --- End of test ---</code></pre>
-</div>
-</div>
 
 
 </section>

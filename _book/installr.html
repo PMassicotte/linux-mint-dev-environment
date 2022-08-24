@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setting up my working environment - 3&nbsp; Installing R</title>
+<title>Setting up my working environment - 4&nbsp; Installing R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,8 +88,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./gis.html" rel="next">
-<link href="./neovim.html" rel="prev">
+<link href="./vscode.html" rel="next">
+<link href="./gis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -128,7 +128,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing R</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -168,22 +168,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./installr.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R</span></a>
+  <a href="./gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">QGIS and gdal</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gis.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QGIS and gdal</span></a>
+  <a href="./installr.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nemo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Nemo</span></a>
+  <a href="./vscode.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visual Studio Code</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./misc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Misc</span></a>
+  <a href="./nemo.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Nemo</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./misc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Misc</span></a>
   </div>
 </li>
     </ul>
@@ -195,18 +200,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#installing-the-latest-r-version" id="toc-installing-the-latest-r-version" class="nav-link active" data-scroll-target="#installing-the-latest-r-version"> <span class="header-section-number">3.1</span> Installing the latest R version</a></li>
-  <li><a href="#installing-r-binaries-for-ubuntu" id="toc-installing-r-binaries-for-ubuntu" class="nav-link" data-scroll-target="#installing-r-binaries-for-ubuntu"> <span class="header-section-number">3.2</span> Installing R binaries for Ubuntu</a></li>
-  <li><a href="#using-rig" id="toc-using-rig" class="nav-link" data-scroll-target="#using-rig"> <span class="header-section-number">3.3</span> Using rig</a></li>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"> <span class="header-section-number">3.4</span> RStudio</a>
+  <li><a href="#installing-the-latest-r-version" id="toc-installing-the-latest-r-version" class="nav-link active" data-scroll-target="#installing-the-latest-r-version"> <span class="header-section-number">4.1</span> Installing the latest R version</a></li>
+  <li><a href="#installing-r-binaries-for-ubuntu" id="toc-installing-r-binaries-for-ubuntu" class="nav-link" data-scroll-target="#installing-r-binaries-for-ubuntu"> <span class="header-section-number">4.2</span> Installing R binaries for Ubuntu</a></li>
+  <li><a href="#using-rig" id="toc-using-rig" class="nav-link" data-scroll-target="#using-rig"> <span class="header-section-number">4.3</span> Using rig</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"> <span class="header-section-number">4.4</span> RStudio</a>
   <ul class="collapse">
-  <li><a href="#installing-themes" id="toc-installing-themes" class="nav-link" data-scroll-target="#installing-themes"> <span class="header-section-number">3.4.1</span> Installing themes</a></li>
+  <li><a href="#installing-themes" id="toc-installing-themes" class="nav-link" data-scroll-target="#installing-themes"> <span class="header-section-number">4.4.1</span> Installing themes</a></li>
   </ul></li>
-  <li><a href="#compiling-r-with-intel-mkl-math-libraries" id="toc-compiling-r-with-intel-mkl-math-libraries" class="nav-link" data-scroll-target="#compiling-r-with-intel-mkl-math-libraries"> <span class="header-section-number">3.5</span> Compiling R with Intel MKL math libraries</a>
+  <li><a href="#compiling-r-with-intel-mkl-math-libraries" id="toc-compiling-r-with-intel-mkl-math-libraries" class="nav-link" data-scroll-target="#compiling-r-with-intel-mkl-math-libraries"> <span class="header-section-number">4.5</span> Compiling R with Intel MKL math libraries</a>
   <ul class="collapse">
-  <li><a href="#install-intel-mkl" id="toc-install-intel-mkl" class="nav-link" data-scroll-target="#install-intel-mkl"> <span class="header-section-number">3.5.1</span> Install Intel MKL</a></li>
-  <li><a href="#compile-r-with-mkl" id="toc-compile-r-with-mkl" class="nav-link" data-scroll-target="#compile-r-with-mkl"> <span class="header-section-number">3.5.2</span> Compile R with MKL</a></li>
-  <li><a href="#ressources" id="toc-ressources" class="nav-link" data-scroll-target="#ressources"> <span class="header-section-number">3.5.3</span> Ressources</a></li>
+  <li><a href="#install-intel-mkl" id="toc-install-intel-mkl" class="nav-link" data-scroll-target="#install-intel-mkl"> <span class="header-section-number">4.5.1</span> Install Intel MKL</a></li>
+  <li><a href="#compile-r-with-mkl" id="toc-compile-r-with-mkl" class="nav-link" data-scroll-target="#compile-r-with-mkl"> <span class="header-section-number">4.5.2</span> Compile R with MKL</a></li>
+  <li><a href="#ressources" id="toc-ressources" class="nav-link" data-scroll-target="#ressources"> <span class="header-section-number">4.5.3</span> Ressources</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -216,7 +221,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Installing R</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Installing R</span></h1>
 </div>
 
 
@@ -231,8 +236,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>Note: Before installing R, make sure that you have the latest gdal, geos libraries installed so <code>terra</code>, <code>sf</code> and other R packages compile correctly.</p>
-<section id="installing-the-latest-r-version" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="installing-the-latest-r-version"><span class="header-section-number">3.1</span> Installing the latest R version</h2>
+<section id="installing-the-latest-r-version" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="installing-the-latest-r-version"><span class="header-section-number">4.1</span> Installing the latest R version</h2>
 <p>These instructions are from <a href="https://blog.zenggyu.com/en/post/2018-01-29/installing-r-r-packages-e-g-tidyverse-and-rstudio-on-ubuntu-linux/">how to set up R on Ubuntu</a>.</p>
 <p>First, open <code>sources.list</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano /etc/apt/sources.list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -244,8 +249,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="installing-r-binaries-for-ubuntu" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="installing-r-binaries-for-ubuntu"><span class="header-section-number">3.2</span> Installing R binaries for Ubuntu</h2>
+<section id="installing-r-binaries-for-ubuntu" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="installing-r-binaries-for-ubuntu"><span class="header-section-number">4.2</span> Installing R binaries for Ubuntu</h2>
 <p>First, install <a href="https://enchufa2.github.io/rspm/">rspm</a>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"Enchufa2/rspm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then, edit <code>.Rprofile</code>:</p>
@@ -253,8 +258,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>And add this:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rspm<span class="sc">::</span><span class="fu">enable</span>() <span class="co"># wrap it in suppressMessages() to avoid the initial message</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="using-rig" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="using-rig"><span class="header-section-number">3.3</span> Using rig</h2>
+<section id="using-rig" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="using-rig"><span class="header-section-number">4.3</span> Using rig</h2>
 <p><a href="https://github.com/r-lib/rig">rig</a> a tool to manage different version of R installation on your computer.</p>
 <p>To install it (note that the destination path is not the same as the one shown on the <code>rig</code> website because R was installed in <code>/usr/</code> and not <code>/usr/local/</code>):</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-Ls</span> curl <span class="at">-Ls</span> https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz <span class="kw">|</span> <span class="fu">sudo</span> tar xz <span class="at">-C</span> /usr/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -266,19 +271,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It is also possible to start RStudio with a specific version of R that is defined in the <code>renv</code> lcok file:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> rstudio <span class="op">&lt;</span>renv-lockfile<span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="rstudio" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">3.4</span> RStudio</h2>
-<section id="installing-themes" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="installing-themes"><span class="header-section-number">3.4.1</span> Installing themes</h3>
+<section id="rstudio" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">4.4</span> RStudio</h2>
+<section id="installing-themes" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="installing-themes"><span class="header-section-number">4.4.1</span> Installing themes</h3>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"gadenbuie/rsthemes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>These can be visualized with:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>rsthemes<span class="sc">::</span><span class="fu">try_rsthemes</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="compiling-r-with-intel-mkl-math-libraries" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="compiling-r-with-intel-mkl-math-libraries"><span class="header-section-number">3.5</span> Compiling R with Intel MKL math libraries</h2>
-<section id="install-intel-mkl" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="install-intel-mkl"><span class="header-section-number">3.5.1</span> Install Intel MKL</h3>
+<section id="compiling-r-with-intel-mkl-math-libraries" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="compiling-r-with-intel-mkl-math-libraries"><span class="header-section-number">4.5</span> Compiling R with Intel MKL math libraries</h2>
+<section id="install-intel-mkl" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="install-intel-mkl"><span class="header-section-number">4.5.1</span> Install Intel MKL</h3>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -289,8 +294,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /opt/intel/mkl/bin/mklvars.sh intel64</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="compile-r-with-mkl" class="level3" data-number="3.5.2">
-<h3 data-number="3.5.2" class="anchored" data-anchor-id="compile-r-with-mkl"><span class="header-section-number">3.5.2</span> Compile R with MKL</h3>
+<section id="compile-r-with-mkl" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="compile-r-with-mkl"><span class="header-section-number">4.5.2</span> Compile R with MKL</h3>
 <p>Download and decompress R source files.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> R-4.0.0.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--enable-R-shlib</span> <span class="at">--enable-threads</span><span class="op">=</span>posix <span class="at">--with-x</span><span class="op">=</span>yes <span class="at">--with-cairo</span> <span class="at">--with-libpng</span> <span class="at">--with-libtiff</span> <span class="at">--with-jpeglib</span> <span class="at">--with-lapack</span> <span class="at">--with-blas</span><span class="op">=</span><span class="st">"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm"</span></span>
@@ -306,8 +311,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="ressources" class="level3" data-number="3.5.3">
-<h3 data-number="3.5.3" class="anchored" data-anchor-id="ressources"><span class="header-section-number">3.5.3</span> Ressources</h3>
+<section id="ressources" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="ressources"><span class="header-section-number">4.5.3</span> Ressources</h3>
 <ul>
 <li>https://www.r-bloggers.com/compiling-r-3-0-1-with-mkl-support/</li>
 <li>https://software.intel.com/content/www/us/en/develop/articles/installing-intel-free-libs-and-python-apt-repo.html</li>
@@ -418,13 +423,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./neovim.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Neovim</span></span>
+      <a href="./gis.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">QGIS and gdal</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./gis.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">QGIS and gdal</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./vscode.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Visual Studio Code</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

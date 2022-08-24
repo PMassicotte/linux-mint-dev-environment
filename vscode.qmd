@@ -1,0 +1,9 @@
+# Visual Studio Code
+
+## Using VScode for R development
+
+On Linux Mint, the default R installation directory is not the same as on Ubuntu. I have configured VScode to use the R bin installation directory of Ubuntu. Hence, on Mint, code completion, help viewer are not working. The simple work around is to create a symbolic link?
+
+```bash
+sudo ln -s /usr/bin/R /usr/local/bin/R
+```

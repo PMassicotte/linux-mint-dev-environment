@@ -8,8 +8,9 @@ book:
     - index.qmd
     - terminal.qmd
     - neovim.qmd
-    - installr.qmd
     - gis.qmd
+    - installr.qmd
+    - vscode.qmd
     - nemo.qmd
     - misc.qmd
 

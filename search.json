@@ -95,7 +95,7 @@
     "href": "installr.html#using-rig",
     "title": "4  Installing R",
     "section": "4.3 Using rig",
-    "text": "4.3 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio <renv-lockfile>"
+    "text": "4.3 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\n\n4.3.1 On Linux Mint\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\n\n\n4.3.2 On Ubuntu\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/local\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio <renv-lockfile>"
   },
   {
     "objectID": "installr.html#rstudio",

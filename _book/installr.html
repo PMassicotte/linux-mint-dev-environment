@@ -201,7 +201,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#installing-the-latest-r-version" id="toc-installing-the-latest-r-version" class="nav-link active" data-scroll-target="#installing-the-latest-r-version"> <span class="header-section-number">4.1</span> Installing the latest R version</a></li>
-  <li><a href="#installing-r-binaries-for-ubuntu" id="toc-installing-r-binaries-for-ubuntu" class="nav-link" data-scroll-target="#installing-r-binaries-for-ubuntu"> <span class="header-section-number">4.2</span> Installing R binaries for Ubuntu</a></li>
+  <li><a href="#installing-r-binaries-for-ubuntu" id="toc-installing-r-binaries-for-ubuntu" class="nav-link" data-scroll-target="#installing-r-binaries-for-ubuntu"> <span class="header-section-number">4.2</span> Installing R binaries for Ubuntu</a>
+  <ul class="collapse">
+  <li><a href="#rspm" id="toc-rspm" class="nav-link" data-scroll-target="#rspm"> <span class="header-section-number">4.2.1</span> RSPM</a></li>
+  <li><a href="#bspm" id="toc-bspm" class="nav-link" data-scroll-target="#bspm"> <span class="header-section-number">4.2.2</span> BSPM</a></li>
+  </ul></li>
   <li><a href="#using-rig" id="toc-using-rig" class="nav-link" data-scroll-target="#using-rig"> <span class="header-section-number">4.3</span> Using rig</a>
   <ul class="collapse">
   <li><a href="#on-linux-mint" id="toc-on-linux-mint" class="nav-link" data-scroll-target="#on-linux-mint"> <span class="header-section-number">4.3.1</span> On Linux Mint</a></li>
@@ -255,6 +259,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="installing-r-binaries-for-ubuntu" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="installing-r-binaries-for-ubuntu"><span class="header-section-number">4.2</span> Installing R binaries for Ubuntu</h2>
+<section id="rspm" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="rspm"><span class="header-section-number">4.2.1</span> RSPM</h3>
 <p>First, install <a href="https://enchufa2.github.io/rspm/">rspm</a>:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"Enchufa2/rspm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then, edit <code>.Rprofile</code>:</p>
@@ -262,65 +268,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>And add this:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rspm<span class="sc">::</span><span class="fu">enable</span>() <span class="co"># wrap it in suppressMessages() to avoid the initial message</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="bspm" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="bspm"><span class="header-section-number">4.2.2</span> BSPM</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>bspm<span class="sc">::</span><span class="fu">enable</span>()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
 <section id="using-rig" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="using-rig"><span class="header-section-number">4.3</span> Using rig</h2>
 <p><a href="https://github.com/r-lib/rig">rig</a> a tool to manage different version of R installation on your computer.</p>
 <p>To install it (note that the destination path is not the same as the one shown on the <code>rig</code> website because R was installed in <code>/usr/</code> and not <code>/usr/local/</code>):</p>
 <section id="on-linux-mint" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="on-linux-mint"><span class="header-section-number">4.3.1</span> On Linux Mint</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-Ls</span> curl <span class="at">-Ls</span> https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz <span class="kw">|</span> <span class="fu">sudo</span> tar xz <span class="at">-C</span> /usr/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-Ls</span> curl <span class="at">-Ls</span> https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz <span class="kw">|</span> <span class="fu">sudo</span> tar xz <span class="at">-C</span> /usr/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="on-ubuntu" class="level3" data-number="4.3.2">
 <h3 data-number="4.3.2" class="anchored" data-anchor-id="on-ubuntu"><span class="header-section-number">4.3.2</span> On Ubuntu</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-Ls</span> curl <span class="at">-Ls</span> https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz <span class="kw">|</span> <span class="fu">sudo</span> tar xz <span class="at">-C</span> /usr/local</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-Ls</span> curl <span class="at">-Ls</span> https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz <span class="kw">|</span> <span class="fu">sudo</span> tar xz <span class="at">-C</span> /usr/local</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Once installed, one can install different versions of R like so:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add 4.1.0</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add 4.2.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add 4.1.0</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> add 4.2.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Starting RStudio with a specific version of R can be done with:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> rstudio 4.1.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> rstudio 4.1.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It is also possible to start RStudio with a specific version of R that is defined in the <code>renv</code> lcok file:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> rstudio <span class="op">&lt;</span>renv-lockfile<span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rig</span> rstudio <span class="op">&lt;</span>renv-lockfile<span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="rstudio" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="rstudio"><span class="header-section-number">4.4</span> RStudio</h2>
 <section id="installing-themes" class="level3" data-number="4.4.1">
 <h3 data-number="4.4.1" class="anchored" data-anchor-id="installing-themes"><span class="header-section-number">4.4.1</span> Installing themes</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"gadenbuie/rsthemes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"gadenbuie/rsthemes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>These can be visualized with:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>rsthemes<span class="sc">::</span><span class="fu">try_rsthemes</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rsthemes<span class="sc">::</span><span class="fu">try_rsthemes</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="compiling-r-with-intel-mkl-math-libraries" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="compiling-r-with-intel-mkl-math-libraries"><span class="header-section-number">4.5</span> Compiling R with Intel MKL math libraries</h2>
 <section id="install-intel-mkl" class="level3" data-number="4.5.1">
 <h3 data-number="4.5.1" class="anchored" data-anchor-id="install-intel-mkl"><span class="header-section-number">4.5.1</span> Install Intel MKL</h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sh <span class="at">-c</span> <span class="st">'echo deb https://apt.repos.intel.com/mkl all main &gt; /etc/apt/sources.list.d/intel-mkl.list'</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install intel-mkl-64bit-2020.1-102 </span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /opt/intel/mkl/bin/mklvars.sh intel64</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /tmp</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> sh <span class="at">-c</span> <span class="st">'echo deb https://apt.repos.intel.com/mkl all main &gt; /etc/apt/sources.list.d/intel-mkl.list'</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install intel-mkl-64bit-2020.1-102 </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> /opt/intel/mkl/bin/mklvars.sh intel64</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="compile-r-with-mkl" class="level3" data-number="4.5.2">
 <h3 data-number="4.5.2" class="anchored" data-anchor-id="compile-r-with-mkl"><span class="header-section-number">4.5.2</span> Compile R with MKL</h3>
 <p>Download and decompress R source files.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> R-4.0.0.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--enable-R-shlib</span> <span class="at">--enable-threads</span><span class="op">=</span>posix <span class="at">--with-x</span><span class="op">=</span>yes <span class="at">--with-cairo</span> <span class="at">--with-libpng</span> <span class="at">--with-libtiff</span> <span class="at">--with-jpeglib</span> <span class="at">--with-lapack</span> <span class="at">--with-blas</span><span class="op">=</span><span class="st">"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm"</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--enable-R-shlib</span> <span class="at">--enable-threads</span><span class="op">=</span>posix <span class="at">--with-x</span><span class="op">=</span>yes <span class="at">--with-cairo</span> <span class="at">--with-libpng</span> <span class="at">--with-libtiff</span> <span class="at">--with-jpeglib</span> <span class="at">--with-lapack</span> <span class="at">--with-blas</span><span class="op">=</span><span class="st">"-fopenmp -m64 -I</span><span class="va">$MKLROOT</span><span class="st">/include -L</span><span class="va">$MKLROOT</span><span class="st">/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm"</span> <span class="at">--libdir</span><span class="op">=</span>/usr/bin</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-j24</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> pdf</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> info</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install-info</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install-pdf</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-zxvf</span> R-4.0.0.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--enable-R-shlib</span> <span class="at">--enable-threads</span><span class="op">=</span>posix <span class="at">--with-x</span><span class="op">=</span>yes <span class="at">--with-cairo</span> <span class="at">--with-libpng</span> <span class="at">--with-libtiff</span> <span class="at">--with-jpeglib</span> <span class="at">--with-lapack</span> <span class="at">--with-blas</span><span class="op">=</span><span class="st">"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm"</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./configure</span> <span class="at">--enable-R-shlib</span> <span class="at">--enable-threads</span><span class="op">=</span>posix <span class="at">--with-x</span><span class="op">=</span>yes <span class="at">--with-cairo</span> <span class="at">--with-libpng</span> <span class="at">--with-libtiff</span> <span class="at">--with-jpeglib</span> <span class="at">--with-lapack</span> <span class="at">--with-blas</span><span class="op">=</span><span class="st">"-fopenmp -m64 -I</span><span class="va">$MKLROOT</span><span class="st">/include -L</span><span class="va">$MKLROOT</span><span class="st">/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm"</span> <span class="at">--libdir</span><span class="op">=</span>/usr/bin</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-j24</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> pdf</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> info</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install-info</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> install-pdf</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> make install</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="ressources" class="level3" data-number="4.5.3">
 <h3 data-number="4.5.3" class="anchored" data-anchor-id="ressources"><span class="header-section-number">4.5.3</span> Ressources</h3>

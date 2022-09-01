@@ -88,7 +88,7 @@
     "href": "installr.html#installing-r-binaries-for-ubuntu",
     "title": "4  Installing R",
     "section": "4.2 Installing R binaries for Ubuntu",
-    "text": "4.2 Installing R binaries for Ubuntu\nFirst, install rspm:\nremotes::install_github(\"Enchufa2/rspm\")\nThen, edit .Rprofile:\nusethis::edit_r_profile()\nAnd add this:\nrspm::enable() # wrap it in suppressMessages() to avoid the initial message"
+    "text": "4.2 Installing R binaries for Ubuntu\n\n4.2.1 RSPM\nFirst, install rspm:\nremotes::install_github(\"Enchufa2/rspm\")\nThen, edit .Rprofile:\nusethis::edit_r_profile()\nAnd add this:\nrspm::enable() # wrap it in suppressMessages() to avoid the initial message\n\n\n4.2.2 BSPM\nbspm::enable()\n\ninstall.packages(\"tidyverse\")"
   },
   {
     "objectID": "installr.html#using-rig",
@@ -117,6 +117,13 @@
     "title": "5  Visual Studio Code",
     "section": "",
     "text": "On Linux Mint, the default R installation directory is not the same as on Ubuntu. I have configured VScode to use the R bin installation directory of Ubuntu. Hence, on Mint, code completion, help viewer are not working. The simple work around is to create a symbolic link?\nsudo ln -s /usr/bin/R /usr/local/bin/R"
+  },
+  {
+    "objectID": "vscode.html#show-plot-externally-on-a-web-browser",
+    "href": "vscode.html#show-plot-externally-on-a-web-browser",
+    "title": "5  Visual Studio Code",
+    "section": "5.2 Show plot externally on a web browser",
+    "text": "5.2 Show plot externally on a web browser\nUse this in .Rprofile inside a project directory.\n\n\n\n\n\n\nWarning\n\n\n\n\n\nThis will not work inside the global .Rprofile.\n\n\n\n\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\nIf you close the web page by accident, it can be reopened using ctrl+alt+p (depending on the chosen keybinding).\n{\n  \"key\": \"ctrl+alt+p\",\n  \"command\": \"r.runCommand\",\n  \"when\": \"editorTextFocus && (editorLangId == 'r' || editorLangId == 'quarto')\",\n  \"args\": \".vsc.browser(httpgd::hgd_url(), viewer = FALSE)\"\n},"
   },
   {
     "objectID": "nemo.html",

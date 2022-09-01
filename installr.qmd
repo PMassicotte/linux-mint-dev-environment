@@ -32,6 +32,8 @@ sudo apt install r-base
 
 ## Installing R binaries for Ubuntu
 
+### RSPM
+
 First, install [rspm](https://enchufa2.github.io/rspm/):
 
 ```r
@@ -48,6 +50,14 @@ And add this:
 
 ```r
 rspm::enable() # wrap it in suppressMessages() to avoid the initial message
+```
+
+### BSPM
+
+```r
+bspm::enable()
+
+install.packages("tidyverse")
 ```
 
 ## Using rig

@@ -7,3 +7,33 @@ On Linux Mint, the default R installation directory is not the same as on Ubuntu
 ```bash
 sudo ln -s /usr/bin/R /usr/local/bin/R
 ```
+
+## Show plot externally on a web browser
+
+Use this in `.Rprofile` **inside** a project directory or globally.
+
+```r
+
+if (interactive() && Sys.getenv("RSTUDIO") == "") {
+  Sys.setenv(TERM_PROGRAM = "vscode")
+  if ("httpgd" %in% .packages(all.available = TRUE)) {
+    options(vsc.plot = FALSE)
+    options(device = function(...) {
+      httpgd::hgd(silent = TRUE)
+      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)
+    })
+  }
+}
+```
+
+If you close the web page by accident, it can be reopened using `ctrl+alt+p` (depending on the chosen keybinding).
+
+```json
+{
+  "key": "ctrl+alt+p",
+  "command": "r.runCommand",
+  "when": "editorTextFocus && (editorLangId == 'r' || editorLangId == 'quarto')",
+  "args": ".vsc.browser(httpgd::hgd_url(), viewer = FALSE)"
+},
+```
+

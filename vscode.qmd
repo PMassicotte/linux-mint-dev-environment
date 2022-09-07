@@ -32,7 +32,7 @@ If you close the web page by accident, it can be reopened using `ctrl+alt+p` (de
 {
   "key": "ctrl+alt+p",
   "command": "r.runCommand",
-  "when": "editorTextFocus && (editorLangId == 'r' || editorLangId == 'quarto')",
+  "when": "editorTextFocus && editorLangId == 'r'",
   "args": ".vsc.browser(httpgd::hgd_url(), viewer = FALSE)"
 },
 ```

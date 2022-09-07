@@ -152,6 +152,5 @@ sudo make install
 
 ### Ressources
 
-- https://www.r-bloggers.com/compiling-r-3-0-1-with-mkl-support/
-- https://software.intel.com/content/www/us/en/develop/articles/installing-intel-free-libs-and-python-apt-repo.html
-- https://software.intel.com/content/www/us/en/develop/articles/using-intel-mkl-with-r.html
+- [Compiling R with MKL support](https://www.r-bloggers.com/compiling-r-3-0-1-with-mkl-support/)
+- [Installing MKL](https://software.intel.com/content/www/us/en/develop/articles/using-intel-mkl-with-r.html)

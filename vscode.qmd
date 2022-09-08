@@ -37,3 +37,6 @@ If you close the web page by accident, it can be reopened using `ctrl+alt+p` (de
 },
 ```
 
+::: {.callout-important}
+Do not forget to install the `httpdg` package. Otherwise, plot will be displayed as png in an external window.
+:::

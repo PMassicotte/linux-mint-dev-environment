@@ -1,5 +1,9 @@
 # Backup
 
+Daily backup is made with [Duplicati](https://www.duplicati.com/).
+
 ## VALERIA
+
+Setting the endpoint on S3 (in this case, VALERIA).
 
 ![](images/duplicati_valeria.png)

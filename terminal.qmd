@@ -1,4 +1,4 @@
-# My terminal set-up
+# Terminal
 
 Setting up my terminal environment. The dimensions of my terminal is 150 columns by 35 rows.
 

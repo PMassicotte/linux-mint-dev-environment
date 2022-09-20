@@ -113,3 +113,69 @@ Easier to use to me.
 ```bash
 rg read.csv -g "*.R"
 ```
+
+## Terminator
+
+I am using [Terminator](https://terminator-gtk3.readthedocs.io/en/latest/) as my terminal emulator.
+
+- [Installing themes](https://github.com/EliverLara/terminator-themes)
+
+I am using this following TOML config file:
+
+```bash
+nvim ~/.config/terminator/config 
+```
+
+```toml
+[global_config]
+  title_transmit_fg_color = "#000000"
+  title_transmit_bg_color = "#fabd2f"
+  enabled_plugins = LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, TerminatorThemes
+  suppress_multiple_term_dialog = True
+  title_use_system_font = False
+  title_font = MesloLGS NF Bold 12
+  always_split_with_profile = True
+[keybindings]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    font = MesloLGS NF Bold 10
+    use_system_font = False
+  [[Nord]]
+    background_color = "#62a0ea"
+    cursor_color = "#D8DEE9"
+    font = MesloLGS NF Bold 12
+    foreground_color = "#ebdbb2"
+    palette = "#3b4252:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#8fbcbb:#eceff4"
+    use_system_font = False
+    use_theme_colors = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+      size = 1200, 600
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = Nord
+  [[New Layout]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 4145:36
+      maximised = False
+      fullscreen = False
+      size = 1200, 600
+      title = filoche@masticotus:~
+      last_active_term = c2b577a3-57fb-4e1d-b988-d54ae92b5b01
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = c2b577a3-57fb-4e1d-b988-d54ae92b5b01
+[plugins]
+```

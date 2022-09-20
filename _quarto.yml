@@ -12,6 +12,7 @@ book:
     - installr.qmd
     - vscode.qmd
     - nemo.qmd
+    - backup.qmd
     - misc.qmd
 
 format:

@@ -13,7 +13,6 @@ sudo ln -s /usr/bin/R /usr/local/bin/R
 Use this in `.Rprofile` **inside** a project directory or globally.
 
 ```r
-
 if (interactive() && Sys.getenv("RSTUDIO") == "") {
   Sys.setenv(TERM_PROGRAM = "vscode")
   if ("httpgd" %in% .packages(all.available = TRUE)) {

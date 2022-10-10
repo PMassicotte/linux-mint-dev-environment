@@ -30,6 +30,10 @@ sudo apt update
 sudo apt install r-base
 ```
 
+## Installing fonts
+
+https://stackoverflow.com/questions/61204259/how-can-i-resolve-the-no-font-name-issue-when-importing-fonts-into-r-using-ext
+
 ## Installing R binaries for Ubuntu
 
 ### RSPM
@@ -149,6 +153,28 @@ make install-pdf
 
 sudo make install
 ```
+
+## `.Rprofile`
+
+Basic `.Rprofile`file.
+
+```r
+rspm::enable()
+
+options(pillar.sigfig = 5)
+
+if (interactive() && Sys.getenv("RSTUDIO") == "") {
+  Sys.setenv(TERM_PROGRAM = "vscode")
+  if ("httpgd" %in% .packages(all.available = TRUE)) {
+    options(vsc.plot = FALSE)
+    options(device = function(...) {
+      httpgd::hgd(silent = TRUE)
+      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)
+    })
+  }
+}
+```
+
 
 ### Ressources
 

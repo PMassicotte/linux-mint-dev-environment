@@ -91,32 +91,46 @@
     "text": "4.1 Installing the latest R version\nThese instructions are from how to set up R on Ubuntu.\nFirst, open sources.list:\nsudo nano /etc/apt/sources.list\nThen add this:\ndeb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev\nFinally, install R:\nsudo apt update\nsudo apt install r-base"
   },
   {
+    "objectID": "installr.html#installing-fonts",
+    "href": "installr.html#installing-fonts",
+    "title": "4  Installing R",
+    "section": "4.2 Installing fonts",
+    "text": "4.2 Installing fonts\nhttps://stackoverflow.com/questions/61204259/how-can-i-resolve-the-no-font-name-issue-when-importing-fonts-into-r-using-ext"
+  },
+  {
     "objectID": "installr.html#installing-r-binaries-for-ubuntu",
     "href": "installr.html#installing-r-binaries-for-ubuntu",
     "title": "4  Installing R",
-    "section": "4.2 Installing R binaries for Ubuntu",
-    "text": "4.2 Installing R binaries for Ubuntu\n\n4.2.1 RSPM\nFirst, install rspm:\nremotes::install_github(\"Enchufa2/rspm\")\nThen, edit .Rprofile:\nusethis::edit_r_profile()\nAnd add this:\nrspm::enable() # wrap it in suppressMessages() to avoid the initial message\n\n\n4.2.2 BSPM\nbspm::enable()\n\ninstall.packages(\"tidyverse\")"
+    "section": "4.3 Installing R binaries for Ubuntu",
+    "text": "4.3 Installing R binaries for Ubuntu\n\n4.3.1 RSPM\nFirst, install rspm:\nremotes::install_github(\"Enchufa2/rspm\")\nThen, edit .Rprofile:\nusethis::edit_r_profile()\nAnd add this:\nrspm::enable() # wrap it in suppressMessages() to avoid the initial message\n\n\n4.3.2 BSPM\nbspm::enable()\n\ninstall.packages(\"tidyverse\")"
   },
   {
     "objectID": "installr.html#using-rig",
     "href": "installr.html#using-rig",
     "title": "4  Installing R",
-    "section": "4.3 Using rig",
-    "text": "4.3 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\n\n4.3.1 On Linux Mint\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\n\n\n4.3.2 On Ubuntu\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/local\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio <renv-lockfile>"
+    "section": "4.4 Using rig",
+    "text": "4.4 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\n\n4.4.1 On Linux Mint\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\n\n\n4.4.2 On Ubuntu\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/local\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio <renv-lockfile>"
   },
   {
     "objectID": "installr.html#rstudio",
     "href": "installr.html#rstudio",
     "title": "4  Installing R",
-    "section": "4.4 RStudio",
-    "text": "4.4 RStudio\n\n4.4.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()"
+    "section": "4.5 RStudio",
+    "text": "4.5 RStudio\n\n4.5.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()"
   },
   {
     "objectID": "installr.html#compiling-r-with-intel-mkl-math-libraries",
     "href": "installr.html#compiling-r-with-intel-mkl-math-libraries",
     "title": "4  Installing R",
-    "section": "4.5 Compiling R with Intel MKL math libraries",
-    "text": "4.5 Compiling R with Intel MKL math libraries\n\n4.5.1 Install Intel MKL\ncd /tmp\nwget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\n\nsudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\nsudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources.list.d/intel-mkl.list'\n\nsudo apt install intel-mkl-64bit-2020.1-102 \n\nsource /opt/intel/mkl/bin/mklvars.sh intel64\n\n\n4.5.2 Compile R with MKL\nDownload and decompress R source files.\ntar -zxvf R-4.0.0.tar.gz\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\"\n\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\" --libdir=/usr/bin\n\nmake -j24\nmake pdf\nmake info\nmake install\nmake install-info\nmake install-pdf\n\nsudo make install\n\n\n4.5.3 Ressources\n\nCompiling R with MKL support\nInstalling MKL"
+    "section": "4.6 Compiling R with Intel MKL math libraries",
+    "text": "4.6 Compiling R with Intel MKL math libraries\n\n4.6.1 Install Intel MKL\ncd /tmp\nwget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\n\nsudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\nsudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources.list.d/intel-mkl.list'\n\nsudo apt install intel-mkl-64bit-2020.1-102 \n\nsource /opt/intel/mkl/bin/mklvars.sh intel64\n\n\n4.6.2 Compile R with MKL\nDownload and decompress R source files.\ntar -zxvf R-4.0.0.tar.gz\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\"\n\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\" --libdir=/usr/bin\n\nmake -j24\nmake pdf\nmake info\nmake install\nmake install-info\nmake install-pdf\n\nsudo make install"
+  },
+  {
+    "objectID": "installr.html#rprofile",
+    "href": "installr.html#rprofile",
+    "title": "4  Installing R",
+    "section": "4.7 .Rprofile",
+    "text": "4.7 .Rprofile\nBasic .Rprofilefile.\nrspm::enable()\n\noptions(pillar.sigfig = 5)\n\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\n4.7.1 Ressources\n\nCompiling R with MKL support\nInstalling MKL"
   },
   {
     "objectID": "vscode.html",

@@ -3,7 +3,7 @@
 
 ## Installing Google fonts
 
-- https://raw.githubusercontent.com/hotice/webupd8/master/install-google-fonts
+- [Script to install Google Fonts](https://raw.githubusercontent.com/hotice/webupd8/master/install-google-fonts)
 
 ```bash
 # Original author: Michalis Georgiou <mechmg93@gmail.comr>
@@ -43,7 +43,7 @@ echo "Done."
 
 Change the value of the `swapiness`, so the kernel use memory primarily instead of the disk.
 
-- https://askubuntu.com/questions/157793/why-is-swap-being-used-even-though-i-have-plenty-of-free-ram
+- [How to change the swapiness](https://askubuntu.com/questions/157793/why-is-swap-being-used-even-though-i-have-plenty-of-free-ram)
 
 ## Zotero
 

@@ -39,3 +39,14 @@ rm -f $_gf.tar.gz
 echo "Done."
 ```
 
+## Swapiness (swap usage)
+
+Change the value of the `swapiness`, so the kernel use memory primarily instead of the disk.
+
+- https://askubuntu.com/questions/157793/why-is-swap-being-used-even-though-i-have-plenty-of-free-ram
+
+## Zotero
+
+- Use better bibtex and set the citation key format as `auth.capitalize+year`.
+
+![](images/zotero.png)

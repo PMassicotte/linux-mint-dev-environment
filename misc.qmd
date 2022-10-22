@@ -50,3 +50,7 @@ Change the value of the `swapiness`, so the kernel use memory primarily instead 
 - Use better bibtex and set the citation key format as `auth.capitalize+year`.
 
 ![](images/zotero.png)
+
+## act
+
+[Run your GitHub Actions locally!](https://github.com/nektos/act)

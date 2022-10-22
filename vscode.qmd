@@ -23,6 +23,16 @@ if (interactive() && Sys.getenv("RSTUDIO") == "") {
     })
   }
 }
+
+
+# Use an external browser for displaying html files, such as {gt} and {xaringan}
+options(vsc.viewer = FALSE)
+# External browser for web apps, such as {shiny}
+options(vsc.browser = FALSE)
+# View help page in an external browser
+options(vsc.helpPanel = FALSE)
+# Use original data viewer
+options(vsc.view = FALSE)
 ```
 
 If you close the web page by accident, it can be reopened using `ctrl+alt+p` (depending on the chosen keybinding).

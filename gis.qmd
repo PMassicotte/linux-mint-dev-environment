@@ -31,6 +31,18 @@ Not tested: use `focal`, because `$(lsb_release -c -s)` returns `una` as codenam
 sudo add-apt-repository "deb https://qgis.org/ubuntu focal main"
 ```
 
+Add the following to `/etc/apt/sources.list.d/qgis.sources` (replace `Suites: kinetic` based on your distro):
+
+```bash
+Types: deb deb-src
+URIs: https://qgis.org/debian
+Suites: kinetic
+Architectures: amd64
+Components: main
+Signed-By: /etc/apt/keyrings/qgis-archive-keyring.gpg
+```
+
+
 ## GDAL
 
 Download the [latest version of gdal](https://gdal.org/download.html). Then configure and install:

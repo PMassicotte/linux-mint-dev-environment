@@ -60,7 +60,7 @@
     "href": "gis.html",
     "title": "3  QGIS and gdal",
     "section": "",
-    "text": "Linux Mint is a bit behind for all the GIS stuff. I had problems (ex.: open cloud optimized geotiff on internet) with a old version of gdal that comes with Mint.\nTo update to a newer version of gdal, install this PPA:\nsudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable\nsudo apt update\nThen, the latest version of QGIS:\nwget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import\n\nsudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg\n\nsudo add-apt-repository \"deb https://qgis.org/ubuntu $(lsb_release -c -s) main\"\n\nsudo apt update\n\nsudo apt install qgis qgis-plugin-grass\nNot tested: use focal, because $(lsb_release -c -s) returns una as codename.\nsudo add-apt-repository \"deb https://qgis.org/ubuntu focal main\""
+    "text": "Linux Mint is a bit behind for all the GIS stuff. I had problems (ex.: open cloud optimized geotiff on internet) with a old version of gdal that comes with Mint.\nTo update to a newer version of gdal, install this PPA:\nsudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable\nsudo apt update\nThen, the latest version of QGIS:\nwget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import\n\nsudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg\n\nsudo add-apt-repository \"deb https://qgis.org/ubuntu $(lsb_release -c -s) main\"\n\nsudo apt update\n\nsudo apt install qgis qgis-plugin-grass\nNot tested: use focal, because $(lsb_release -c -s) returns una as codename.\nsudo add-apt-repository \"deb https://qgis.org/ubuntu focal main\"\nAdd the following to /etc/apt/sources.list.d/qgis.sources (replace Suites: kinetic based on your distro):\nTypes: deb deb-src\nURIs: https://qgis.org/debian\nSuites: kinetic\nArchitectures: amd64\nComponents: main\nSigned-By: /etc/apt/keyrings/qgis-archive-keyring.gpg"
   },
   {
     "objectID": "gis.html#gdal",
@@ -144,7 +144,7 @@
     "href": "vscode.html#show-plot-externally-on-a-web-browser",
     "title": "5  Visual Studio Code",
     "section": "5.2 Show plot externally on a web browser",
-    "text": "5.2 Show plot externally on a web browser\nUse this in .Rprofile inside a project directory or globally.\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\nIf you close the web page by accident, it can be reopened using ctrl+alt+p (depending on the chosen keybinding).\n{\n  \"key\": \"ctrl+alt+p\",\n  \"command\": \"r.runCommand\",\n  \"when\": \"editorTextFocus && editorLangId == 'r'\",\n  \"args\": \".vsc.browser(httpgd::hgd_url(), viewer = FALSE)\"\n},\n\n\n\n\n\n\nImportant\n\n\n\nDo not forget to install the httpdg package. Otherwise, plot will be displayed as png in an external window."
+    "text": "5.2 Show plot externally on a web browser\nUse this in .Rprofile inside a project directory or globally.\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\n\n# Use an external browser for displaying html files, such as {gt} and {xaringan}\noptions(vsc.viewer = FALSE)\n# External browser for web apps, such as {shiny}\noptions(vsc.browser = FALSE)\n# View help page in an external browser\noptions(vsc.helpPanel = FALSE)\n# Use original data viewer\noptions(vsc.view = FALSE)\nIf you close the web page by accident, it can be reopened using ctrl+alt+p (depending on the chosen keybinding).\n{\n  \"key\": \"ctrl+alt+p\",\n  \"command\": \"r.runCommand\",\n  \"when\": \"editorTextFocus && editorLangId == 'r'\",\n  \"args\": \".vsc.browser(httpgd::hgd_url(), viewer = FALSE)\"\n},\n\n\n\n\n\n\nImportant\n\n\n\nDo not forget to install the httpdg package. Otherwise, plot will be displayed as png in an external window."
   },
   {
     "objectID": "nemo.html",
@@ -187,5 +187,12 @@
     "title": "8  Misc",
     "section": "8.3 Zotero",
     "text": "8.3 Zotero\n\nUse better bibtex and set the citation key format as auth.capitalize+year."
+  },
+  {
+    "objectID": "misc.html#act",
+    "href": "misc.html#act",
+    "title": "8  Misc",
+    "section": "8.4 act",
+    "text": "8.4 act\nRun your GitHub Actions locally!"
   }
 ]

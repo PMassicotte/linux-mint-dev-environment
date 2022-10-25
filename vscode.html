@@ -212,6 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#using-vscode-for-r-development" id="toc-using-vscode-for-r-development" class="nav-link active" data-scroll-target="#using-vscode-for-r-development"><span class="toc-section-number">5.1</span>  Using VScode for R development</a></li>
   <li><a href="#show-plot-externally-on-a-web-browser" id="toc-show-plot-externally-on-a-web-browser" class="nav-link" data-scroll-target="#show-plot-externally-on-a-web-browser"><span class="toc-section-number">5.2</span>  Show plot externally on a web browser</a></li>
+  <li><a href="#debugging" id="toc-debugging" class="nav-link" data-scroll-target="#debugging"><span class="toc-section-number">5.3</span>  Debugging</a></li>
   </ul>
 </nav>
     </div>
@@ -282,6 +283,28 @@ Important
 <p>Do not forget to install the <code>httpdg</code> package. Otherwise, plot will be displayed as png in an external window.</p>
 </div>
 </div>
+</section>
+<section id="debugging" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="debugging"><span class="header-section-number">5.3</span> Debugging</h2>
+<p>Debugging can be done using the <a href="https://github.com/ManuelHentschel/VSCode-R-Debugger">VSCode-R-Debugger package</a>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"ManuelHentschel/vscDebugger"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This <code>.vscode/launch.json</code> configuration file is placed in the project root directory:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="er">//</span> <span class="er">Use</span> <span class="er">IntelliSense</span> <span class="er">to</span> <span class="er">learn</span> <span class="er">about</span> <span class="er">possible</span> <span class="er">attributes.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="er">//</span> <span class="er">Hover</span> <span class="er">to</span> <span class="er">view</span> <span class="er">descriptions</span> <span class="er">of</span> <span class="er">existing</span> <span class="er">attributes.</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="er">//</span> <span class="er">For</span> <span class="er">more</span> <span class="er">information</span><span class="fu">,</span> <span class="er">visit</span><span class="fu">:</span> <span class="er">https://go.microsoft.com/fwlink/?linkid=</span><span class="dv">830387</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"version"</span><span class="er">:</span> <span class="st">"0.2.0"</span><span class="fu">,</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">"configurations"</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">{</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"type"</span><span class="fu">:</span> <span class="st">"R-Debugger"</span><span class="fu">,</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"request"</span><span class="fu">:</span> <span class="st">"attach"</span><span class="fu">,</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"name"</span><span class="fu">:</span> <span class="st">"Attach to R process"</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Open the R terminal and type:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>vscDebugger<span class="sc">::</span><span class="fu">.vsc.listenForDAP</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, press <code>F5</code>to start the debugger.</p>
 
 
 </section>

@@ -49,3 +49,37 @@ If you close the web page by accident, it can be reopened using `ctrl+alt+p` (de
 ::: {.callout-important}
 Do not forget to install the `httpdg` package. Otherwise, plot will be displayed as png in an external window.
 :::
+
+## Debugging
+
+Debugging can be done using the [VSCode-R-Debugger package](https://github.com/ManuelHentschel/VSCode-R-Debugger).
+
+```r
+remotes::install_github("ManuelHentschel/vscDebugger")
+```
+
+This `.vscode/launch.json` configuration file is placed in the project root directory:
+
+```json
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "R-Debugger",
+      "request": "attach",
+      "name": "Attach to R process"
+    }
+  ]
+}
+```
+
+Open the R terminal and type:
+
+```r
+vscDebugger::.vsc.listenForDAP()
+```
+
+Then, press `F5`to start the debugger. 

@@ -208,5 +208,12 @@
     "title": "5  Visual Studio Code",
     "section": "5.3 Debugging",
     "text": "5.3 Debugging\nDebugging can be done using the VSCode-R-Debugger package.\nremotes::install_github(\"ManuelHentschel/vscDebugger\")\nThis .vscode/launch.json configuration file is placed in the project root directory:\n{\n  // Use IntelliSense to learn about possible attributes.\n  // Hover to view descriptions of existing attributes.\n  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    {\n      \"type\": \"R-Debugger\",\n      \"request\": \"attach\",\n      \"name\": \"Attach to R process\"\n    }\n  ]\n}\nOpen the R terminal and type:\nvscDebugger::.vsc.listenForDAP()\nThen, press F5to start the debugger."
+  },
+  {
+    "objectID": "misc.html#make-using-multiple-cores",
+    "href": "misc.html#make-using-multiple-cores",
+    "title": "8  Misc",
+    "section": "8.5 Make using multiple cores",
+    "text": "8.5 Make using multiple cores\nOpen the .zshrc file and set the number of core to be used with make. This will also work when installing R packages from source.\nnvim ~/.zshrc\nexport MAKE=\"make -j24\""
   }
 ]

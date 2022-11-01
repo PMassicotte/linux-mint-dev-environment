@@ -213,6 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#swapiness-swap-usage" id="toc-swapiness-swap-usage" class="nav-link" data-scroll-target="#swapiness-swap-usage"><span class="toc-section-number">8.2</span>  Swapiness (swap usage)</a></li>
   <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="toc-section-number">8.3</span>  Zotero</a></li>
   <li><a href="#act" id="toc-act" class="nav-link" data-scroll-target="#act"><span class="toc-section-number">8.4</span>  act</a></li>
+  <li><a href="#make-using-multiple-cores" id="toc-make-using-multiple-cores" class="nav-link" data-scroll-target="#make-using-multiple-cores"><span class="toc-section-number">8.5</span>  Make using multiple cores</a></li>
   </ul>
 </nav>
     </div>
@@ -289,6 +290,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="act" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="act"><span class="header-section-number">8.4</span> act</h2>
 <p><a href="https://github.com/nektos/act">Run your GitHub Actions locally!</a></p>
+</section>
+<section id="make-using-multiple-cores" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="make-using-multiple-cores"><span class="header-section-number">8.5</span> Make using multiple cores</h2>
+<p>Open the <code>.zshrc</code> file and set the number of core to be used with <code>make</code>. This will also work when <a href="https://stackoverflow.com/questions/36725027/r-package-installation-from-source-using-multiple-cores">installing R packages from source</a>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvim</span> ~/.zshrc</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MAKE</span><span class="op">=</span><span class="st">"make -j24"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>R packages will install much faster.</p>
 
 
 </section>

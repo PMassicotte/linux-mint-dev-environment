@@ -201,5 +201,12 @@
     "title": "8  Misc",
     "section": "8.4 act",
     "text": "8.4 act\nRun your GitHub Actions locally!"
+  },
+  {
+    "objectID": "misc.html#make-using-multiple-cores",
+    "href": "misc.html#make-using-multiple-cores",
+    "title": "8  Misc",
+    "section": "8.5 Make using multiple cores",
+    "text": "8.5 Make using multiple cores\nOpen the .zshrc file and set the number of core to be used with make. This will also work when installing R packages from source.\nnvim ~/.zshrc\nexport MAKE=\"make -j24\"\nR packages will install much faster."
   }
 ]

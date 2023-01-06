@@ -14,6 +14,7 @@ book:
     - nemo.qmd
     - backup.qmd
     - misc.qmd
+    - rust.qmd
 
 format:
   html:

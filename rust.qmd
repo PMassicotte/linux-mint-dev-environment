@@ -1,0 +1,12 @@
+# Rust
+
+```bash
+rustup update stable
+cargo install evcxr_repl  
+```
+Then run:
+
+```bash
+evcxr
+```
+

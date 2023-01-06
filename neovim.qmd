@@ -30,3 +30,14 @@ From neovim, update the plugins:
 :PackerSync
 :PackerUpdate
 ```
+## Packaged neovim
+
+There are some pre-configured neovim environments:
+
+- https://www.lunarvim.org/
+- https://astronvim.github.io/
+
+### How to configure R for neovim
+
+- [See here](https://www.reddit.com/r/neovim/comments/yqi6cy/new_to_neovim_need_quick_help_to_set_up_r/)
+

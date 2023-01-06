@@ -113,6 +113,15 @@ Easier to use to me.
 ```bash
 rg read.csv -g "*.R"
 ```
+### gdu - go DiskUsage()
+
+Pretty fast disk usage analyzer written in Go: https://github.com/dundee/gdu
+
+```bash
+add-apt-repository ppa:daniel-milde/gdu
+apt-get update
+apt-get install gdu
+```
 
 ## Terminator
 

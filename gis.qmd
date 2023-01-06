@@ -41,18 +41,20 @@ Architectures: amd64
 Components: main
 Signed-By: /etc/apt/keyrings/qgis-archive-keyring.gpg
 ```
-
-
 ## GDAL
 
-Download the [latest version of gdal](https://gdal.org/download.html). Then configure and install:
+Download the [latest version of gdal](https://gdal.org/download.html). Then [configure and install](https://gdal.org/build_hints.html#build-hints):
 
 ```bash
-./configure --with-python --with-pg --with-geos
-make -j24
-sudo make install
-```
+tar xvf gdal-3.6.2.tar.gz
+cd xvf gdal-3.6.2
+mkdir build
+cd build
 
+cmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release
+cmake --build .
+cmake --build . --target install
+```
 ## See also
 
-- https://rtask.thinkr.fr/installation-of-r-4-2-on-ubuntu-22-04-lts-and-tips-for-spatial-packages/
+- [Installation of R 4.2 on Ubuntu 22.04.1 LTS and tips for spatial packages](https://rtask.thinkr.fr/installation-of-r-4-2-on-ubuntu-22-04-lts-and-tips-for-spatial-packages/)

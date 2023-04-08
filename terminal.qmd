@@ -44,6 +44,8 @@ p10k configure
 
 ## Useful tools
 
+- [Useful tools written in rust](https://zaiste.net/posts/shell-commands-rust/)
+
 For some of these tools, rust needs to be [installed](https://www.rust-lang.org/tools/install).
 
 ```bash
@@ -122,6 +124,16 @@ add-apt-repository ppa:daniel-milde/gdu
 apt-get update
 apt-get install gdu
 ```
+
+### nala
+
+> Nala is a front-end for `libapt-pkg`. Specifically we interface using the `python-apt` api.
+
+- [Installation](https://github.com/volitank/nala)
+
+### btop
+
+- https://github.com/aristocratos/btop
 
 ## Terminator
 

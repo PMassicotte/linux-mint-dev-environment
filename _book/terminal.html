@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -235,6 +235,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#the-silver-searcher" id="toc-the-silver-searcher" class="nav-link" data-scroll-target="#the-silver-searcher"><span class="toc-section-number">1.3.6</span>  The Silver Searcher</a></li>
   <li><a href="#ripgrep" id="toc-ripgrep" class="nav-link" data-scroll-target="#ripgrep"><span class="toc-section-number">1.3.7</span>  ripgrep</a></li>
   <li><a href="#gdu---go-diskusage" id="toc-gdu---go-diskusage" class="nav-link" data-scroll-target="#gdu---go-diskusage"><span class="toc-section-number">1.3.8</span>  gdu - go DiskUsage()</a></li>
+  <li><a href="#nala" id="toc-nala" class="nav-link" data-scroll-target="#nala"><span class="toc-section-number">1.3.9</span>  nala</a></li>
+  <li><a href="#btop" id="toc-btop" class="nav-link" data-scroll-target="#btop"><span class="toc-section-number">1.3.10</span>  btop</a></li>
   </ul></li>
   <li><a href="#terminator" id="toc-terminator" class="nav-link" data-scroll-target="#terminator"><span class="toc-section-number">1.4</span>  Terminator</a></li>
   </ul>
@@ -253,6 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -290,6 +293,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="useful-tools" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="useful-tools"><span class="header-section-number">1.3</span> Useful tools</h2>
+<ul>
+<li><a href="https://zaiste.net/posts/shell-commands-rust/">Useful tools written in rust</a></li>
+</ul>
 <p>For some of these tools, rust needs to be <a href="https://www.rust-lang.org/tools/install">installed</a>.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">--proto</span> <span class="st">'=https'</span> <span class="at">--tlsv1.2</span> <span class="at">-sSf</span> https://sh.rustup.rs <span class="kw">|</span> <span class="fu">sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="tldr" class="level3" data-number="1.3.1">
@@ -339,6 +345,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">add-apt-repository</span> ppa:daniel-milde/gdu</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> update</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> install gdu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="nala" class="level3" data-number="1.3.9">
+<h3 data-number="1.3.9" class="anchored" data-anchor-id="nala"><span class="header-section-number">1.3.9</span> nala</h3>
+<blockquote class="blockquote">
+<p>Nala is a front-end for <code>libapt-pkg</code>. Specifically we interface using the <code>python-apt</code> api.</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/volitank/nala">Installation</a></li>
+</ul>
+</section>
+<section id="btop" class="level3" data-number="1.3.10">
+<h3 data-number="1.3.10" class="anchored" data-anchor-id="btop"><span class="header-section-number">1.3.10</span> btop</h3>
+<ul>
+<li>https://github.com/aristocratos/btop</li>
+</ul>
 </section>
 </section>
 <section id="terminator" class="level2" data-number="1.4">
@@ -446,7 +467,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -482,24 +520,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

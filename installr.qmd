@@ -197,3 +197,12 @@ options(vsc.helpPanel = FALSE)
 
 - [Compiling R with MKL support](https://www.r-bloggers.com/compiling-r-3-0-1-with-mkl-support/)
 - [Installing MKL](https://software.intel.com/content/www/us/en/develop/articles/using-intel-mkl-with-r.html)
+
+## Libraries locations
+
+To avoid getting message that packages can not be updated because the directory is not writabl, comment out `R_LIBS_SITE="/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library"` in:
+
+```bash
+sudo vim /etc/R/Renviron.site
+sudo vim /etc/R/Renviron
+```

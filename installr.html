@@ -240,6 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#ressources" id="toc-ressources" class="nav-link" data-scroll-target="#ressources"><span class="toc-section-number">4.7.1</span>  Ressources</a></li>
   </ul></li>
+  <li><a href="#libraries-locations" id="toc-libraries-locations" class="nav-link" data-scroll-target="#libraries-locations"><span class="toc-section-number">4.8</span>  Libraries locations</a></li>
   </ul>
 </nav>
     </div>
@@ -400,9 +401,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="https://www.r-bloggers.com/compiling-r-3-0-1-with-mkl-support/">Compiling R with MKL support</a></li>
 <li><a href="https://software.intel.com/content/www/us/en/develop/articles/using-intel-mkl-with-r.html">Installing MKL</a></li>
 </ul>
-
-
 </section>
+</section>
+<section id="libraries-locations" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="libraries-locations"><span class="header-section-number">4.8</span> Libraries locations</h2>
+<p>To avoid getting message that packages can not be updated because the directory is not writabl, comment out <code>R_LIBS_SITE="/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library"</code> in:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> vim /etc/R/Renviron.site</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> vim /etc/R/Renviron</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 
 </main> <!-- /main -->

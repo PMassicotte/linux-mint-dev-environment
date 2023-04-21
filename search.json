@@ -126,6 +126,13 @@
     "text": "4.7 .Rprofile\nBasic .Rprofilefile.\n# rspm::enable()\n\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\noptions(pillar.sigfig = 5)\n\noptions(repos=\"https://packagemanager.rstudio.com/cran/__linux__/jammy/latest\")\n\n# This is important if you are using RSPM on Linux outside RStudio\noptions(HTTPUserAgent = sprintf(\"R/%s R (%s)\", getRversion(), paste(getRversion(), R.version[\"platform\"], R.version[\"arch\"], R.version[\"os\"])))\n\n# Use an external browser for displaying html files, such as {gt} and {xaringan}\noptions(vsc.viewer = FALSE)\n\n# External browser for web apps, such as {shiny}\noptions(vsc.browser = FALSE)\n\n# View help page in an external browser\noptions(vsc.helpPanel = FALSE)\n\n# Use original data viewer\n# options(vsc.view = FALSE)\n\n4.7.1 Ressources\n\nCompiling R with MKL support\nInstalling MKL"
   },
   {
+    "objectID": "installr.html#libraries-locations",
+    "href": "installr.html#libraries-locations",
+    "title": "4  Installing R",
+    "section": "4.8 Libraries locations",
+    "text": "4.8 Libraries locations\nTo avoid getting message that packages can not be updated because the directory is not writabl, comment out R_LIBS_SITE=\"/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library\" in:\nsudo vim /etc/R/Renviron.site\nsudo vim /etc/R/Renviron"
+  },
+  {
     "objectID": "vscode.html#using-vscode-for-r-development",
     "href": "vscode.html#using-vscode-for-r-development",
     "title": "5  Visual Studio Code",

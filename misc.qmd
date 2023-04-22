@@ -51,7 +51,7 @@ Change the value of the `swapiness`, so the kernel use memory primarily instead 
 
 https://linux.how2shout.com/how-to-install-zotero-on-ubuntu-22-04-or-20-04-lts/
 
-```{r}
+```r
 curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
 sudo apt update 
 sudo apt install zotero
@@ -79,4 +79,6 @@ export MAKE="make -j24"
 
 R packages will install much faster.
 
+## Image viewer
 
+- [Nomacs](https://github.com/nomacs/nomacs?ref=itsfoss.com)

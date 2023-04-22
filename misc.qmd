@@ -47,6 +47,18 @@ Change the value of the `swapiness`, so the kernel use memory primarily instead 
 
 ## Zotero
 
+### Installation
+
+https://linux.how2shout.com/how-to-install-zotero-on-ubuntu-22-04-or-20-04-lts/
+
+```{r}
+curl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash
+sudo apt update 
+sudo apt install zotero
+```
+
+### Citation key
+
 - Use better bibtex and set the citation key format as `auth.capitalize+year`.
 
 ![](images/zotero.png)

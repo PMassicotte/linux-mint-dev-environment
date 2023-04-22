@@ -217,9 +217,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#installing-google-fonts" id="toc-installing-google-fonts" class="nav-link active" data-scroll-target="#installing-google-fonts"><span class="toc-section-number">8.1</span>  Installing Google fonts</a></li>
   <li><a href="#swapiness-swap-usage" id="toc-swapiness-swap-usage" class="nav-link" data-scroll-target="#swapiness-swap-usage"><span class="toc-section-number">8.2</span>  Swapiness (swap usage)</a></li>
-  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="toc-section-number">8.3</span>  Zotero</a></li>
+  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="toc-section-number">8.3</span>  Zotero</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation"><span class="toc-section-number">8.3.1</span>  Installation</a></li>
+  <li><a href="#citation-key" id="toc-citation-key" class="nav-link" data-scroll-target="#citation-key"><span class="toc-section-number">8.3.2</span>  Citation key</a></li>
+  </ul></li>
   <li><a href="#act" id="toc-act" class="nav-link" data-scroll-target="#act"><span class="toc-section-number">8.4</span>  act</a></li>
   <li><a href="#make-using-multiple-cores" id="toc-make-using-multiple-cores" class="nav-link" data-scroll-target="#make-using-multiple-cores"><span class="toc-section-number">8.5</span>  Make using multiple cores</a></li>
+  <li><a href="#image-viewer" id="toc-image-viewer" class="nav-link" data-scroll-target="#image-viewer"><span class="toc-section-number">8.6</span>  Image viewer</a></li>
   </ul>
 </nav>
     </div>
@@ -289,10 +294,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="zotero" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="zotero"><span class="header-section-number">8.3</span> Zotero</h2>
+<section id="installation" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">8.3.1</span> Installation</h3>
+<p>https://linux.how2shout.com/how-to-install-zotero-on-ubuntu-22-04-or-20-04-lts/</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>curl <span class="sc">-</span>sL https<span class="sc">:</span><span class="er">//</span>raw.githubusercontent.com<span class="sc">/</span>retorquere<span class="sc">/</span>zotero<span class="sc">-</span>deb<span class="sc">/</span>master<span class="sc">/</span>install.sh <span class="sc">|</span> sudo bash</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sudo apt update </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sudo apt install zotero</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="citation-key" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="citation-key"><span class="header-section-number">8.3.2</span> Citation key</h3>
 <ul>
 <li>Use better bibtex and set the citation key format as <code>auth.capitalize+year</code>.</li>
 </ul>
 <p><img src="images/zotero.png" class="img-fluid"></p>
+</section>
 </section>
 <section id="act" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="act"><span class="header-section-number">8.4</span> act</h2>
@@ -301,9 +316,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="make-using-multiple-cores" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="make-using-multiple-cores"><span class="header-section-number">8.5</span> Make using multiple cores</h2>
 <p>Open the <code>.zshrc</code> file and set the number of core to be used with <code>make</code>. This will also work when <a href="https://stackoverflow.com/questions/36725027/r-package-installation-from-source-using-multiple-cores">installing R packages from source</a>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvim</span> ~/.zshrc</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MAKE</span><span class="op">=</span><span class="st">"make -j24"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvim</span> ~/.zshrc</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MAKE</span><span class="op">=</span><span class="st">"make -j24"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>R packages will install much faster.</p>
+</section>
+<section id="image-viewer" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="image-viewer"><span class="header-section-number">8.6</span> Image viewer</h2>
+<ul>
+<li><a href="https://github.com/nomacs/nomacs?ref=itsfoss.com">Nomacs</a></li>
+</ul>
 
 
 </section>

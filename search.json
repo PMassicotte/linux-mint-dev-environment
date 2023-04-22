@@ -186,7 +186,7 @@
     "href": "misc.html#zotero",
     "title": "8  Misc",
     "section": "8.3 Zotero",
-    "text": "8.3 Zotero\n\nUse better bibtex and set the citation key format as auth.capitalize+year."
+    "text": "8.3 Zotero\n\n8.3.1 Installation\nhttps://linux.how2shout.com/how-to-install-zotero-on-ubuntu-22-04-or-20-04-lts/\ncurl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash\nsudo apt update \nsudo apt install zotero\n\n\n8.3.2 Citation key\n\nUse better bibtex and set the citation key format as auth.capitalize+year."
   },
   {
     "objectID": "misc.html#act",
@@ -201,6 +201,13 @@
     "title": "8  Misc",
     "section": "8.5 Make using multiple cores",
     "text": "8.5 Make using multiple cores\nOpen the .zshrc file and set the number of core to be used with make. This will also work when installing R packages from source.\nnvim ~/.zshrc\nexport MAKE=\"make -j24\"\nR packages will install much faster."
+  },
+  {
+    "objectID": "misc.html#image-viewer",
+    "href": "misc.html#image-viewer",
+    "title": "8  Misc",
+    "section": "8.6 Image viewer",
+    "text": "8.6 Image viewer\n\nNomacs"
   },
   {
     "objectID": "rust.html",

@@ -67,7 +67,7 @@
     "href": "gis.html#gdal",
     "title": "3  QGIS and gdal",
     "section": "3.2 GDAL",
-    "text": "3.2 GDAL\nDownload the latest version of gdal. Then configure and install:\ntar xvf gdal-3.6.2.tar.gz\ncd xvf gdal-3.6.2\nmkdir build\ncd build\n\ncmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release\ncmake --build .\ncmake --build . --target install"
+    "text": "3.2 GDAL\nDownload the latest version of gdal. Then configure and install:\ntar xvf gdal-3.6.2.tar.gz\ncd gdal-3.6.2\nmkdir build\ncd build\n\ncmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release\ncmake --build .\ncmake --build . --target install"
   },
   {
     "objectID": "gis.html#see-also",
@@ -102,7 +102,7 @@
     "href": "installr.html#using-rig",
     "title": "4  Installing R",
     "section": "4.4 Using rig",
-    "text": "4.4 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\n\n4.4.1 On Linux Mint\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\n\n\n4.4.2 On Ubuntu\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/local\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio <renv-lockfile>"
+    "text": "4.4 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\n\n4.4.1 On Linux Mint\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\n\n\n4.4.2 On Ubuntu\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/local\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio &lt;renv-lockfile&gt;"
   },
   {
     "objectID": "installr.html#rstudio",
@@ -116,7 +116,7 @@
     "href": "installr.html#compiling-r-with-intel-mkl-math-libraries",
     "title": "4  Installing R",
     "section": "4.6 Compiling R with Intel MKL math libraries",
-    "text": "4.6 Compiling R with Intel MKL math libraries\n\n4.6.1 Install Intel MKL\ncd /tmp\nwget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\n\nsudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\nsudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources.list.d/intel-mkl.list'\n\nsudo apt install intel-mkl-64bit-2020.1-102 \n\nsource /opt/intel/mkl/bin/mklvars.sh intel64\n\n\n4.6.2 Compile R with MKL\nDownload and decompress R source files.\ntar -zxvf R-4.0.0.tar.gz\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\"\n\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\" --libdir=/usr/bin\n\nmake -j24\nmake pdf\nmake info\nmake install\nmake install-info\nmake install-pdf\n\nsudo make install"
+    "text": "4.6 Compiling R with Intel MKL math libraries\n\n4.6.1 Install Intel MKL\ncd /tmp\nwget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\n\nsudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\nsudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main &gt; /etc/apt/sources.list.d/intel-mkl.list'\n\nsudo apt install intel-mkl-64bit-2020.1-102 \n\nsource /opt/intel/mkl/bin/mklvars.sh intel64\n\n\n4.6.2 Compile R with MKL\nDownload and decompress R source files.\ntar -zxvf R-4.0.0.tar.gz\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\"\n\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\" --libdir=/usr/bin\n\nmake -j24\nmake pdf\nmake info\nmake install\nmake install-info\nmake install-pdf\n\nsudo make install"
   },
   {
     "objectID": "installr.html#rprofile",
@@ -158,7 +158,7 @@
     "href": "nemo.html#opening-the-terminal-in-the-current-directory",
     "title": "6  Nemo",
     "section": "6.1 Opening the terminal in the current directory",
-    "text": "6.1 Opening the terminal in the current directory\n\nThis will make pressing F4 top open the Nemo file manager.\nInformation found here.\n\nCreate this folder and this file:\nmkdir -p ~/.gnome2/accels\nnvim ~/.gnome2/accels/nemo\nAdd this to the file:\n(gtk_accel_path \"<Actions>/DirViewActions/OpenInTerminal\" \"F4\")"
+    "text": "6.1 Opening the terminal in the current directory\n\nThis will make pressing F4 top open the Nemo file manager.\nInformation found here.\n\nCreate this folder and this file:\nmkdir -p ~/.gnome2/accels\nnvim ~/.gnome2/accels/nemo\nAdd this to the file:\n(gtk_accel_path \"&lt;Actions&gt;/DirViewActions/OpenInTerminal\" \"F4\")"
   },
   {
     "objectID": "backup.html#valeria",
@@ -172,7 +172,7 @@
     "href": "misc.html#installing-google-fonts",
     "title": "8  Misc",
     "section": "8.1 Installing Google fonts",
-    "text": "8.1 Installing Google fonts\n\nScript to install Google Fonts\n\n# Original author: Michalis Georgiou <mechmg93@gmail.comr>\n# Modified by Andrew http://www.webupd8.org <andrew@webupd8.org>\n\n_wgeturl=\"https://github.com/google/fonts/archive/master.tar.gz\"\n_gf=\"google-fonts\"\n\n# install wget\nsudo apt-get install wget\n\n# make sure a file with the same name doesn't already exist\nrm -f $_gf.tar.gz\n\necho \"Connecting to Github server...\"\nwget $_wgeturl -O $_gf.tar.gz\n\necho \"Extracting the downloaded archive...\"\ntar -xf $_gf.tar.gz\n\necho \"Creating the /usr/share/fonts/truetype/$_gf folder\"\nsudo mkdir -p /usr/share/fonts/truetype/$_gf\n\necho \"Installing all .ttf fonts in /usr/share/fonts/truetype/$_gf\"\nfind $PWD/fonts-main/ -name \"*.ttf\" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \\; || return 1\n\necho \"Updating the font cache\"\nfc-cache -f > /dev/null\n\n# clean up, but only the .tar.gz, the user may need the folder\nrm -f $_gf.tar.gz\n\necho \"Done.\""
+    "text": "8.1 Installing Google fonts\n\nScript to install Google Fonts\n\n# Original author: Michalis Georgiou &lt;mechmg93@gmail.comr&gt;\n# Modified by Andrew http://www.webupd8.org &lt;andrew@webupd8.org&gt;\n\n_wgeturl=\"https://github.com/google/fonts/archive/master.tar.gz\"\n_gf=\"google-fonts\"\n\n# install wget\nsudo apt-get install wget\n\n# make sure a file with the same name doesn't already exist\nrm -f $_gf.tar.gz\n\necho \"Connecting to Github server...\"\nwget $_wgeturl -O $_gf.tar.gz\n\necho \"Extracting the downloaded archive...\"\ntar -xf $_gf.tar.gz\n\necho \"Creating the /usr/share/fonts/truetype/$_gf folder\"\nsudo mkdir -p /usr/share/fonts/truetype/$_gf\n\necho \"Installing all .ttf fonts in /usr/share/fonts/truetype/$_gf\"\nfind $PWD/fonts-main/ -name \"*.ttf\" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \\; || return 1\n\necho \"Updating the font cache\"\nfc-cache -f &gt; /dev/null\n\n# clean up, but only the .tar.gz, the user may need the folder\nrm -f $_gf.tar.gz\n\necho \"Done.\""
   },
   {
     "objectID": "misc.html#swapiness-swap-usage",

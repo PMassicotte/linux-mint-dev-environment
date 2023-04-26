@@ -47,7 +47,7 @@ Download the [latest version of gdal](https://gdal.org/download.html). Then [con
 
 ```bash
 tar xvf gdal-3.6.2.tar.gz
-cd xvf gdal-3.6.2
+cd gdal-3.6.2
 mkdir build
 cd build
 

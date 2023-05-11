@@ -154,6 +154,25 @@ make install-pdf
 sudo make install
 ```
 
+## Minimal system dependencies for R packages installation on Ubuntu
+
+- https://datawookie.dev/blog/2022/08/linux-packages-for-r/
+
+```bash
+sudo apt install -y \
+  libcurl4-openssl-dev \
+  libssl-dev \
+  libxml2-dev \
+  libfontconfig1-dev \
+  libharfbuzz-dev \
+  libfribidi-dev \
+  libfreetype6-dev \
+  libpng-dev \
+  libtiff5-dev \
+  libjpeg-dev \
+  libpq-dev
+```
+
 ## `.Rprofile`
 
 Basic `.Rprofile`file.
@@ -200,7 +219,7 @@ options(vsc.helpPanel = FALSE)
 
 ## Libraries locations
 
-To avoid getting message that packages can not be updated because the directory is not writabl, comment out `R_LIBS_SITE="/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library"` in:
+To avoid getting message that packages can not be updated because the directory is not writable, comment out `R_LIBS_SITE="/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library"` in:
 
 ```bash
 sudo vim /etc/R/Renviron.site

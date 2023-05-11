@@ -67,7 +67,7 @@
     "href": "gis.html#gdal",
     "title": "3  QGIS and gdal",
     "section": "3.2 GDAL",
-    "text": "3.2 GDAL\nDownload the latest version of gdal. Then configure and install:\ntar xvf gdal-3.6.2.tar.gz\ncd xvf gdal-3.6.2\nmkdir build\ncd build\n\ncmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release\ncmake --build .\ncmake --build . --target install"
+    "text": "3.2 GDAL\nDownload the latest version of gdal. Then configure and install:\ntar xvf gdal-3.6.2.tar.gz\ncd gdal-3.6.2\nmkdir build\ncd build\n\ncmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release\ncmake --build .\ncmake --build . --target install"
   },
   {
     "objectID": "gis.html#see-also",
@@ -102,7 +102,7 @@
     "href": "installr.html#using-rig",
     "title": "4  Installing R",
     "section": "4.4 Using rig",
-    "text": "4.4 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\n\n4.4.1 On Linux Mint\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\n\n\n4.4.2 On Ubuntu\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/local\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio <renv-lockfile>"
+    "text": "4.4 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\n\n4.4.1 On Linux Mint\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\n\n\n4.4.2 On Ubuntu\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/local\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio &lt;renv-lockfile&gt;"
   },
   {
     "objectID": "installr.html#rstudio",
@@ -116,21 +116,28 @@
     "href": "installr.html#compiling-r-with-intel-mkl-math-libraries",
     "title": "4  Installing R",
     "section": "4.6 Compiling R with Intel MKL math libraries",
-    "text": "4.6 Compiling R with Intel MKL math libraries\n\n4.6.1 Install Intel MKL\ncd /tmp\nwget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\n\nsudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\nsudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main > /etc/apt/sources.list.d/intel-mkl.list'\n\nsudo apt install intel-mkl-64bit-2020.1-102 \n\nsource /opt/intel/mkl/bin/mklvars.sh intel64\n\n\n4.6.2 Compile R with MKL\nDownload and decompress R source files.\ntar -zxvf R-4.0.0.tar.gz\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\"\n\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\" --libdir=/usr/bin\n\nmake -j24\nmake pdf\nmake info\nmake install\nmake install-info\nmake install-pdf\n\nsudo make install"
+    "text": "4.6 Compiling R with Intel MKL math libraries\n\n4.6.1 Install Intel MKL\ncd /tmp\nwget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\n\nsudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\nsudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main &gt; /etc/apt/sources.list.d/intel-mkl.list'\n\nsudo apt install intel-mkl-64bit-2020.1-102 \n\nsource /opt/intel/mkl/bin/mklvars.sh intel64\n\n\n4.6.2 Compile R with MKL\nDownload and decompress R source files.\ntar -zxvf R-4.0.0.tar.gz\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\"\n\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\" --libdir=/usr/bin\n\nmake -j24\nmake pdf\nmake info\nmake install\nmake install-info\nmake install-pdf\n\nsudo make install"
+  },
+  {
+    "objectID": "installr.html#minimal-system-dependencies-for-r-packages-installation-on-ubuntu",
+    "href": "installr.html#minimal-system-dependencies-for-r-packages-installation-on-ubuntu",
+    "title": "4  Installing R",
+    "section": "4.7 Minimal system dependencies for R packages installation on Ubuntu",
+    "text": "4.7 Minimal system dependencies for R packages installation on Ubuntu\n\nhttps://datawookie.dev/blog/2022/08/linux-packages-for-r/\n\nsudo apt install -y \\\n  libcurl4-openssl-dev \\\n  libssl-dev \\\n  libxml2-dev \\\n  libfontconfig1-dev \\\n  libharfbuzz-dev \\\n  libfribidi-dev \\\n  libfreetype6-dev \\\n  libpng-dev \\\n  libtiff5-dev \\\n  libjpeg-dev \\\n  libpq-dev"
   },
   {
     "objectID": "installr.html#rprofile",
     "href": "installr.html#rprofile",
     "title": "4  Installing R",
-    "section": "4.7 .Rprofile",
-    "text": "4.7 .Rprofile\nBasic .Rprofilefile.\n# rspm::enable()\n\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\noptions(pillar.sigfig = 5)\n\noptions(repos=\"https://packagemanager.rstudio.com/cran/__linux__/jammy/latest\")\n\n# This is important if you are using RSPM on Linux outside RStudio\noptions(HTTPUserAgent = sprintf(\"R/%s R (%s)\", getRversion(), paste(getRversion(), R.version[\"platform\"], R.version[\"arch\"], R.version[\"os\"])))\n\n# Use an external browser for displaying html files, such as {gt} and {xaringan}\noptions(vsc.viewer = FALSE)\n\n# External browser for web apps, such as {shiny}\noptions(vsc.browser = FALSE)\n\n# View help page in an external browser\noptions(vsc.helpPanel = FALSE)\n\n# Use original data viewer\n# options(vsc.view = FALSE)\n\n4.7.1 Ressources\n\nCompiling R with MKL support\nInstalling MKL"
+    "section": "4.8 .Rprofile",
+    "text": "4.8 .Rprofile\nBasic .Rprofilefile.\n# rspm::enable()\n\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\noptions(pillar.sigfig = 5)\n\noptions(repos=\"https://packagemanager.rstudio.com/cran/__linux__/jammy/latest\")\n\n# This is important if you are using RSPM on Linux outside RStudio\noptions(HTTPUserAgent = sprintf(\"R/%s R (%s)\", getRversion(), paste(getRversion(), R.version[\"platform\"], R.version[\"arch\"], R.version[\"os\"])))\n\n# Use an external browser for displaying html files, such as {gt} and {xaringan}\noptions(vsc.viewer = FALSE)\n\n# External browser for web apps, such as {shiny}\noptions(vsc.browser = FALSE)\n\n# View help page in an external browser\noptions(vsc.helpPanel = FALSE)\n\n# Use original data viewer\n# options(vsc.view = FALSE)\n\n4.8.1 Ressources\n\nCompiling R with MKL support\nInstalling MKL"
   },
   {
     "objectID": "installr.html#libraries-locations",
     "href": "installr.html#libraries-locations",
     "title": "4  Installing R",
-    "section": "4.8 Libraries locations",
-    "text": "4.8 Libraries locations\nTo avoid getting message that packages can not be updated because the directory is not writabl, comment out R_LIBS_SITE=\"/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library\" in:\nsudo vim /etc/R/Renviron.site\nsudo vim /etc/R/Renviron"
+    "section": "4.9 Libraries locations",
+    "text": "4.9 Libraries locations\nTo avoid getting message that packages can not be updated because the directory is not writable, comment out R_LIBS_SITE=\"/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library\" in:\nsudo vim /etc/R/Renviron.site\nsudo vim /etc/R/Renviron"
   },
   {
     "objectID": "vscode.html#using-vscode-for-r-development",
@@ -158,7 +165,7 @@
     "href": "nemo.html#opening-the-terminal-in-the-current-directory",
     "title": "6  Nemo",
     "section": "6.1 Opening the terminal in the current directory",
-    "text": "6.1 Opening the terminal in the current directory\n\nThis will make pressing F4 top open the Nemo file manager.\nInformation found here.\n\nCreate this folder and this file:\nmkdir -p ~/.gnome2/accels\nnvim ~/.gnome2/accels/nemo\nAdd this to the file:\n(gtk_accel_path \"<Actions>/DirViewActions/OpenInTerminal\" \"F4\")"
+    "text": "6.1 Opening the terminal in the current directory\n\nThis will make pressing F4 top open the Nemo file manager.\nInformation found here.\n\nCreate this folder and this file:\nmkdir -p ~/.gnome2/accels\nnvim ~/.gnome2/accels/nemo\nAdd this to the file:\n(gtk_accel_path \"&lt;Actions&gt;/DirViewActions/OpenInTerminal\" \"F4\")"
   },
   {
     "objectID": "backup.html#valeria",
@@ -172,7 +179,7 @@
     "href": "misc.html#installing-google-fonts",
     "title": "8  Misc",
     "section": "8.1 Installing Google fonts",
-    "text": "8.1 Installing Google fonts\n\nScript to install Google Fonts\n\n# Original author: Michalis Georgiou <mechmg93@gmail.comr>\n# Modified by Andrew http://www.webupd8.org <andrew@webupd8.org>\n\n_wgeturl=\"https://github.com/google/fonts/archive/master.tar.gz\"\n_gf=\"google-fonts\"\n\n# install wget\nsudo apt-get install wget\n\n# make sure a file with the same name doesn't already exist\nrm -f $_gf.tar.gz\n\necho \"Connecting to Github server...\"\nwget $_wgeturl -O $_gf.tar.gz\n\necho \"Extracting the downloaded archive...\"\ntar -xf $_gf.tar.gz\n\necho \"Creating the /usr/share/fonts/truetype/$_gf folder\"\nsudo mkdir -p /usr/share/fonts/truetype/$_gf\n\necho \"Installing all .ttf fonts in /usr/share/fonts/truetype/$_gf\"\nfind $PWD/fonts-main/ -name \"*.ttf\" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \\; || return 1\n\necho \"Updating the font cache\"\nfc-cache -f > /dev/null\n\n# clean up, but only the .tar.gz, the user may need the folder\nrm -f $_gf.tar.gz\n\necho \"Done.\""
+    "text": "8.1 Installing Google fonts\n\nScript to install Google Fonts\n\n# Original author: Michalis Georgiou &lt;mechmg93@gmail.comr&gt;\n# Modified by Andrew http://www.webupd8.org &lt;andrew@webupd8.org&gt;\n\n_wgeturl=\"https://github.com/google/fonts/archive/master.tar.gz\"\n_gf=\"google-fonts\"\n\n# install wget\nsudo apt-get install wget\n\n# make sure a file with the same name doesn't already exist\nrm -f $_gf.tar.gz\n\necho \"Connecting to Github server...\"\nwget $_wgeturl -O $_gf.tar.gz\n\necho \"Extracting the downloaded archive...\"\ntar -xf $_gf.tar.gz\n\necho \"Creating the /usr/share/fonts/truetype/$_gf folder\"\nsudo mkdir -p /usr/share/fonts/truetype/$_gf\n\necho \"Installing all .ttf fonts in /usr/share/fonts/truetype/$_gf\"\nfind $PWD/fonts-main/ -name \"*.ttf\" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \\; || return 1\n\necho \"Updating the font cache\"\nfc-cache -f &gt; /dev/null\n\n# clean up, but only the .tar.gz, the user may need the folder\nrm -f $_gf.tar.gz\n\necho \"Done.\""
   },
   {
     "objectID": "misc.html#swapiness-swap-usage",
@@ -186,7 +193,7 @@
     "href": "misc.html#zotero",
     "title": "8  Misc",
     "section": "8.3 Zotero",
-    "text": "8.3 Zotero\n\nUse better bibtex and set the citation key format as auth.capitalize+year."
+    "text": "8.3 Zotero\n\n8.3.1 Installation\nhttps://linux.how2shout.com/how-to-install-zotero-on-ubuntu-22-04-or-20-04-lts/\ncurl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash\nsudo apt update \nsudo apt install zotero\n\n\n8.3.2 Citation key\n\nUse better bibtex and set the citation key format as auth.capitalize+year."
   },
   {
     "objectID": "misc.html#act",
@@ -201,6 +208,13 @@
     "title": "8  Misc",
     "section": "8.5 Make using multiple cores",
     "text": "8.5 Make using multiple cores\nOpen the .zshrc file and set the number of core to be used with make. This will also work when installing R packages from source.\nnvim ~/.zshrc\nexport MAKE=\"make -j24\"\nR packages will install much faster."
+  },
+  {
+    "objectID": "misc.html#image-viewer",
+    "href": "misc.html#image-viewer",
+    "title": "8  Misc",
+    "section": "8.6 Image viewer",
+    "text": "8.6 Image viewer\n\nNomacs"
   },
   {
     "objectID": "rust.html",

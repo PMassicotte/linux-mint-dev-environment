@@ -119,18 +119,25 @@
     "text": "4.6 Compiling R with Intel MKL math libraries\n\n4.6.1 Install Intel MKL\ncd /tmp\nwget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\n\nsudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\nsudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main &gt; /etc/apt/sources.list.d/intel-mkl.list'\n\nsudo apt install intel-mkl-64bit-2020.1-102 \n\nsource /opt/intel/mkl/bin/mklvars.sh intel64\n\n\n4.6.2 Compile R with MKL\nDownload and decompress R source files.\ntar -zxvf R-4.0.0.tar.gz\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\"\n\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\" --libdir=/usr/bin\n\nmake -j24\nmake pdf\nmake info\nmake install\nmake install-info\nmake install-pdf\n\nsudo make install"
   },
   {
+    "objectID": "installr.html#minimal-system-dependencies-for-r-packages-installation-on-ubuntu",
+    "href": "installr.html#minimal-system-dependencies-for-r-packages-installation-on-ubuntu",
+    "title": "4  Installing R",
+    "section": "4.7 Minimal system dependencies for R packages installation on Ubuntu",
+    "text": "4.7 Minimal system dependencies for R packages installation on Ubuntu\n\nhttps://datawookie.dev/blog/2022/08/linux-packages-for-r/\n\nsudo apt install -y \\\n  libcurl4-openssl-dev \\\n  libssl-dev \\\n  libxml2-dev \\\n  libfontconfig1-dev \\\n  libharfbuzz-dev \\\n  libfribidi-dev \\\n  libfreetype6-dev \\\n  libpng-dev \\\n  libtiff5-dev \\\n  libjpeg-dev \\\n  libpq-dev"
+  },
+  {
     "objectID": "installr.html#rprofile",
     "href": "installr.html#rprofile",
     "title": "4  Installing R",
-    "section": "4.7 .Rprofile",
-    "text": "4.7 .Rprofile\nBasic .Rprofilefile.\n# rspm::enable()\n\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\noptions(pillar.sigfig = 5)\n\noptions(repos=\"https://packagemanager.rstudio.com/cran/__linux__/jammy/latest\")\n\n# This is important if you are using RSPM on Linux outside RStudio\noptions(HTTPUserAgent = sprintf(\"R/%s R (%s)\", getRversion(), paste(getRversion(), R.version[\"platform\"], R.version[\"arch\"], R.version[\"os\"])))\n\n# Use an external browser for displaying html files, such as {gt} and {xaringan}\noptions(vsc.viewer = FALSE)\n\n# External browser for web apps, such as {shiny}\noptions(vsc.browser = FALSE)\n\n# View help page in an external browser\noptions(vsc.helpPanel = FALSE)\n\n# Use original data viewer\n# options(vsc.view = FALSE)\n\n4.7.1 Ressources\n\nCompiling R with MKL support\nInstalling MKL"
+    "section": "4.8 .Rprofile",
+    "text": "4.8 .Rprofile\nBasic .Rprofilefile.\n# rspm::enable()\n\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\noptions(pillar.sigfig = 5)\n\noptions(repos=\"https://packagemanager.rstudio.com/cran/__linux__/jammy/latest\")\n\n# This is important if you are using RSPM on Linux outside RStudio\noptions(HTTPUserAgent = sprintf(\"R/%s R (%s)\", getRversion(), paste(getRversion(), R.version[\"platform\"], R.version[\"arch\"], R.version[\"os\"])))\n\n# Use an external browser for displaying html files, such as {gt} and {xaringan}\noptions(vsc.viewer = FALSE)\n\n# External browser for web apps, such as {shiny}\noptions(vsc.browser = FALSE)\n\n# View help page in an external browser\noptions(vsc.helpPanel = FALSE)\n\n# Use original data viewer\n# options(vsc.view = FALSE)\n\n4.8.1 Ressources\n\nCompiling R with MKL support\nInstalling MKL"
   },
   {
     "objectID": "installr.html#libraries-locations",
     "href": "installr.html#libraries-locations",
     "title": "4  Installing R",
-    "section": "4.8 Libraries locations",
-    "text": "4.8 Libraries locations\nTo avoid getting message that packages can not be updated because the directory is not writabl, comment out R_LIBS_SITE=\"/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library\" in:\nsudo vim /etc/R/Renviron.site\nsudo vim /etc/R/Renviron"
+    "section": "4.9 Libraries locations",
+    "text": "4.9 Libraries locations\nTo avoid getting message that packages can not be updated because the directory is not writable, comment out R_LIBS_SITE=\"/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library\" in:\nsudo vim /etc/R/Renviron.site\nsudo vim /etc/R/Renviron"
   },
   {
     "objectID": "vscode.html#using-vscode-for-r-development",

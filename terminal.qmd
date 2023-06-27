@@ -200,3 +200,7 @@ nvim ~/.config/terminator/config
       uuid = c2b577a3-57fb-4e1d-b988-d54ae92b5b01
 [plugins]
 ```
+
+## btop
+
+

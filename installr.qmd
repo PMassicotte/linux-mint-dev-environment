@@ -151,6 +151,9 @@ make install
 make install-info
 make install-pdf
 
+# Or in 1 liner
+make -j24 ; make pdf ; make info ; make install ; make install-info ; make install-pdf
+
 sudo make install
 ```
 

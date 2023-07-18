@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setting up my working environment - 8&nbsp; Misc</title>
+<title>Setting up my working environment - 10&nbsp; Managing my dotfiles</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./rust.html" rel="next">
-<link href="./backup.html" rel="prev">
+<link href="./rust.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./misc.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Misc</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dotfiles.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Managing my dotfiles</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -183,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./misc.html" class="sidebar-item-text sidebar-link active">
+  <a href="./misc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Misc</span></span></a>
   </div>
 </li>
@@ -195,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./dotfiles.html" class="sidebar-item-text sidebar-link">
+  <a href="./dotfiles.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Managing my dotfiles</span></span></a>
   </div>
 </li>
@@ -209,16 +208,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#installing-google-fonts" id="toc-installing-google-fonts" class="nav-link active" data-scroll-target="#installing-google-fonts"><span class="header-section-number">8.1</span> Installing Google fonts</a></li>
-  <li><a href="#swapiness-swap-usage" id="toc-swapiness-swap-usage" class="nav-link" data-scroll-target="#swapiness-swap-usage"><span class="header-section-number">8.2</span> Swapiness (swap usage)</a></li>
-  <li><a href="#zotero" id="toc-zotero" class="nav-link" data-scroll-target="#zotero"><span class="header-section-number">8.3</span> Zotero</a>
-  <ul class="collapse">
-  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation"><span class="header-section-number">8.3.1</span> Installation</a></li>
-  <li><a href="#citation-key" id="toc-citation-key" class="nav-link" data-scroll-target="#citation-key"><span class="header-section-number">8.3.2</span> Citation key</a></li>
-  </ul></li>
-  <li><a href="#act" id="toc-act" class="nav-link" data-scroll-target="#act"><span class="header-section-number">8.4</span> act</a></li>
-  <li><a href="#make-using-multiple-cores" id="toc-make-using-multiple-cores" class="nav-link" data-scroll-target="#make-using-multiple-cores"><span class="header-section-number">8.5</span> Make using multiple cores</a></li>
-  <li><a href="#image-viewer" id="toc-image-viewer" class="nav-link" data-scroll-target="#image-viewer"><span class="header-section-number">8.6</span> Image viewer</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation"><span class="header-section-number">10.1</span> Installation</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage"><span class="header-section-number">10.2</span> Usage</a></li>
   </ul>
 </nav>
     </div>
@@ -227,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Misc</span></h1>
+<h1 class="title"><span id="sec-dotfiles" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Managing my dotfiles</span></span></h1>
 </div>
 
 
@@ -242,83 +233,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="installing-google-fonts" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="installing-google-fonts"><span class="header-section-number">8.1</span> Installing Google fonts</h2>
-<ul>
-<li><a href="https://raw.githubusercontent.com/hotice/webupd8/master/install-google-fonts">Script to install Google Fonts</a></li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original author: Michalis Georgiou &lt;mechmg93@gmail.comr&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Modified by Andrew http://www.webupd8.org &lt;andrew@webupd8.org&gt;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="va">_wgeturl</span><span class="op">=</span><span class="st">"https://github.com/google/fonts/archive/master.tar.gz"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="va">_gf</span><span class="op">=</span><span class="st">"google-fonts"</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># install wget</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install wget</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure a file with the same name doesn't already exist</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> <span class="va">$_gf</span>.tar.gz</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Connecting to Github server..."</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="va">$_wgeturl</span> <span class="at">-O</span> <span class="va">$_gf</span>.tar.gz</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Extracting the downloaded archive..."</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xf</span> <span class="va">$_gf</span>.tar.gz</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Creating the /usr/share/fonts/truetype/</span><span class="va">$_gf</span><span class="st"> folder"</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir <span class="at">-p</span> /usr/share/fonts/truetype/<span class="va">$_gf</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Installing all .ttf fonts in /usr/share/fonts/truetype/</span><span class="va">$_gf</span><span class="st">"</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> <span class="va">$PWD</span>/fonts-main/ <span class="at">-name</span> <span class="st">"*.ttf"</span> <span class="at">-exec</span> sudo install <span class="at">-m644</span> {} /usr/share/fonts/truetype/google-fonts/ <span class="dt">\;</span> <span class="kw">||</span> <span class="cf">return</span> <span class="dv">1</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Updating the font cache"</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ex">fc-cache</span> <span class="at">-f</span> <span class="op">&gt;</span> /dev/null</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up, but only the .tar.gz, the user may need the folder</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> <span class="va">$_gf</span>.tar.gz</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Done."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I am using <a href="https://www.chezmoi.io/">chezmoi</a> to manage my dotfiles.</p>
+<section id="installation" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">10.1</span> Installation</h2>
+<p><a href="https://www.chezmoi.io/install/#one-line-binary-install">Binary installation</a></p>
 </section>
-<section id="swapiness-swap-usage" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="swapiness-swap-usage"><span class="header-section-number">8.2</span> Swapiness (swap usage)</h2>
-<p>Change the value of the <code>swapiness</code>, so the kernel use memory primarily instead of the disk.</p>
-<ul>
-<li><a href="https://askubuntu.com/questions/157793/why-is-swap-being-used-even-though-i-have-plenty-of-free-ram">How to change the swapiness</a></li>
-</ul>
-</section>
-<section id="zotero" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="zotero"><span class="header-section-number">8.3</span> Zotero</h2>
-<section id="installation" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">8.3.1</span> Installation</h3>
-<p>https://linux.how2shout.com/how-to-install-zotero-on-ubuntu-22-04-or-20-04-lts/</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>curl <span class="sc">-</span>sL https<span class="sc">:</span><span class="er">//</span>raw.githubusercontent.com<span class="sc">/</span>retorquere<span class="sc">/</span>zotero<span class="sc">-</span>deb<span class="sc">/</span>master<span class="sc">/</span>install.sh <span class="sc">|</span> sudo bash</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sudo apt update </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sudo apt install zotero</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="citation-key" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="citation-key"><span class="header-section-number">8.3.2</span> Citation key</h3>
-<ul>
-<li>Use better bibtex and set the citation key format as <code>auth.capitalize+year</code>.</li>
-</ul>
-<p><img src="images/zotero.png" class="img-fluid"></p>
-</section>
-</section>
-<section id="act" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="act"><span class="header-section-number">8.4</span> act</h2>
-<p><a href="https://github.com/nektos/act">Run your GitHub Actions locally!</a></p>
-</section>
-<section id="make-using-multiple-cores" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="make-using-multiple-cores"><span class="header-section-number">8.5</span> Make using multiple cores</h2>
-<p>Open the <code>.zshrc</code> file and set the number of core to be used with <code>make</code>. This will also work when <a href="https://stackoverflow.com/questions/36725027/r-package-installation-from-source-using-multiple-cores">installing R packages from source</a>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvim</span> ~/.zshrc</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">MAKE</span><span class="op">=</span><span class="st">"make -j24"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>R packages will install much faster.</p>
-</section>
-<section id="image-viewer" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="image-viewer"><span class="header-section-number">8.6</span> Image viewer</h2>
-<ul>
-<li><a href="https://github.com/nomacs/nomacs?ref=itsfoss.com">Nomacs</a></li>
-</ul>
+<section id="usage" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="usage"><span class="header-section-number">10.2</span> Usage</h2>
+<p>First, I have to add/track files using:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">chezmoi</span> add [ files ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then I can edit my dotfiles using:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">chezmoi</span> edit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or use this to go to the dotfiles directory. This is where the changes should me made.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">chezmoi</span> cd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will open (ex. (n)vim) so I can make changes. Once I am done, I can use this <strong>apply the changes </strong> to the local directory (where the actual dotfiles are located).</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">chezmoi</span> <span class="at">-v</span> apply </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Finally, I can push the dotfiles directory to GitHub:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"..."</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -559,14 +492,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="./backup.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Backup</span></span>
+      <a href="./rust.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rust</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./rust.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rust</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

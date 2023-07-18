@@ -15,6 +15,7 @@ book:
     - backup.qmd
     - misc.qmd
     - rust.qmd
+    - dotfiles.qmd
 
 format:
   html:

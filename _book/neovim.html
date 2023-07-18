@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,7 +91,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -110,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./neovim.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Neovim</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -192,6 +193,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rust</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dotfiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Managing my dotfiles</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -204,10 +211,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#install-neovim" id="toc-install-neovim" class="nav-link active" data-scroll-target="#install-neovim"><span class="header-section-number">2.1</span> Install Neovim</a></li>
   <li><a href="#install-packer" id="toc-install-packer" class="nav-link" data-scroll-target="#install-packer"><span class="header-section-number">2.2</span> Install packer</a></li>
-  <li><a href="#packaged-neovim" id="toc-packaged-neovim" class="nav-link" data-scroll-target="#packaged-neovim"><span class="header-section-number">2.3</span> Packaged neovim</a>
-  <ul class="collapse">
-  <li><a href="#how-to-configure-r-for-neovim" id="toc-how-to-configure-r-for-neovim" class="nav-link" data-scroll-target="#how-to-configure-r-for-neovim"><span class="header-section-number">2.3.1</span> How to configure R for neovim</a></li>
-  </ul></li>
+  <li><a href="#packaged-neovim" id="toc-packaged-neovim" class="nav-link" data-scroll-target="#packaged-neovim"><span class="header-section-number">2.3</span> Packaged neovim</a></li>
+  <li><a href="#how-to-configure-r-for-neovim" id="toc-how-to-configure-r-for-neovim" class="nav-link" data-scroll-target="#how-to-configure-r-for-neovim"><span class="header-section-number">2.4</span> How to configure R for neovim</a></li>
   </ul>
 </nav>
     </div>
@@ -256,14 +261,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>https://www.lunarvim.org/</li>
 <li>https://astronvim.github.io/</li>
 </ul>
-<section id="how-to-configure-r-for-neovim" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="how-to-configure-r-for-neovim"><span class="header-section-number">2.3.1</span> How to configure R for neovim</h3>
-<ul>
-<li><a href="https://www.reddit.com/r/neovim/comments/yqi6cy/new_to_neovim_need_quick_help_to_set_up_r/">See here</a></li>
-</ul>
-
-
 </section>
+<section id="how-to-configure-r-for-neovim" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="how-to-configure-r-for-neovim"><span class="header-section-number">2.4</span> How to configure R for neovim</h2>
+<ul>
+<li><p><a href="https://www.reddit.com/r/neovim/comments/yqi6cy/new_to_neovim_need_quick_help_to_set_up_r/">See here</a></p></li>
+<li><p><a href="https://github.com/PMassicotte/nvim">My config</a></p></li>
+</ul>
+<p>https://github.com/jalvesaq/cmp-nvim-r</p>
+<blockquote class="blockquote">
+<p>Since cmp-nvim-r and the R package languageserver provide completions for the same code, and completions from the languageserver might be the first ones to be displayed by nvim-cmp, you may want to put this in your ~/.Rprofile:</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Disable completion from the language &lt;!-- server --&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">languageserver.server_capabilities =</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">completionProvider =</span> <span class="cn">FALSE</span>, </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">completionItemResolve =</span> <span class="cn">FALSE</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
 </section>
 
 </main> <!-- /main -->

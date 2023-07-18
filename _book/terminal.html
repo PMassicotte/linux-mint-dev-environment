@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,7 +91,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -110,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./terminal.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terminal</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -192,6 +193,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Rust</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dotfiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Managing my dotfiles</span></span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -202,30 +209,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#fonts" id="toc-fonts" class="nav-link active" data-scroll-target="#fonts"><span class="header-section-number">1.1</span> Fonts</a>
+  <li><a href="#kitty-terminal-emulator" id="toc-kitty-terminal-emulator" class="nav-link active" data-scroll-target="#kitty-terminal-emulator"><span class="header-section-number">1.1</span> kitty terminal emulator</a></li>
+  <li><a href="#fonts" id="toc-fonts" class="nav-link" data-scroll-target="#fonts"><span class="header-section-number">1.2</span> Fonts</a>
   <ul class="collapse">
-  <li><a href="#jetbrains-font" id="toc-jetbrains-font" class="nav-link" data-scroll-target="#jetbrains-font"><span class="header-section-number">1.1.1</span> JetBrains font</a></li>
-  <li><a href="#meslo-nerd-font-for-powerlevl10k" id="toc-meslo-nerd-font-for-powerlevl10k" class="nav-link" data-scroll-target="#meslo-nerd-font-for-powerlevl10k"><span class="header-section-number">1.1.2</span> Meslo Nerd font (for Powerlevl10k)</a></li>
+  <li><a href="#jetbrains-font" id="toc-jetbrains-font" class="nav-link" data-scroll-target="#jetbrains-font"><span class="header-section-number">1.2.1</span> JetBrains font</a></li>
+  <li><a href="#meslo-nerd-font-for-powerlevl10k" id="toc-meslo-nerd-font-for-powerlevl10k" class="nav-link" data-scroll-target="#meslo-nerd-font-for-powerlevl10k"><span class="header-section-number">1.2.2</span> Meslo Nerd font (for Powerlevl10k)</a></li>
   </ul></li>
-  <li><a href="#zsh" id="toc-zsh" class="nav-link" data-scroll-target="#zsh"><span class="header-section-number">1.2</span> zsh</a>
+  <li><a href="#zsh" id="toc-zsh" class="nav-link" data-scroll-target="#zsh"><span class="header-section-number">1.3</span> zsh</a>
   <ul class="collapse">
-  <li><a href="#oh-my-zsh" id="toc-oh-my-zsh" class="nav-link" data-scroll-target="#oh-my-zsh"><span class="header-section-number">1.2.1</span> oh-my-zsh</a></li>
-  <li><a href="#power10k-theme" id="toc-power10k-theme" class="nav-link" data-scroll-target="#power10k-theme"><span class="header-section-number">1.2.2</span> power10k theme</a></li>
+  <li><a href="#oh-my-zsh" id="toc-oh-my-zsh" class="nav-link" data-scroll-target="#oh-my-zsh"><span class="header-section-number">1.3.1</span> oh-my-zsh</a></li>
+  <li><a href="#power10k-theme" id="toc-power10k-theme" class="nav-link" data-scroll-target="#power10k-theme"><span class="header-section-number">1.3.2</span> power10k theme</a></li>
   </ul></li>
-  <li><a href="#useful-tools" id="toc-useful-tools" class="nav-link" data-scroll-target="#useful-tools"><span class="header-section-number">1.3</span> Useful tools</a>
+  <li><a href="#useful-tools" id="toc-useful-tools" class="nav-link" data-scroll-target="#useful-tools"><span class="header-section-number">1.4</span> Useful tools</a>
   <ul class="collapse">
-  <li><a href="#tldr" id="toc-tldr" class="nav-link" data-scroll-target="#tldr"><span class="header-section-number">1.3.1</span> tldr</a></li>
-  <li><a href="#exa" id="toc-exa" class="nav-link" data-scroll-target="#exa"><span class="header-section-number">1.3.2</span> exa</a></li>
-  <li><a href="#bat" id="toc-bat" class="nav-link" data-scroll-target="#bat"><span class="header-section-number">1.3.3</span> bat</a></li>
-  <li><a href="#creating-alias" id="toc-creating-alias" class="nav-link" data-scroll-target="#creating-alias"><span class="header-section-number">1.3.4</span> Creating alias</a></li>
-  <li><a href="#fzf" id="toc-fzf" class="nav-link" data-scroll-target="#fzf"><span class="header-section-number">1.3.5</span> fzf</a></li>
-  <li><a href="#the-silver-searcher" id="toc-the-silver-searcher" class="nav-link" data-scroll-target="#the-silver-searcher"><span class="header-section-number">1.3.6</span> The Silver Searcher</a></li>
-  <li><a href="#ripgrep" id="toc-ripgrep" class="nav-link" data-scroll-target="#ripgrep"><span class="header-section-number">1.3.7</span> ripgrep</a></li>
-  <li><a href="#gdu---go-diskusage" id="toc-gdu---go-diskusage" class="nav-link" data-scroll-target="#gdu---go-diskusage"><span class="header-section-number">1.3.8</span> gdu - go DiskUsage()</a></li>
-  <li><a href="#nala" id="toc-nala" class="nav-link" data-scroll-target="#nala"><span class="header-section-number">1.3.9</span> nala</a></li>
-  <li><a href="#btop" id="toc-btop" class="nav-link" data-scroll-target="#btop"><span class="header-section-number">1.3.10</span> btop</a></li>
+  <li><a href="#tldr" id="toc-tldr" class="nav-link" data-scroll-target="#tldr"><span class="header-section-number">1.4.1</span> tldr</a></li>
+  <li><a href="#exa" id="toc-exa" class="nav-link" data-scroll-target="#exa"><span class="header-section-number">1.4.2</span> exa</a></li>
+  <li><a href="#bat" id="toc-bat" class="nav-link" data-scroll-target="#bat"><span class="header-section-number">1.4.3</span> bat</a></li>
+  <li><a href="#creating-alias" id="toc-creating-alias" class="nav-link" data-scroll-target="#creating-alias"><span class="header-section-number">1.4.4</span> Creating alias</a></li>
+  <li><a href="#fzf" id="toc-fzf" class="nav-link" data-scroll-target="#fzf"><span class="header-section-number">1.4.5</span> fzf</a></li>
+  <li><a href="#the-silver-searcher" id="toc-the-silver-searcher" class="nav-link" data-scroll-target="#the-silver-searcher"><span class="header-section-number">1.4.6</span> The Silver Searcher</a></li>
+  <li><a href="#ripgrep" id="toc-ripgrep" class="nav-link" data-scroll-target="#ripgrep"><span class="header-section-number">1.4.7</span> ripgrep</a></li>
+  <li><a href="#gdu---go-diskusage" id="toc-gdu---go-diskusage" class="nav-link" data-scroll-target="#gdu---go-diskusage"><span class="header-section-number">1.4.8</span> gdu - go DiskUsage()</a></li>
+  <li><a href="#nala" id="toc-nala" class="nav-link" data-scroll-target="#nala"><span class="header-section-number">1.4.9</span> nala</a></li>
+  <li><a href="#btop" id="toc-btop" class="nav-link" data-scroll-target="#btop"><span class="header-section-number">1.4.10</span> btop</a></li>
   </ul></li>
-  <li><a href="#terminator" id="toc-terminator" class="nav-link" data-scroll-target="#terminator"><span class="header-section-number">1.4</span> Terminator</a></li>
   </ul>
 </nav>
     </div>
@@ -250,56 +257,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p>Setting up my terminal environment. The dimensions of my terminal is 150 columns by 35 rows.</p>
-<section id="fonts" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="fonts"><span class="header-section-number">1.1</span> Fonts</h2>
-<section id="jetbrains-font" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="jetbrains-font"><span class="header-section-number">1.1.1</span> JetBrains font</h3>
+<section id="kitty-terminal-emulator" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="kitty-terminal-emulator"><span class="header-section-number">1.1</span> kitty terminal emulator</h2>
+<p>I am using <a href="https://sw.kovidgoyal.net/kitty/">kitty</a> as my terminal emulator. See the <a href="./dotfiles.html">dotfiles</a></p>
+</section>
+<section id="fonts" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="fonts"><span class="header-section-number">1.2</span> Fonts</h2>
+<section id="jetbrains-font" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="jetbrains-font"><span class="header-section-number">1.2.1</span> JetBrains font</h3>
 <p>For my daily to go programming font.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="meslo-nerd-font-for-powerlevl10k" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="meslo-nerd-font-for-powerlevl10k"><span class="header-section-number">1.1.2</span> Meslo Nerd font (for Powerlevl10k)</h3>
+<section id="meslo-nerd-font-for-powerlevl10k" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="meslo-nerd-font-for-powerlevl10k"><span class="header-section-number">1.2.2</span> Meslo Nerd font (for Powerlevl10k)</h3>
 <p>Got on <a href="https://github.com/romkatv/powerlevel10k/blob/master/font.md">this page</a> and download and install the <code>.ttf</code> files.</p>
 </section>
 </section>
-<section id="zsh" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="zsh"><span class="header-section-number">1.2</span> zsh</h2>
+<section id="zsh" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="zsh"><span class="header-section-number">1.3</span> zsh</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install zsh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="oh-my-zsh" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="oh-my-zsh"><span class="header-section-number">1.2.1</span> oh-my-zsh</h3>
+<section id="oh-my-zsh" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="oh-my-zsh"><span class="header-section-number">1.3.1</span> oh-my-zsh</h3>
 <p><a href="https://ohmyz.sh/#install">Install oh-my-zsh</a></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="power10k-theme" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="power10k-theme"><span class="header-section-number">1.2.2</span> power10k theme</h3>
+<section id="power10k-theme" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="power10k-theme"><span class="header-section-number">1.3.2</span> power10k theme</h3>
 <p><a href="https://github.com/romkatv/powerlevel10k">Powerlevel10k theme</a></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--depth</span><span class="op">=</span>1 https://github.com/romkatv/powerlevel10k.git <span class="va">${ZSH_CUSTOM</span><span class="op">:-</span><span class="va">$HOME</span>/.oh-my-zsh/custom<span class="va">}</span>/themes/powerlevel10k</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then, set <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code> in <code>~/.zshrc</code> and configure the theme as follow:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">p10k</span> configure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="useful-tools" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="useful-tools"><span class="header-section-number">1.3</span> Useful tools</h2>
+<section id="useful-tools" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="useful-tools"><span class="header-section-number">1.4</span> Useful tools</h2>
 <ul>
 <li><a href="https://zaiste.net/posts/shell-commands-rust/">Useful tools written in rust</a></li>
 </ul>
 <p>For some of these tools, rust needs to be <a href="https://www.rust-lang.org/tools/install">installed</a>.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">--proto</span> <span class="st">'=https'</span> <span class="at">--tlsv1.2</span> <span class="at">-sSf</span> https://sh.rustup.rs <span class="kw">|</span> <span class="fu">sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="tldr" class="level3" data-number="1.3.1">
-<h3 data-number="1.3.1" class="anchored" data-anchor-id="tldr"><span class="header-section-number">1.3.1</span> tldr</h3>
+<section id="tldr" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="tldr"><span class="header-section-number">1.4.1</span> tldr</h3>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install tldr</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tldr</span> <span class="at">--update</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="exa" class="level3" data-number="1.3.2">
-<h3 data-number="1.3.2" class="anchored" data-anchor-id="exa"><span class="header-section-number">1.3.2</span> exa</h3>
+<section id="exa" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="exa"><span class="header-section-number">1.4.2</span> exa</h3>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install exa </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="bat" class="level3" data-number="1.3.3">
-<h3 data-number="1.3.3" class="anchored" data-anchor-id="bat"><span class="header-section-number">1.3.3</span> bat</h3>
+<section id="bat" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="bat"><span class="header-section-number">1.4.3</span> bat</h3>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install bat </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="creating-alias" class="level3" data-number="1.3.4">
-<h3 data-number="1.3.4" class="anchored" data-anchor-id="creating-alias"><span class="header-section-number">1.3.4</span> Creating alias</h3>
+<section id="creating-alias" class="level3" data-number="1.4.4">
+<h3 data-number="1.4.4" class="anchored" data-anchor-id="creating-alias"><span class="header-section-number">1.4.4</span> Creating alias</h3>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.zshrc </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Add these alias to the file.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ls=<span class="st">'exa --icons'</span></span>
@@ -308,33 +319,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ll=<span class="st">'exa -lahF --icons'</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> cat=bat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="fzf" class="level3" data-number="1.3.5">
-<h3 data-number="1.3.5" class="anchored" data-anchor-id="fzf"><span class="header-section-number">1.3.5</span> fzf</h3>
+<section id="fzf" class="level3" data-number="1.4.5">
+<h3 data-number="1.4.5" class="anchored" data-anchor-id="fzf"><span class="header-section-number">1.4.5</span> fzf</h3>
 <p><a href="https://github.com/junegunn/fzf">fzf</a> is a command-line fuzzy finder.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--depth</span> 1 https://github.com/junegunn/fzf.git ~/.fzf</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~/.fzf/install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then, set <code>plugins=(fzf)</code> in <code>~/.zshrc</code>.</p>
 </section>
-<section id="the-silver-searcher" class="level3" data-number="1.3.6">
-<h3 data-number="1.3.6" class="anchored" data-anchor-id="the-silver-searcher"><span class="header-section-number">1.3.6</span> The Silver Searcher</h3>
+<section id="the-silver-searcher" class="level3" data-number="1.4.6">
+<h3 data-number="1.4.6" class="anchored" data-anchor-id="the-silver-searcher"><span class="header-section-number">1.4.6</span> The Silver Searcher</h3>
 <p><a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install silversearcher-ag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="ripgrep" class="level3" data-number="1.3.7">
-<h3 data-number="1.3.7" class="anchored" data-anchor-id="ripgrep"><span class="header-section-number">1.3.7</span> ripgrep</h3>
+<section id="ripgrep" class="level3" data-number="1.4.7">
+<h3 data-number="1.4.7" class="anchored" data-anchor-id="ripgrep"><span class="header-section-number">1.4.7</span> ripgrep</h3>
 <p>https://github.com/BurntSushi/ripgrep</p>
 <p>Easier to use to me.</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rg</span> read.csv <span class="at">-g</span> <span class="st">"*.R"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="gdu---go-diskusage" class="level3" data-number="1.3.8">
-<h3 data-number="1.3.8" class="anchored" data-anchor-id="gdu---go-diskusage"><span class="header-section-number">1.3.8</span> gdu - go DiskUsage()</h3>
+<section id="gdu---go-diskusage" class="level3" data-number="1.4.8">
+<h3 data-number="1.4.8" class="anchored" data-anchor-id="gdu---go-diskusage"><span class="header-section-number">1.4.8</span> gdu - go DiskUsage()</h3>
 <p>Pretty fast disk usage analyzer written in Go: https://github.com/dundee/gdu</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">add-apt-repository</span> ppa:daniel-milde/gdu</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> update</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> install gdu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="nala" class="level3" data-number="1.3.9">
-<h3 data-number="1.3.9" class="anchored" data-anchor-id="nala"><span class="header-section-number">1.3.9</span> nala</h3>
+<section id="nala" class="level3" data-number="1.4.9">
+<h3 data-number="1.4.9" class="anchored" data-anchor-id="nala"><span class="header-section-number">1.4.9</span> nala</h3>
 <blockquote class="blockquote">
 <p>Nala is a front-end for <code>libapt-pkg</code>. Specifically we interface using the <code>python-apt</code> api.</p>
 </blockquote>
@@ -342,74 +353,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://github.com/volitank/nala">Installation</a></li>
 </ul>
 </section>
-<section id="btop" class="level3" data-number="1.3.10">
-<h3 data-number="1.3.10" class="anchored" data-anchor-id="btop"><span class="header-section-number">1.3.10</span> btop</h3>
+<section id="btop" class="level3" data-number="1.4.10">
+<h3 data-number="1.4.10" class="anchored" data-anchor-id="btop"><span class="header-section-number">1.4.10</span> btop</h3>
 <ul>
 <li>https://github.com/aristocratos/btop</li>
 </ul>
-</section>
-</section>
-<section id="terminator" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="terminator"><span class="header-section-number">1.4</span> Terminator</h2>
-<p>I am using <a href="https://terminator-gtk3.readthedocs.io/en/latest/">Terminator</a> as my terminal emulator.</p>
-<ul>
-<li><a href="https://github.com/EliverLara/terminator-themes">Installing themes</a></li>
-</ul>
-<p>I am using this following TOML config file:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nvim</span> ~/.config/terminator/config </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb17"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dt">global_config</span><span class="kw">]</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title_transmit_fg_color</span> <span class="op">=</span> <span class="st">"#000000"</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title_transmit_bg_color</span> <span class="op">=</span> <span class="st">"#fabd2f"</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">enabled_plugins</span> <span class="op">=</span> <span class="dt">LaunchpadBugURLHandler</span><span class="er">,</span> <span class="dt">LaunchpadCodeURLHandler</span><span class="er">,</span> <span class="dt">APTURLHandler</span><span class="er">,</span> <span class="dt">TerminatorThemes</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">suppress_multiple_term_dialog</span> <span class="op">=</span> <span class="dt">True</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title_use_system_font</span> <span class="op">=</span> <span class="dt">False</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title_font</span> <span class="op">=</span> <span class="dt">MesloLGS</span> <span class="dt">NF</span> <span class="dt">Bold</span> <span class="dt">12</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">always_split_with_profile</span> <span class="op">=</span> <span class="dt">True</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dt">keybindings</span><span class="kw">]</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dt">profiles</span><span class="kw">]</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[[</span><span class="dt">default</span><span class="kw">]]</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">cursor_color</span> <span class="op">=</span> <span class="st">"#aaaaaa"</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">font</span> <span class="op">=</span> <span class="dt">MesloLGS</span> <span class="dt">NF</span> <span class="dt">Bold</span> <span class="dt">10</span></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">use_system_font</span> <span class="op">=</span> <span class="dt">False</span></span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[[</span><span class="dt">Nord</span><span class="kw">]]</span></span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">background_color</span> <span class="op">=</span> <span class="st">"#62a0ea"</span></span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    <span class="dt">cursor_color</span> <span class="op">=</span> <span class="st">"#D8DEE9"</span></span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">font</span> <span class="op">=</span> <span class="dt">MesloLGS</span> <span class="dt">NF</span> <span class="dt">Bold</span> <span class="dt">12</span></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">foreground_color</span> <span class="op">=</span> <span class="st">"#ebdbb2"</span></span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="dt">palette</span> <span class="op">=</span> <span class="st">"#3b4252:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#8fbcbb:#eceff4"</span></span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">use_system_font</span> <span class="op">=</span> <span class="dt">False</span></span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    <span class="dt">use_theme_colors</span> <span class="op">=</span> <span class="dt">True</span></span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dt">layouts</span><span class="kw">]</span></span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[[</span><span class="dt">default</span><span class="kw">]]</span></span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[[[</span><span class="dt">window0</span><span class="kw">]</span><span class="er">]]</span></span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span> <span class="op">=</span> <span class="dt">Window</span></span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>      <span class="dt">parent</span> <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>      <span class="dt">size</span> <span class="op">=</span> <span class="dv">1200</span><span class="er">,</span> <span class="dt">600</span></span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[[[</span><span class="dt">child1</span><span class="kw">]</span><span class="er">]]</span></span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span> <span class="op">=</span> <span class="dt">Terminal</span></span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>      <span class="dt">parent</span> <span class="op">=</span> <span class="dt">window0</span></span>
-<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>      <span class="dt">profile</span> <span class="op">=</span> <span class="dt">Nord</span></span>
-<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>  <span class="kw">[[</span><span class="dt">New</span> <span class="dt">Layout</span><span class="kw">]]</span></span>
-<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[[[</span><span class="dt">child0</span><span class="kw">]</span><span class="er">]]</span></span>
-<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span> <span class="op">=</span> <span class="dt">Window</span></span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>      <span class="dt">parent</span> <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>      <span class="dt">order</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>      <span class="dt">position</span> <span class="op">=</span> <span class="dv">4145</span><span class="er">:</span><span class="dt">36</span></span>
-<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>      <span class="dt">maximised</span> <span class="op">=</span> <span class="dt">False</span></span>
-<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fullscreen</span> <span class="op">=</span> <span class="dt">False</span></span>
-<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>      <span class="dt">size</span> <span class="op">=</span> <span class="dv">1200</span><span class="er">,</span> <span class="dt">600</span></span>
-<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>      <span class="dt">title</span> <span class="op">=</span> <span class="dt">filoche</span><span class="er">@</span><span class="dt">masticotus</span><span class="er">:~</span></span>
-<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>      <span class="dt">last_active_term</span> <span class="op">=</span> <span class="dt">c2b577a3-57fb-4e1d-b988-d54ae92b5b01</span></span>
-<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>      <span class="dt">last_active_window</span> <span class="op">=</span> <span class="dt">True</span></span>
-<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>    <span class="kw">[[[</span><span class="dt">terminal1</span><span class="kw">]</span><span class="er">]]</span></span>
-<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>      <span class="dt">type</span> <span class="op">=</span> <span class="dt">Terminal</span></span>
-<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>      <span class="dt">parent</span> <span class="op">=</span> <span class="dt">child0</span></span>
-<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>      <span class="dt">order</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>      <span class="dt">profile</span> <span class="op">=</span> <span class="dt">default</span></span>
-<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a>      <span class="dt">uuid</span> <span class="op">=</span> <span class="dt">c2b577a3-57fb-4e1d-b988-d54ae92b5b01</span></span>
-<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dt">plugins</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

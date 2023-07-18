@@ -37,7 +37,24 @@ There are some pre-configured neovim environments:
 - https://www.lunarvim.org/
 - https://astronvim.github.io/
 
-### How to configure R for neovim
+## How to configure R for neovim
 
 - [See here](https://www.reddit.com/r/neovim/comments/yqi6cy/new_to_neovim_need_quick_help_to_set_up_r/)
+
+- [My config](https://github.com/PMassicotte/nvim)
+
+https://github.com/jalvesaq/cmp-nvim-r
+
+> Since cmp-nvim-r and the R package languageserver provide completions for the same code, and completions from the languageserver might be the first ones to be displayed by nvim-cmp, you may want to put this in your ~/.Rprofile:
+
+```r
+# Disable completion from the language <!-- server -->
+options(
+  languageserver.server_capabilities = 
+    list(
+      completionProvider = FALSE, 
+      completionItemResolve = FALSE
+    )
+)
+```
 

@@ -1,0 +1,42 @@
+# Managing my dotfiles {#sec-dotfiles}
+
+I am using [chezmoi](https://www.chezmoi.io/) to manage my dotfiles. 
+
+## Installation
+
+[Binary installation](https://www.chezmoi.io/install/#one-line-binary-install)
+
+## Usage
+
+First, I have to add/track files using:
+
+```bash
+chezmoi add [ files ]
+```
+
+Then I can edit my dotfiles using:
+
+```bash
+chezmoi edit
+```
+
+Or use this to go to the dotfiles directory. This is where the changes should me made.
+
+```bash
+chezmoi cd
+```
+
+This will open (ex. (n)vim) so I can make changes. Once I am done, I can use this **apply the changes ** to the local directory (where the actual dotfiles are located).
+
+```bash
+chezmoi -v apply 
+```
+
+Finally, I can push the dotfiles directory to GitHub:
+
+```bash
+git add .
+git commit -m "..."
+git push
+```
+

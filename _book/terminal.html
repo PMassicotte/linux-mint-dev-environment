@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -91,7 +91,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -110,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./terminal.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Terminal</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -208,7 +209,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#kitty-terminal-emulator" id="toc-kitty-terminal-emulator" class="nav-link active" data-scroll-target="#kitty-terminal-emulator"><span class="header-section-number">1.1</span> kitty terminal emulator</a></li>
+  <li><a href="#kitty-terminal-emulator" id="toc-kitty-terminal-emulator" class="nav-link active" data-scroll-target="#kitty-terminal-emulator"><span class="header-section-number">1.1</span> kitty terminal emulator</a>
+  <ul class="collapse">
+  <li><a href="#kitty-themes" id="toc-kitty-themes" class="nav-link" data-scroll-target="#kitty-themes"><span class="header-section-number">1.1.1</span> Kitty themes</a></li>
+  <li><a href="#remote-ssh" id="toc-remote-ssh" class="nav-link" data-scroll-target="#remote-ssh"><span class="header-section-number">1.1.2</span> Remote ssh</a></li>
+  </ul></li>
   <li><a href="#fonts" id="toc-fonts" class="nav-link" data-scroll-target="#fonts"><span class="header-section-number">1.2</span> Fonts</a>
   <ul class="collapse">
   <li><a href="#jetbrains-font" id="toc-jetbrains-font" class="nav-link" data-scroll-target="#jetbrains-font"><span class="header-section-number">1.2.1</span> JetBrains font</a></li>
@@ -231,6 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#gdu---go-diskusage" id="toc-gdu---go-diskusage" class="nav-link" data-scroll-target="#gdu---go-diskusage"><span class="header-section-number">1.4.8</span> gdu - go DiskUsage()</a></li>
   <li><a href="#nala" id="toc-nala" class="nav-link" data-scroll-target="#nala"><span class="header-section-number">1.4.9</span> nala</a></li>
   <li><a href="#btop" id="toc-btop" class="nav-link" data-scroll-target="#btop"><span class="header-section-number">1.4.10</span> btop</a></li>
+  <li><a href="#broot" id="toc-broot" class="nav-link" data-scroll-target="#broot"><span class="header-section-number">1.4.11</span> Broot</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -259,13 +265,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="kitty-terminal-emulator" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="kitty-terminal-emulator"><span class="header-section-number">1.1</span> kitty terminal emulator</h2>
 <p>I am using <a href="https://sw.kovidgoyal.net/kitty/">kitty</a> as my terminal emulator. See the <a href="./dotfiles.html">dotfiles</a></p>
+<section id="kitty-themes" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="kitty-themes"><span class="header-section-number">1.1.1</span> Kitty themes</h3>
+<ul>
+<li>https://github.com/kovidgoyal/kitty-themes</li>
+</ul>
+<p>Type:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kitty</span> +kitten themes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="remote-ssh" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="remote-ssh"><span class="header-section-number">1.1.2</span> Remote ssh</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kitty</span> +kitten ssh filoche@beluga.computecanada.ca</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">edit-in-kitt</span> filename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>https://sw.kovidgoyal.net/kitty/shell-integration/#shell-integration-over-ssh</li>
+</ul>
+</section>
 </section>
 <section id="fonts" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="fonts"><span class="header-section-number">1.2</span> Fonts</h2>
 <section id="jetbrains-font" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="jetbrains-font"><span class="header-section-number">1.2.1</span> JetBrains font</h3>
 <p>For my daily to go programming font.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/bin/bash</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="meslo-nerd-font-for-powerlevl10k" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="meslo-nerd-font-for-powerlevl10k"><span class="header-section-number">1.2.2</span> Meslo Nerd font (for Powerlevl10k)</h3>
@@ -274,18 +296,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="zsh" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="zsh"><span class="header-section-number">1.3</span> zsh</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install zsh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install zsh</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="oh-my-zsh" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="oh-my-zsh"><span class="header-section-number">1.3.1</span> oh-my-zsh</h3>
 <p><a href="https://ohmyz.sh/#install">Install oh-my-zsh</a></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sh</span> <span class="at">-c</span> <span class="st">"</span><span class="va">$(</span><span class="ex">curl</span> <span class="at">-fsSL</span> https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="va">)</span><span class="st">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="power10k-theme" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="power10k-theme"><span class="header-section-number">1.3.2</span> power10k theme</h3>
 <p><a href="https://github.com/romkatv/powerlevel10k">Powerlevel10k theme</a></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--depth</span><span class="op">=</span>1 https://github.com/romkatv/powerlevel10k.git <span class="va">${ZSH_CUSTOM</span><span class="op">:-</span><span class="va">$HOME</span>/.oh-my-zsh/custom<span class="va">}</span>/themes/powerlevel10k</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--depth</span><span class="op">=</span>1 https://github.com/romkatv/powerlevel10k.git <span class="va">${ZSH_CUSTOM</span><span class="op">:-</span><span class="va">$HOME</span>/.oh-my-zsh/custom<span class="va">}</span>/themes/powerlevel10k</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then, set <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code> in <code>~/.zshrc</code> and configure the theme as follow:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">p10k</span> configure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">p10k</span> configure</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="useful-tools" class="level2" data-number="1.4">
@@ -294,54 +316,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://zaiste.net/posts/shell-commands-rust/">Useful tools written in rust</a></li>
 </ul>
 <p>For some of these tools, rust needs to be <a href="https://www.rust-lang.org/tools/install">installed</a>.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">--proto</span> <span class="st">'=https'</span> <span class="at">--tlsv1.2</span> <span class="at">-sSf</span> https://sh.rustup.rs <span class="kw">|</span> <span class="fu">sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">--proto</span> <span class="st">'=https'</span> <span class="at">--tlsv1.2</span> <span class="at">-sSf</span> https://sh.rustup.rs <span class="kw">|</span> <span class="fu">sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="tldr" class="level3" data-number="1.4.1">
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="tldr"><span class="header-section-number">1.4.1</span> tldr</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install tldr</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tldr</span> <span class="at">--update</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install tldr</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tldr</span> <span class="at">--update</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exa" class="level3" data-number="1.4.2">
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="exa"><span class="header-section-number">1.4.2</span> exa</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install exa </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install exa </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="bat" class="level3" data-number="1.4.3">
 <h3 data-number="1.4.3" class="anchored" data-anchor-id="bat"><span class="header-section-number">1.4.3</span> bat</h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install bat </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install bat </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="creating-alias" class="level3" data-number="1.4.4">
 <h3 data-number="1.4.4" class="anchored" data-anchor-id="creating-alias"><span class="header-section-number">1.4.4</span> Creating alias</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.zshrc </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.zshrc </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Add these alias to the file.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ls=<span class="st">'exa --icons'</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> l=<span class="st">'exa'</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> la=<span class="st">'exa -a'</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ll=<span class="st">'exa -lahF --icons'</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> cat=bat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ls=<span class="st">'exa --icons'</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> l=<span class="st">'exa'</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> la=<span class="st">'exa -a'</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ll=<span class="st">'exa -lahF --icons'</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> cat=bat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="fzf" class="level3" data-number="1.4.5">
 <h3 data-number="1.4.5" class="anchored" data-anchor-id="fzf"><span class="header-section-number">1.4.5</span> fzf</h3>
 <p><a href="https://github.com/junegunn/fzf">fzf</a> is a command-line fuzzy finder.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--depth</span> 1 https://github.com/junegunn/fzf.git ~/.fzf</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~/.fzf/install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">--depth</span> 1 https://github.com/junegunn/fzf.git ~/.fzf</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">~/.fzf/install</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then, set <code>plugins=(fzf)</code> in <code>~/.zshrc</code>.</p>
 </section>
 <section id="the-silver-searcher" class="level3" data-number="1.4.6">
 <h3 data-number="1.4.6" class="anchored" data-anchor-id="the-silver-searcher"><span class="header-section-number">1.4.6</span> The Silver Searcher</h3>
 <p><a href="https://github.com/ggreer/the_silver_searcher">The Silver Searcher</a></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install silversearcher-ag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install silversearcher-ag</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="ripgrep" class="level3" data-number="1.4.7">
 <h3 data-number="1.4.7" class="anchored" data-anchor-id="ripgrep"><span class="header-section-number">1.4.7</span> ripgrep</h3>
 <p>https://github.com/BurntSushi/ripgrep</p>
 <p>Easier to use to me.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rg</span> read.csv <span class="at">-g</span> <span class="st">"*.R"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rg</span> read.csv <span class="at">-g</span> <span class="st">"*.R"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="gdu---go-diskusage" class="level3" data-number="1.4.8">
 <h3 data-number="1.4.8" class="anchored" data-anchor-id="gdu---go-diskusage"><span class="header-section-number">1.4.8</span> gdu - go DiskUsage()</h3>
 <p>Pretty fast disk usage analyzer written in Go: https://github.com/dundee/gdu</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">add-apt-repository</span> ppa:daniel-milde/gdu</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> update</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> install gdu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">add-apt-repository</span> ppa:daniel-milde/gdu</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> update</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-get</span> install gdu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="nala" class="level3" data-number="1.4.9">
 <h3 data-number="1.4.9" class="anchored" data-anchor-id="nala"><span class="header-section-number">1.4.9</span> nala</h3>
@@ -357,6 +379,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>https://github.com/aristocratos/btop</li>
 </ul>
+</section>
+<section id="broot" class="level3" data-number="1.4.11">
+<h3 data-number="1.4.11" class="anchored" data-anchor-id="broot"><span class="header-section-number">1.4.11</span> Broot</h3>
+<ul>
+<li>https://github.com/Canop/broot</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install <span class="at">--locked</span> broot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

@@ -6,6 +6,24 @@ Setting up my terminal environment. The dimensions of my terminal is 150 columns
 
 I am using [kitty](https://sw.kovidgoyal.net/kitty/) as my terminal emulator. See the [dotfiles](dotfiles.qmd)
 
+### Kitty themes
+
+- https://github.com/kovidgoyal/kitty-themes
+
+Type:
+
+```bash
+kitty +kitten themes
+```
+
+### Remote ssh
+
+```bash
+kitty +kitten ssh filoche@beluga.computecanada.ca
+edit-in-kitt filename
+```
+- https://sw.kovidgoyal.net/kitty/shell-integration/#shell-integration-over-ssh
+
 ## Fonts
 
 ### JetBrains font
@@ -138,4 +156,12 @@ apt-get install gdu
 ### btop
 
 - https://github.com/aristocratos/btop
+
+### Broot
+
+- https://github.com/Canop/broot
+
+```bash
+cargo install --locked broot
+```
 

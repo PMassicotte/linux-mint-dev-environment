@@ -11,7 +11,7 @@
     "href": "terminal.html#kitty-terminal-emulator",
     "title": "1  Terminal",
     "section": "1.1 kitty terminal emulator",
-    "text": "1.1 kitty terminal emulator\nI am using kitty as my terminal emulator. See the dotfiles"
+    "text": "1.1 kitty terminal emulator\nI am using kitty as my terminal emulator. See the dotfiles\n\n1.1.1 Kitty themes\n\nhttps://github.com/kovidgoyal/kitty-themes\n\nType:\nkitty +kitten themes\n\n\n1.1.2 Remote ssh\nkitty +kitten ssh filoche@beluga.computecanada.ca\nedit-in-kitt filename\n\nhttps://sw.kovidgoyal.net/kitty/shell-integration/#shell-integration-over-ssh"
   },
   {
     "objectID": "terminal.html#fonts",
@@ -32,7 +32,7 @@
     "href": "terminal.html#useful-tools",
     "title": "1  Terminal",
     "section": "1.4 Useful tools",
-    "text": "1.4 Useful tools\n\nUseful tools written in rust\n\nFor some of these tools, rust needs to be installed.\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\n\n1.4.1 tldr\nsudo apt install tldr\ntldr --update\n\n\n1.4.2 exa\ncargo install exa \n\n\n1.4.3 bat\ncargo install bat \n\n\n1.4.4 Creating alias\nnano ~/.zshrc \nAdd these alias to the file.\nalias ls='exa --icons'\nalias l='exa'\nalias la='exa -a'\nalias ll='exa -lahF --icons'\nalias cat=bat\n\n\n1.4.5 fzf\nfzf is a command-line fuzzy finder.\ngit clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf\n~/.fzf/install\nThen, set plugins=(fzf) in ~/.zshrc.\n\n\n1.4.6 The Silver Searcher\nThe Silver Searcher\nsudo apt-get install silversearcher-ag\n\n\n1.4.7 ripgrep\nhttps://github.com/BurntSushi/ripgrep\nEasier to use to me.\nrg read.csv -g \"*.R\"\n\n\n1.4.8 gdu - go DiskUsage()\nPretty fast disk usage analyzer written in Go: https://github.com/dundee/gdu\nadd-apt-repository ppa:daniel-milde/gdu\napt-get update\napt-get install gdu\n\n\n1.4.9 nala\n\nNala is a front-end for libapt-pkg. Specifically we interface using the python-apt api.\n\n\nInstallation\n\n\n\n1.4.10 btop\n\nhttps://github.com/aristocratos/btop"
+    "text": "1.4 Useful tools\n\nUseful tools written in rust\n\nFor some of these tools, rust needs to be installed.\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\n\n1.4.1 tldr\nsudo apt install tldr\ntldr --update\n\n\n1.4.2 exa\ncargo install exa \n\n\n1.4.3 bat\ncargo install bat \n\n\n1.4.4 Creating alias\nnano ~/.zshrc \nAdd these alias to the file.\nalias ls='exa --icons'\nalias l='exa'\nalias la='exa -a'\nalias ll='exa -lahF --icons'\nalias cat=bat\n\n\n1.4.5 fzf\nfzf is a command-line fuzzy finder.\ngit clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf\n~/.fzf/install\nThen, set plugins=(fzf) in ~/.zshrc.\n\n\n1.4.6 The Silver Searcher\nThe Silver Searcher\nsudo apt-get install silversearcher-ag\n\n\n1.4.7 ripgrep\nhttps://github.com/BurntSushi/ripgrep\nEasier to use to me.\nrg read.csv -g \"*.R\"\n\n\n1.4.8 gdu - go DiskUsage()\nPretty fast disk usage analyzer written in Go: https://github.com/dundee/gdu\nadd-apt-repository ppa:daniel-milde/gdu\napt-get update\napt-get install gdu\n\n\n1.4.9 nala\n\nNala is a front-end for libapt-pkg. Specifically we interface using the python-apt api.\n\n\nInstallation\n\n\n\n1.4.10 btop\n\nhttps://github.com/aristocratos/btop\n\n\n\n1.4.11 Broot\n\nhttps://github.com/Canop/broot\n\ncargo install --locked broot"
   },
   {
     "objectID": "neovim.html#install-neovim",

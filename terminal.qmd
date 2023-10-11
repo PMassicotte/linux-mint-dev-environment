@@ -74,6 +74,14 @@ For some of these tools, rust needs to be [installed](https://www.rust-lang.org/
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+To update installed cargo packages:
+
+```bash
+cargo install cargo-update
+cargo install-update -l
+cargo install-update -a
+```
+
 ### tldr
 
 ```bash

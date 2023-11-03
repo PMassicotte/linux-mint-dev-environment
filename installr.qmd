@@ -147,14 +147,9 @@ tar -zxvf R-4.0.0.tar.gz
 make -j24
 make pdf
 make info
-make install
-make install-info
-make install-pdf
-
-# Or in 1 liner
-make -j24 ; make pdf ; make info ; make install ; make install-info ; make install-pdf
-
 sudo make install
+sudo make install-info
+sudo make install-pdf
 ```
 
 ## Minimal system dependencies for R packages installation on Ubuntu

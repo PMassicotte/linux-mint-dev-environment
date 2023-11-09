@@ -211,8 +211,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#kitty-terminal-emulator" id="toc-kitty-terminal-emulator" class="nav-link active" data-scroll-target="#kitty-terminal-emulator"><span class="header-section-number">1.1</span> kitty terminal emulator</a>
   <ul class="collapse">
-  <li><a href="#kitty-themes" id="toc-kitty-themes" class="nav-link" data-scroll-target="#kitty-themes"><span class="header-section-number">1.1.1</span> Kitty themes</a></li>
-  <li><a href="#remote-ssh" id="toc-remote-ssh" class="nav-link" data-scroll-target="#remote-ssh"><span class="header-section-number">1.1.2</span> Remote ssh</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation"><span class="header-section-number">1.1.1</span> Installation</a></li>
+  <li><a href="#kitty-themes" id="toc-kitty-themes" class="nav-link" data-scroll-target="#kitty-themes"><span class="header-section-number">1.1.2</span> Kitty themes</a></li>
+  <li><a href="#remote-ssh" id="toc-remote-ssh" class="nav-link" data-scroll-target="#remote-ssh"><span class="header-section-number">1.1.3</span> Remote ssh</a></li>
   </ul></li>
   <li><a href="#fonts" id="toc-fonts" class="nav-link" data-scroll-target="#fonts"><span class="header-section-number">1.2</span> Fonts</a>
   <ul class="collapse">
@@ -265,16 +266,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="kitty-terminal-emulator" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="kitty-terminal-emulator"><span class="header-section-number">1.1</span> kitty terminal emulator</h2>
 <p>I am using <a href="https://sw.kovidgoyal.net/kitty/">kitty</a> as my terminal emulator. See the <a href="./dotfiles.html">dotfiles</a></p>
-<section id="kitty-themes" class="level3" data-number="1.1.1">
-<h3 data-number="1.1.1" class="anchored" data-anchor-id="kitty-themes"><span class="header-section-number">1.1.1</span> Kitty themes</h3>
+<section id="installation" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">1.1.1</span> Installation</h3>
+<ul>
+<li>https://www.linuxfordevices.com/tutorials/ubuntu/install-kitty</li>
+</ul>
+<p>Do not forget to recreate the symbolic link to the kitty binary after an update.</p>
+</section>
+<section id="kitty-themes" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="kitty-themes"><span class="header-section-number">1.1.2</span> Kitty themes</h3>
 <ul>
 <li>https://github.com/kovidgoyal/kitty-themes</li>
 </ul>
 <p>Type:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kitty</span> +kitten themes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="remote-ssh" class="level3" data-number="1.1.2">
-<h3 data-number="1.1.2" class="anchored" data-anchor-id="remote-ssh"><span class="header-section-number">1.1.2</span> Remote ssh</h3>
+<section id="remote-ssh" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="remote-ssh"><span class="header-section-number">1.1.3</span> Remote ssh</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kitty</span> +kitten ssh filoche@beluga.computecanada.ca</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">edit-in-kitt</span> filename</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>

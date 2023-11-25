@@ -77,11 +77,18 @@
     "text": "3.2 GDAL\nDownload the latest version of gdal. Then configure and install:\ntar xvf gdal-3.6.2.tar.gz\ncd gdal-3.6.2\nmkdir build\ncd build\n\ncmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release\ncmake --build .\ncmake --build . --target install\nIt is also possible to install it like this (on Linux Mint for example):\ncd gdal-x.x.x\nmkdir build\ncd build\n\ncmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr\nmake -j24\nsudo make install"
   },
   {
+    "objectID": "gis.html#geos",
+    "href": "gis.html#geos",
+    "title": "3  QGIS and gdal",
+    "section": "3.3 GEOS",
+    "text": "3.3 GEOS\nSee https://libgeos.org/usage/download/"
+  },
+  {
     "objectID": "gis.html#see-also",
     "href": "gis.html#see-also",
     "title": "3  QGIS and gdal",
-    "section": "3.3 See also",
-    "text": "3.3 See also\n\nInstallation of R 4.2 on Ubuntu 22.04.1 LTS and tips for spatial packages"
+    "section": "3.4 See also",
+    "text": "3.4 See also\n\nInstallation of R 4.2 on Ubuntu 22.04.1 LTS and tips for spatial packages"
   },
   {
     "objectID": "installr.html#installing-the-latest-r-version",

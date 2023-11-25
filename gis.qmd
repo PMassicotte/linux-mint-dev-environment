@@ -68,6 +68,10 @@ make -j24
 sudo make install
 ```
 
+## GEOS
+
+See https://libgeos.org/usage/download/
+
 ## See also
 
 - [Installation of R 4.2 on Ubuntu 22.04.1 LTS and tips for spatial packages](https://rtask.thinkr.fr/installation-of-r-4-2-on-ubuntu-22-04-lts-and-tips-for-spatial-packages/)

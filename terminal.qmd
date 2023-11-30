@@ -28,6 +28,7 @@ kitty +kitten themes
 kitty +kitten ssh filoche@beluga.computecanada.ca
 edit-in-kitt filename
 ```
+- https://sw.kovidgoyal.net/kitty/kittens/remote_file/
 - https://sw.kovidgoyal.net/kitty/shell-integration/#shell-integration-over-ssh
 
 ## Fonts

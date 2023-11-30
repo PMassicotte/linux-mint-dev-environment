@@ -11,7 +11,7 @@
     "href": "terminal.html#kitty-terminal-emulator",
     "title": "1  Terminal",
     "section": "1.1 kitty terminal emulator",
-    "text": "1.1 kitty terminal emulator\nI am using kitty as my terminal emulator. See the dotfiles\n\n1.1.1 Installation\n\nhttps://www.linuxfordevices.com/tutorials/ubuntu/install-kitty\n\nDo not forget to recreate the symbolic link to the kitty binary after an update.\n\n\n1.1.2 Kitty themes\n\nhttps://github.com/kovidgoyal/kitty-themes\n\nType:\nkitty +kitten themes\n\n\n1.1.3 Remote ssh\nkitty +kitten ssh filoche@beluga.computecanada.ca\nedit-in-kitt filename\n\nhttps://sw.kovidgoyal.net/kitty/shell-integration/#shell-integration-over-ssh"
+    "text": "1.1 kitty terminal emulator\nI am using kitty as my terminal emulator. See the dotfiles\n\n1.1.1 Installation\n\nhttps://www.linuxfordevices.com/tutorials/ubuntu/install-kitty\n\nDo not forget to recreate the symbolic link to the kitty binary after an update.\n\n\n1.1.2 Kitty themes\n\nhttps://github.com/kovidgoyal/kitty-themes\n\nType:\nkitty +kitten themes\n\n\n1.1.3 Remote ssh\nkitty +kitten ssh filoche@beluga.computecanada.ca\nedit-in-kitt filename\n\nhttps://sw.kovidgoyal.net/kitty/kittens/remote_file/\nhttps://sw.kovidgoyal.net/kitty/shell-integration/#shell-integration-over-ssh"
   },
   {
     "objectID": "terminal.html#fonts",

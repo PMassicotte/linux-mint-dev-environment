@@ -28,8 +28,23 @@ kitty +kitten themes
 kitty +kitten ssh filoche@beluga.computecanada.ca
 edit-in-kitt filename
 ```
+
 - https://sw.kovidgoyal.net/kitty/kittens/remote_file/
 - https://sw.kovidgoyal.net/kitty/shell-integration/#shell-integration-over-ssh
+
+To download a file from a remote server:
+
+```bash
+<local computer>  $ kitten ssh my-remote-computer
+<remote computer> $ kitten transfer some-file /path/on/local/computer
+```
+
+Example:
+
+```bash
+kitty +kitten ssh filoche@cedar.computecanada.ca
+kitten transfer simulation_results.tar.bz2 ~/Desktop/
+```
 
 ## Fonts
 
@@ -40,6 +55,7 @@ For my daily to go programming font.
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)"
 ```
+
 ### Meslo Nerd font (for Powerlevl10k)
 
 Got on [this page](https://github.com/romkatv/powerlevel10k/blob/master/font.md) and download and install the `.ttf` files.
@@ -65,6 +81,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
+
 Then, set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc` and configure the theme as follow:
 
 ```bash
@@ -99,19 +116,19 @@ tldr --update
 ### exa
 
 ```bash
-cargo install exa 
+cargo install exa
 ```
 
 ### bat
 
 ```bash
-cargo install bat 
+cargo install bat
 ```
 
 ### Creating alias
 
 ```bash
-nano ~/.zshrc 
+nano ~/.zshrc
 ```
 
 Add these alias to the file.
@@ -152,6 +169,7 @@ Easier to use to me.
 ```bash
 rg read.csv -g "*.R"
 ```
+
 ### gdu - go DiskUsage()
 
 Pretty fast disk usage analyzer written in Go: https://github.com/dundee/gdu
@@ -179,4 +197,3 @@ apt-get install gdu
 ```bash
 cargo install --locked broot
 ```
-

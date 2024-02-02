@@ -197,3 +197,7 @@ apt-get install gdu
 ```bash
 cargo install --locked broot
 ```
+
+### lazygit
+
+- https://github.com/jesseduffield/lazygit/tree/master

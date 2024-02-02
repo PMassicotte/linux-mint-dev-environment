@@ -4,258 +4,439 @@
     "href": "index.html",
     "title": "Setting up my working environment",
     "section": "",
-    "text": "Preface\nThese are simply a list of notes for my self to setup my development environment on Ubuntu derivative (like Linux Mint) so I do not have to spend much time when I format or setup a new computer."
+    "text": "Preface\nThese are simply a list of notes for my self to setup my development environment on Ubuntu derivative (like Linux Mint) so I do not have to spend much time when I format or setup a new computer.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "terminal.html",
+    "href": "terminal.html",
+    "title": "1  Terminal",
+    "section": "",
+    "text": "1.1 kitty terminal emulator\nI am using kitty as my terminal emulator. See the dotfiles",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Terminal</span>"
+    ]
   },
   {
     "objectID": "terminal.html#kitty-terminal-emulator",
     "href": "terminal.html#kitty-terminal-emulator",
     "title": "1  Terminal",
-    "section": "1.1 kitty terminal emulator",
-    "text": "1.1 kitty terminal emulator\nI am using kitty as my terminal emulator. See the dotfiles\n\n1.1.1 Installation\n\nhttps://www.linuxfordevices.com/tutorials/ubuntu/install-kitty\n\nDo not forget to recreate the symbolic link to the kitty binary after an update.\n\n\n1.1.2 Kitty themes\n\nhttps://github.com/kovidgoyal/kitty-themes\n\nType:\nkitty +kitten themes\n\n\n1.1.3 Remote ssh\nkitty +kitten ssh filoche@beluga.computecanada.ca\nedit-in-kitt filename\n\nhttps://sw.kovidgoyal.net/kitty/kittens/remote_file/\nhttps://sw.kovidgoyal.net/kitty/shell-integration/#shell-integration-over-ssh\n\nTo download a file from a remote server:\n&lt;local computer&gt;  $ kitten ssh my-remote-computer\n&lt;remote computer&gt; $ kitten transfer some-file /path/on/local/computer\nExample:\nkitty +kitten ssh filoche@cedar.computecanada.ca\nkitten transfer simulation_results.tar.bz2 ~/Desktop/"
+    "section": "",
+    "text": "1.1.1 Installation\n\nhttps://www.linuxfordevices.com/tutorials/ubuntu/install-kitty\n\nDo not forget to recreate the symbolic link to the kitty binary after an update.\n\n\n1.1.2 Kitty themes\n\nhttps://github.com/kovidgoyal/kitty-themes\n\nType:\nkitty +kitten themes\n\n\n1.1.3 Remote ssh\nkitty +kitten ssh filoche@beluga.computecanada.ca\nedit-in-kitt filename\n\nhttps://sw.kovidgoyal.net/kitty/kittens/remote_file/\nhttps://sw.kovidgoyal.net/kitty/shell-integration/#shell-integration-over-ssh\n\nTo download a file from a remote server:\n&lt;local computer&gt;  $ kitten ssh my-remote-computer\n&lt;remote computer&gt; $ kitten transfer some-file /path/on/local/computer\nExample:\nkitty +kitten ssh filoche@cedar.computecanada.ca\nkitten transfer simulation_results.tar.bz2 ~/Desktop/",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Terminal</span>"
+    ]
   },
   {
     "objectID": "terminal.html#fonts",
     "href": "terminal.html#fonts",
     "title": "1  Terminal",
     "section": "1.2 Fonts",
-    "text": "1.2 Fonts\n\n1.2.1 JetBrains font\nFor my daily to go programming font.\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)\"\n\n\n1.2.2 Meslo Nerd font (for Powerlevl10k)\nGot on this page and download and install the .ttf files."
+    "text": "1.2 Fonts\n\n1.2.1 JetBrains font\nFor my daily to go programming font.\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/JetBrains/JetBrainsMono/master/install_manual.sh)\"\n\n\n1.2.2 Meslo Nerd font (for Powerlevl10k)\nGot on this page and download and install the .ttf files.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Terminal</span>"
+    ]
   },
   {
     "objectID": "terminal.html#zsh",
     "href": "terminal.html#zsh",
     "title": "1  Terminal",
     "section": "1.3 zsh",
-    "text": "1.3 zsh\nsudo apt install zsh\n\n1.3.1 oh-my-zsh\nInstall oh-my-zsh\nsh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"\n\n\n1.3.2 power10k theme\nPowerlevel10k theme\ngit clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k\nThen, set ZSH_THEME=\"powerlevel10k/powerlevel10k\" in ~/.zshrc and configure the theme as follow:\np10k configure"
+    "text": "1.3 zsh\nsudo apt install zsh\n\n1.3.1 oh-my-zsh\nInstall oh-my-zsh\nsh -c \"$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"\n\n\n1.3.2 power10k theme\nPowerlevel10k theme\ngit clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k\nThen, set ZSH_THEME=\"powerlevel10k/powerlevel10k\" in ~/.zshrc and configure the theme as follow:\np10k configure",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Terminal</span>"
+    ]
   },
   {
     "objectID": "terminal.html#useful-tools",
     "href": "terminal.html#useful-tools",
     "title": "1  Terminal",
     "section": "1.4 Useful tools",
-    "text": "1.4 Useful tools\n\nUseful tools written in rust\n\nFor some of these tools, rust needs to be installed.\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\nTo update installed cargo packages:\ncargo install cargo-update\ncargo install-update -l\ncargo install-update -a\n\n1.4.1 tldr\nsudo apt install tldr\ntldr --update\n\n\n1.4.2 exa\ncargo install exa\n\n\n1.4.3 bat\ncargo install bat\n\n\n1.4.4 Creating alias\nnano ~/.zshrc\nAdd these alias to the file.\nalias ls='exa --icons'\nalias l='exa'\nalias la='exa -a'\nalias ll='exa -lahF --icons'\nalias cat=bat\n\n\n1.4.5 fzf\nfzf is a command-line fuzzy finder.\ngit clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf\n~/.fzf/install\nThen, set plugins=(fzf) in ~/.zshrc.\n\n\n1.4.6 The Silver Searcher\nThe Silver Searcher\nsudo apt-get install silversearcher-ag\n\n\n1.4.7 ripgrep\nhttps://github.com/BurntSushi/ripgrep\nEasier to use to me.\nrg read.csv -g \"*.R\"\n\n\n1.4.8 gdu - go DiskUsage()\nPretty fast disk usage analyzer written in Go: https://github.com/dundee/gdu\nadd-apt-repository ppa:daniel-milde/gdu\napt-get update\napt-get install gdu\n\n\n1.4.9 nala\n\nNala is a front-end for libapt-pkg. Specifically we interface using the python-apt api.\n\n\nInstallation\n\n\n\n1.4.10 btop\n\nhttps://github.com/aristocratos/btop\n\n\n\n1.4.11 Broot\n\nhttps://github.com/Canop/broot\n\ncargo install --locked broot"
+    "text": "1.4 Useful tools\n\nUseful tools written in rust\n\nFor some of these tools, rust needs to be installed.\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh\nTo update installed cargo packages:\ncargo install cargo-update\ncargo install-update -l\ncargo install-update -a\n\n1.4.1 tldr\nsudo apt install tldr\ntldr --update\n\n\n1.4.2 exa\ncargo install exa\n\n\n1.4.3 bat\ncargo install bat\n\n\n1.4.4 Creating alias\nnano ~/.zshrc\nAdd these alias to the file.\nalias ls='exa --icons'\nalias l='exa'\nalias la='exa -a'\nalias ll='exa -lahF --icons'\nalias cat=bat\n\n\n1.4.5 fzf\nfzf is a command-line fuzzy finder.\ngit clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf\n~/.fzf/install\nThen, set plugins=(fzf) in ~/.zshrc.\n\n\n1.4.6 The Silver Searcher\nThe Silver Searcher\nsudo apt-get install silversearcher-ag\n\n\n1.4.7 ripgrep\nhttps://github.com/BurntSushi/ripgrep\nEasier to use to me.\nrg read.csv -g \"*.R\"\n\n\n1.4.8 gdu - go DiskUsage()\nPretty fast disk usage analyzer written in Go: https://github.com/dundee/gdu\nadd-apt-repository ppa:daniel-milde/gdu\napt-get update\napt-get install gdu\n\n\n1.4.9 nala\n\nNala is a front-end for libapt-pkg. Specifically we interface using the python-apt api.\n\n\nInstallation\n\n\n\n1.4.10 btop\n\nhttps://github.com/aristocratos/btop\n\n\n\n1.4.11 Broot\n\nhttps://github.com/Canop/broot\n\ncargo install --locked broot\n\n\n1.4.12 lazygit\n\nhttps://github.com/jesseduffield/lazygit/tree/master",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Terminal</span>"
+    ]
+  },
+  {
+    "objectID": "neovim.html",
+    "href": "neovim.html",
+    "title": "2  Neovim",
+    "section": "",
+    "text": "2.1 Install Neovim",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Neovim</span>"
+    ]
   },
   {
     "objectID": "neovim.html#install-neovim",
     "href": "neovim.html#install-neovim",
     "title": "2  Neovim",
-    "section": "2.1 Install Neovim",
-    "text": "2.1 Install Neovim\nsudo add-apt-repository ppa:neovim-ppa/stable \nsudo apt update\n\nsudo apt install neovim"
+    "section": "",
+    "text": "sudo add-apt-repository ppa:neovim-ppa/stable \nsudo apt update\n\nsudo apt install neovim",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Neovim</span>"
+    ]
   },
   {
     "objectID": "neovim.html#install-packer",
     "href": "neovim.html#install-packer",
     "title": "2  Neovim",
     "section": "2.2 Install packer",
-    "text": "2.2 Install packer\nPacker plugin/package management for Neovim\ngit clone --depth 1 https://github.com/wbthomason/packer.nvim\\\n ~/.local/share/nvim/site/pack/packer/start/packer.nvim\nThen go in ~/.config and clone the configuration files:\ngit clone git@github.com:PMassicotte/nvim.git\nFrom neovim, update the plugins:\n:PackerSync\n:PackerUpdate"
+    "text": "2.2 Install packer\nPacker plugin/package management for Neovim\ngit clone --depth 1 https://github.com/wbthomason/packer.nvim\\\n ~/.local/share/nvim/site/pack/packer/start/packer.nvim\nThen go in ~/.config and clone the configuration files:\ngit clone git@github.com:PMassicotte/nvim.git\nFrom neovim, update the plugins:\n:PackerSync\n:PackerUpdate",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Neovim</span>"
+    ]
   },
   {
     "objectID": "neovim.html#packaged-neovim",
     "href": "neovim.html#packaged-neovim",
     "title": "2  Neovim",
     "section": "2.3 Packaged neovim",
-    "text": "2.3 Packaged neovim\nThere are some pre-configured neovim environments:\n\nhttps://www.lunarvim.org/\nhttps://astronvim.github.io/"
+    "text": "2.3 Packaged neovim\nThere are some pre-configured neovim environments:\n\nhttps://www.lunarvim.org/\nhttps://astronvim.github.io/",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Neovim</span>"
+    ]
   },
   {
     "objectID": "neovim.html#how-to-configure-r-for-neovim",
     "href": "neovim.html#how-to-configure-r-for-neovim",
     "title": "2  Neovim",
     "section": "2.4 How to configure R for neovim",
-    "text": "2.4 How to configure R for neovim\n\nSee here\nMy config\n\nhttps://github.com/jalvesaq/cmp-nvim-r\n\nSince cmp-nvim-r and the R package languageserver provide completions for the same code, and completions from the languageserver might be the first ones to be displayed by nvim-cmp, you may want to put this in your ~/.Rprofile:\n\n\u001b# Disable completion from the language &lt;!-- server --&gt;\noptions(\n  languageserver.server_capabilities = \n    list(\n      completionProvider = FALSE, \n      completionItemResolve = FALSE\n    )\n)"
+    "text": "2.4 How to configure R for neovim\n\nSee here\nMy config\n\nhttps://github.com/jalvesaq/cmp-nvim-r\n\nSince cmp-nvim-r and the R package languageserver provide completions for the same code, and completions from the languageserver might be the first ones to be displayed by nvim-cmp, you may want to put this in your ~/.Rprofile:\n\n\u001b# Disable completion from the language &lt;!-- server --&gt;\noptions(\n  languageserver.server_capabilities = \n    list(\n      completionProvider = FALSE, \n      completionItemResolve = FALSE\n    )\n)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Neovim</span>"
+    ]
+  },
+  {
+    "objectID": "gis.html",
+    "href": "gis.html",
+    "title": "3  QGIS and gdal",
+    "section": "",
+    "text": "3.1 QGIS\nLinux Mint is a bit behind for all the GIS stuff. I had problems (ex.: open cloud optimized geotiff on internet) with a old version of gdal that comes with Mint.\nTo update to a newer version of gdal, install this PPA:\nThen, the latest version of QGIS:\nNot tested: use focal, because $(lsb_release -c -s) returns una as codename.\nAdd the following to /etc/apt/sources.list.d/qgis.sources (replace Suites: kinetic based on your distro):",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and gdal</span>"
+    ]
   },
   {
     "objectID": "gis.html#qgis",
     "href": "gis.html#qgis",
     "title": "3  QGIS and gdal",
-    "section": "3.1 QGIS",
-    "text": "3.1 QGIS\nLinux Mint is a bit behind for all the GIS stuff. I had problems (ex.: open cloud optimized geotiff on internet) with a old version of gdal that comes with Mint.\nTo update to a newer version of gdal, install this PPA:\nsudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable\nsudo apt update\nThen, the latest version of QGIS:\nwget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import\n\nsudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg\n\nsudo add-apt-repository \"deb https://qgis.org/ubuntu $(lsb_release -c -s) main\"\n\nsudo apt update\n\nsudo apt install qgis qgis-plugin-grass\nNot tested: use focal, because $(lsb_release -c -s) returns una as codename.\nsudo add-apt-repository \"deb https://qgis.org/ubuntu focal main\"\nAdd the following to /etc/apt/sources.list.d/qgis.sources (replace Suites: kinetic based on your distro):\nTypes: deb deb-src\nURIs: https://qgis.org/debian\nSuites: kinetic\nArchitectures: amd64\nComponents: main\nSigned-By: /etc/apt/keyrings/qgis-archive-keyring.gpg"
+    "section": "",
+    "text": "sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable\nsudo apt update\n\nwget -qO - https://qgis.org/downloads/qgis-2021.gpg.key | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/qgis-archive.gpg --import\n\nsudo chmod a+r /etc/apt/trusted.gpg.d/qgis-archive.gpg\n\nsudo add-apt-repository \"deb https://qgis.org/ubuntu $(lsb_release -c -s) main\"\n\nsudo apt update\n\nsudo apt install qgis qgis-plugin-grass\n\nsudo add-apt-repository \"deb https://qgis.org/ubuntu focal main\"\n\nTypes: deb deb-src\nURIs: https://qgis.org/debian\nSuites: kinetic\nArchitectures: amd64\nComponents: main\nSigned-By: /etc/apt/keyrings/qgis-archive-keyring.gpg",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and gdal</span>"
+    ]
   },
   {
     "objectID": "gis.html#gdal",
     "href": "gis.html#gdal",
     "title": "3  QGIS and gdal",
     "section": "3.2 GDAL",
-    "text": "3.2 GDAL\nDownload the latest version of gdal. Then configure and install:\ntar xvf gdal-3.6.2.tar.gz\ncd gdal-3.6.2\nmkdir build\ncd build\n\ncmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release\ncmake --build .\ncmake --build . --target install\nIt is also possible to install it like this (on Linux Mint for example):\ncd gdal-x.x.x\nmkdir build\ncd build\n\ncmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr\nmake -j24\nsudo make install"
+    "text": "3.2 GDAL\nDownload the latest version of gdal. Then configure and install:\ntar xvf gdal-3.6.2.tar.gz\ncd gdal-3.6.2\nmkdir build\ncd build\n\ncmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release\ncmake --build .\ncmake --build . --target install\nIt is also possible to install it like this (on Linux Mint for example):\ncd gdal-x.x.x\nmkdir build\ncd build\n\ncmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr\nmake -j24\nsudo make install",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and gdal</span>"
+    ]
   },
   {
     "objectID": "gis.html#geos",
     "href": "gis.html#geos",
     "title": "3  QGIS and gdal",
     "section": "3.3 GEOS",
-    "text": "3.3 GEOS\nSee https://libgeos.org/usage/download/"
+    "text": "3.3 GEOS\nSee https://libgeos.org/usage/download/",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and gdal</span>"
+    ]
   },
   {
     "objectID": "gis.html#see-also",
     "href": "gis.html#see-also",
     "title": "3  QGIS and gdal",
     "section": "3.4 See also",
-    "text": "3.4 See also\n\nInstallation of R 4.2 on Ubuntu 22.04.1 LTS and tips for spatial packages"
+    "text": "3.4 See also\n\nInstallation of R 4.2 on Ubuntu 22.04.1 LTS and tips for spatial packages",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and gdal</span>"
+    ]
+  },
+  {
+    "objectID": "installr.html",
+    "href": "installr.html",
+    "title": "4  Installing R",
+    "section": "",
+    "text": "4.1 Installing the latest R version\nThese instructions are from how to set up R on Ubuntu.\nFirst, open sources.list:\nThen add this:\nFinally, install R:",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
+    ]
   },
   {
     "objectID": "installr.html#installing-the-latest-r-version",
     "href": "installr.html#installing-the-latest-r-version",
     "title": "4  Installing R",
-    "section": "4.1 Installing the latest R version",
-    "text": "4.1 Installing the latest R version\nThese instructions are from how to set up R on Ubuntu.\nFirst, open sources.list:\nsudo nano /etc/apt/sources.list\nThen add this:\ndeb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev\nFinally, install R:\nsudo apt update\nsudo apt install r-base"
+    "section": "",
+    "text": "sudo nano /etc/apt/sources.list\n\ndeb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/\nsudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9\nsudo apt install libcurl4-openssl-dev libssl-dev libxml2-dev libfontconfig1-dev libcairo2-dev\n\nsudo apt update\nsudo apt install r-base",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
+    ]
   },
   {
     "objectID": "installr.html#installing-fonts",
     "href": "installr.html#installing-fonts",
     "title": "4  Installing R",
     "section": "4.2 Installing fonts",
-    "text": "4.2 Installing fonts\nhttps://stackoverflow.com/questions/61204259/how-can-i-resolve-the-no-font-name-issue-when-importing-fonts-into-r-using-ext"
+    "text": "4.2 Installing fonts\nhttps://stackoverflow.com/questions/61204259/how-can-i-resolve-the-no-font-name-issue-when-importing-fonts-into-r-using-ext",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
+    ]
   },
   {
     "objectID": "installr.html#installing-r-binaries-for-ubuntu",
     "href": "installr.html#installing-r-binaries-for-ubuntu",
     "title": "4  Installing R",
     "section": "4.3 Installing R binaries for Ubuntu",
-    "text": "4.3 Installing R binaries for Ubuntu\n\n4.3.1 RSPM\nFirst, install rspm:\nremotes::install_github(\"Enchufa2/rspm\")\nThen, edit .Rprofile:\nusethis::edit_r_profile()\nAnd add this:\nrspm::enable() # wrap it in suppressMessages() to avoid the initial message\n\n\n4.3.2 BSPM\nbspm::enable()\n\ninstall.packages(\"tidyverse\")"
+    "text": "4.3 Installing R binaries for Ubuntu\n\n4.3.1 RSPM\nFirst, install rspm:\nremotes::install_github(\"Enchufa2/rspm\")\nThen, edit .Rprofile:\nusethis::edit_r_profile()\nAnd add this:\nrspm::enable() # wrap it in suppressMessages() to avoid the initial message\n\n\n4.3.2 BSPM\nbspm::enable()\n\ninstall.packages(\"tidyverse\")",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
+    ]
   },
   {
     "objectID": "installr.html#using-rig",
     "href": "installr.html#using-rig",
     "title": "4  Installing R",
     "section": "4.4 Using rig",
-    "text": "4.4 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\n\n4.4.1 On Linux Mint\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\n\n\n4.4.2 On Ubuntu\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/local\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio &lt;renv-lockfile&gt;"
+    "text": "4.4 Using rig\nrig a tool to manage different version of R installation on your computer.\nTo install it (note that the destination path is not the same as the one shown on the rig website because R was installed in /usr/ and not /usr/local/):\n\n4.4.1 On Linux Mint\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/\n\n\n4.4.2 On Ubuntu\ncurl -Ls curl -Ls https://github.com/r-lib/rig/releases/download/v0.5.0/rig-linux-0.5.0.tar.gz | sudo tar xz -C /usr/local\nOnce installed, one can install different versions of R like so:\nrig add 4.1.0\nrig add 4.2.0\nStarting RStudio with a specific version of R can be done with:\nrig rstudio 4.1.0\nIt is also possible to start RStudio with a specific version of R that is defined in the renv lcok file:\nrig rstudio &lt;renv-lockfile&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
+    ]
   },
   {
     "objectID": "installr.html#rstudio",
     "href": "installr.html#rstudio",
     "title": "4  Installing R",
     "section": "4.5 RStudio",
-    "text": "4.5 RStudio\n\n4.5.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()"
+    "text": "4.5 RStudio\n\n4.5.1 Installing themes\ndevtools::install_github(\"gadenbuie/rsthemes\")\nThese can be visualized with:\nrsthemes::try_rsthemes()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
+    ]
   },
   {
     "objectID": "installr.html#compiling-r-with-intel-mkl-math-libraries",
     "href": "installr.html#compiling-r-with-intel-mkl-math-libraries",
     "title": "4  Installing R",
     "section": "4.6 Compiling R with Intel MKL math libraries",
-    "text": "4.6 Compiling R with Intel MKL math libraries\n\n4.6.1 Install Intel MKL\ncd /tmp\nwget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\n\nsudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\nsudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main &gt; /etc/apt/sources.list.d/intel-mkl.list'\n\nsudo apt install intel-mkl-64bit-2020.1-102 \n\nsource /opt/intel/mkl/bin/mklvars.sh intel64\n\n\n4.6.2 Compile R with MKL\nDownload and decompress R source files.\ntar -zxvf R-4.0.0.tar.gz\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\"\n\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\" --libdir=/usr/bin\n\nmake -j24\nmake pdf\nmake info\nsudo make install\nsudo make install-info\nsudo make install-pdf"
+    "text": "4.6 Compiling R with Intel MKL math libraries\n\n4.6.1 Install Intel MKL\ncd /tmp\nwget https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\n\nsudo apt-key add GPG-PUB-KEY-INTEL-SW-PRODUCTS-2019.PUB\nsudo sh -c 'echo deb https://apt.repos.intel.com/mkl all main &gt; /etc/apt/sources.list.d/intel-mkl.list'\n\nsudo apt install intel-mkl-64bit-2020.1-102 \n\nsource /opt/intel/mkl/bin/mklvars.sh intel64\n\n\n4.6.2 Compile R with MKL\nDownload and decompress R source files.\ntar -zxvf R-4.0.0.tar.gz\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/include -L/opt/intel/compilers_and_libraries_2020.4.304/linux/mkl/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\"\n\n./configure --enable-R-shlib --enable-threads=posix --with-x=yes --with-cairo --with-libpng --with-libtiff --with-jpeglib --with-lapack --with-blas=\"-fopenmp -m64 -I$MKLROOT/include -L$MKLROOT/lib/intel64 -lmkl_gf_lp64 -lmkl_gnu_thread -lmkl_core -lpthread -lm\" --libdir=/usr/bin\n\nmake -j24\nmake pdf\nmake info\nsudo make install\nsudo make install-info\nsudo make install-pdf",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
+    ]
   },
   {
     "objectID": "installr.html#minimal-system-dependencies-for-r-packages-installation-on-ubuntu",
     "href": "installr.html#minimal-system-dependencies-for-r-packages-installation-on-ubuntu",
     "title": "4  Installing R",
     "section": "4.7 Minimal system dependencies for R packages installation on Ubuntu",
-    "text": "4.7 Minimal system dependencies for R packages installation on Ubuntu\n\nhttps://datawookie.dev/blog/2022/08/linux-packages-for-r/\n\nsudo apt install -y \\\n  libcurl4-openssl-dev \\\n  libssl-dev \\\n  libxml2-dev \\\n  libfontconfig1-dev \\\n  libharfbuzz-dev \\\n  libfribidi-dev \\\n  libfreetype6-dev \\\n  libpng-dev \\\n  libtiff5-dev \\\n  libjpeg-dev \\\n  libpq-dev"
+    "text": "4.7 Minimal system dependencies for R packages installation on Ubuntu\n\nhttps://datawookie.dev/blog/2022/08/linux-packages-for-r/\n\nsudo apt install -y \\\n  libcurl4-openssl-dev \\\n  libssl-dev \\\n  libxml2-dev \\\n  libfontconfig1-dev \\\n  libharfbuzz-dev \\\n  libfribidi-dev \\\n  libfreetype6-dev \\\n  libpng-dev \\\n  libtiff5-dev \\\n  libjpeg-dev \\\n  libpq-dev",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
+    ]
   },
   {
     "objectID": "installr.html#rprofile",
     "href": "installr.html#rprofile",
     "title": "4  Installing R",
     "section": "4.8 .Rprofile",
-    "text": "4.8 .Rprofile\nBasic .Rprofilefile.\n# rspm::enable()\n\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\noptions(pillar.sigfig = 5)\n\noptions(repos=\"https://packagemanager.rstudio.com/cran/__linux__/jammy/latest\")\n\n# This is important if you are using RSPM on Linux outside RStudio\noptions(HTTPUserAgent = sprintf(\"R/%s R (%s)\", getRversion(), paste(getRversion(), R.version[\"platform\"], R.version[\"arch\"], R.version[\"os\"])))\n\n# Use an external browser for displaying html files, such as {gt} and {xaringan}\noptions(vsc.viewer = FALSE)\n\n# External browser for web apps, such as {shiny}\noptions(vsc.browser = FALSE)\n\n# View help page in an external browser\noptions(vsc.helpPanel = FALSE)\n\n# Use original data viewer\n# options(vsc.view = FALSE)\n\n4.8.1 Ressources\n\nCompiling R with MKL support\nInstalling MKL"
+    "text": "4.8 .Rprofile\nBasic .Rprofilefile.\n# rspm::enable()\n\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\noptions(pillar.sigfig = 5)\n\noptions(repos=\"https://packagemanager.rstudio.com/cran/__linux__/jammy/latest\")\n\n# This is important if you are using RSPM on Linux outside RStudio\noptions(HTTPUserAgent = sprintf(\"R/%s R (%s)\", getRversion(), paste(getRversion(), R.version[\"platform\"], R.version[\"arch\"], R.version[\"os\"])))\n\n# Use an external browser for displaying html files, such as {gt} and {xaringan}\noptions(vsc.viewer = FALSE)\n\n# External browser for web apps, such as {shiny}\noptions(vsc.browser = FALSE)\n\n# View help page in an external browser\noptions(vsc.helpPanel = FALSE)\n\n# Use original data viewer\n# options(vsc.view = FALSE)\n\n4.8.1 Ressources\n\nCompiling R with MKL support\nInstalling MKL",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
+    ]
   },
   {
     "objectID": "installr.html#libraries-locations",
     "href": "installr.html#libraries-locations",
     "title": "4  Installing R",
     "section": "4.9 Libraries locations",
-    "text": "4.9 Libraries locations\nTo avoid getting message that packages can not be updated because the directory is not writable, comment out R_LIBS_SITE=\"/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library\" in:\nsudo vim /etc/R/Renviron.site\nsudo vim /etc/R/Renviron"
+    "text": "4.9 Libraries locations\nTo avoid getting message that packages can not be updated because the directory is not writable, comment out R_LIBS_SITE=\"/usr/local/lib/R/site-library/:${R_LIBS_SITE}:/usr/lib/R/library\" in:\nsudo vim /etc/R/Renviron.site\nsudo vim /etc/R/Renviron",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
+    ]
+  },
+  {
+    "objectID": "vscode.html",
+    "href": "vscode.html",
+    "title": "5  Visual Studio Code",
+    "section": "",
+    "text": "5.1 Using VScode for R development\nOn Linux Mint, the default R installation directory is not the same as on Ubuntu. I have configured VScode to use the R bin installation directory of Ubuntu. Hence, on Mint, code completion, help viewer are not working. The simple work around is to create a symbolic link?",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Visual Studio Code</span>"
+    ]
   },
   {
     "objectID": "vscode.html#using-vscode-for-r-development",
     "href": "vscode.html#using-vscode-for-r-development",
     "title": "5  Visual Studio Code",
-    "section": "5.1 Using VScode for R development",
-    "text": "5.1 Using VScode for R development\nOn Linux Mint, the default R installation directory is not the same as on Ubuntu. I have configured VScode to use the R bin installation directory of Ubuntu. Hence, on Mint, code completion, help viewer are not working. The simple work around is to create a symbolic link?\nsudo ln -s /usr/bin/R /usr/local/bin/R"
+    "section": "",
+    "text": "sudo ln -s /usr/bin/R /usr/local/bin/R",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Visual Studio Code</span>"
+    ]
   },
   {
     "objectID": "vscode.html#show-plot-externally-on-a-web-browser",
     "href": "vscode.html#show-plot-externally-on-a-web-browser",
     "title": "5  Visual Studio Code",
     "section": "5.2 Show plot externally on a web browser",
-    "text": "5.2 Show plot externally on a web browser\nUse this in .Rprofile inside a project directory or globally.\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\n\n# Use an external browser for displaying html files, such as {gt} and {xaringan}\noptions(vsc.viewer = FALSE)\n# External browser for web apps, such as {shiny}\noptions(vsc.browser = FALSE)\n# View help page in an external browser\noptions(vsc.helpPanel = FALSE)\n# Use original data viewer\noptions(vsc.view = FALSE)\nIf you close the web page by accident, it can be reopened using ctrl+alt+p (depending on the chosen keybinding).\n{\n  \"key\": \"ctrl+alt+p\",\n  \"command\": \"r.runCommand\",\n  \"when\": \"editorTextFocus && editorLangId == 'r'\",\n  \"args\": \".vsc.browser(httpgd::hgd_url(), viewer = FALSE)\"\n},\n\n\n\n\n\n\nImportant\n\n\n\nDo not forget to install the httpdg package. Otherwise, plot will be displayed as png in an external window."
+    "text": "5.2 Show plot externally on a web browser\nUse this in .Rprofile inside a project directory or globally.\nif (interactive() && Sys.getenv(\"RSTUDIO\") == \"\") {\n  Sys.setenv(TERM_PROGRAM = \"vscode\")\n  if (\"httpgd\" %in% .packages(all.available = TRUE)) {\n    options(vsc.plot = FALSE)\n    options(device = function(...) {\n      httpgd::hgd(silent = TRUE)\n      .vsc.browser(httpgd::hgd_url(history = FALSE), viewer = FALSE)\n    })\n  }\n}\n\n\n# Use an external browser for displaying html files, such as {gt} and {xaringan}\noptions(vsc.viewer = FALSE)\n# External browser for web apps, such as {shiny}\noptions(vsc.browser = FALSE)\n# View help page in an external browser\noptions(vsc.helpPanel = FALSE)\n# Use original data viewer\noptions(vsc.view = FALSE)\nIf you close the web page by accident, it can be reopened using ctrl+alt+p (depending on the chosen keybinding).\n{\n  \"key\": \"ctrl+alt+p\",\n  \"command\": \"r.runCommand\",\n  \"when\": \"editorTextFocus && editorLangId == 'r'\",\n  \"args\": \".vsc.browser(httpgd::hgd_url(), viewer = FALSE)\"\n},\n\n\n\n\n\n\nImportant\n\n\n\nDo not forget to install the httpdg package. Otherwise, plot will be displayed as png in an external window.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Visual Studio Code</span>"
+    ]
   },
   {
     "objectID": "vscode.html#debugging",
     "href": "vscode.html#debugging",
     "title": "5  Visual Studio Code",
     "section": "5.3 Debugging",
-    "text": "5.3 Debugging\nDebugging can be done using the VSCode-R-Debugger package.\nremotes::install_github(\"ManuelHentschel/vscDebugger\")\nThis .vscode/launch.json configuration file is placed in the project root directory:\n{\n  // Use IntelliSense to learn about possible attributes.\n  // Hover to view descriptions of existing attributes.\n  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    {\n      \"type\": \"R-Debugger\",\n      \"request\": \"attach\",\n      \"name\": \"Attach to R process\"\n    }\n  ]\n}\nOpen the R terminal and type:\nvscDebugger::.vsc.listenForDAP()\nThen, press F5to start the debugger."
+    "text": "5.3 Debugging\nDebugging can be done using the VSCode-R-Debugger package.\nremotes::install_github(\"ManuelHentschel/vscDebugger\")\nThis .vscode/launch.json configuration file is placed in the project root directory:\n{\n  // Use IntelliSense to learn about possible attributes.\n  // Hover to view descriptions of existing attributes.\n  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387\n  \"version\": \"0.2.0\",\n  \"configurations\": [\n    {\n      \"type\": \"R-Debugger\",\n      \"request\": \"attach\",\n      \"name\": \"Attach to R process\"\n    }\n  ]\n}\nOpen the R terminal and type:\nvscDebugger::.vsc.listenForDAP()\nThen, press F5to start the debugger.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Visual Studio Code</span>"
+    ]
+  },
+  {
+    "objectID": "nemo.html",
+    "href": "nemo.html",
+    "title": "6  Nemo",
+    "section": "",
+    "text": "6.1 Opening the terminal in the current directory\nCreate this folder and this file:\nAdd this to the file:",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Nemo</span>"
+    ]
   },
   {
     "objectID": "nemo.html#opening-the-terminal-in-the-current-directory",
     "href": "nemo.html#opening-the-terminal-in-the-current-directory",
     "title": "6  Nemo",
-    "section": "6.1 Opening the terminal in the current directory",
-    "text": "6.1 Opening the terminal in the current directory\n\nThis will make pressing F4 top open the Nemo file manager.\nInformation found here.\n\nCreate this folder and this file:\nmkdir -p ~/.gnome2/accels\nnvim ~/.gnome2/accels/nemo\nAdd this to the file:\n(gtk_accel_path \"&lt;Actions&gt;/DirViewActions/OpenInTerminal\" \"F4\")"
+    "section": "",
+    "text": "This will make pressing F4 top open the Nemo file manager.\nInformation found here.\n\n\nmkdir -p ~/.gnome2/accels\nnvim ~/.gnome2/accels/nemo\n\n(gtk_accel_path \"&lt;Actions&gt;/DirViewActions/OpenInTerminal\" \"F4\")",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Nemo</span>"
+    ]
   },
   {
-    "objectID": "backup.html#valeria",
-    "href": "backup.html#valeria",
+    "objectID": "backup.html",
+    "href": "backup.html",
     "title": "7  Backup",
-    "section": "7.1 VALERIA",
-    "text": "7.1 VALERIA\nSetting the endpoint on S3 (in this case, VALERIA)."
+    "section": "",
+    "text": "7.1 VALERIA\nSetting the endpoint on S3 (in this case, VALERIA).",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Backup</span>"
+    ]
+  },
+  {
+    "objectID": "misc.html",
+    "href": "misc.html",
+    "title": "8  Misc",
+    "section": "",
+    "text": "8.1 Installing Google fonts",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
+    ]
   },
   {
     "objectID": "misc.html#installing-google-fonts",
     "href": "misc.html#installing-google-fonts",
     "title": "8  Misc",
-    "section": "8.1 Installing Google fonts",
-    "text": "8.1 Installing Google fonts\n\nScript to install Google Fonts\n\n# Original author: Michalis Georgiou &lt;mechmg93@gmail.comr&gt;\n# Modified by Andrew http://www.webupd8.org &lt;andrew@webupd8.org&gt;\n\n_wgeturl=\"https://github.com/google/fonts/archive/master.tar.gz\"\n_gf=\"google-fonts\"\n\n# install wget\nsudo apt-get install wget\n\n# make sure a file with the same name doesn't already exist\nrm -f $_gf.tar.gz\n\necho \"Connecting to Github server...\"\nwget $_wgeturl -O $_gf.tar.gz\n\necho \"Extracting the downloaded archive...\"\ntar -xf $_gf.tar.gz\n\necho \"Creating the /usr/share/fonts/truetype/$_gf folder\"\nsudo mkdir -p /usr/share/fonts/truetype/$_gf\n\necho \"Installing all .ttf fonts in /usr/share/fonts/truetype/$_gf\"\nfind $PWD/fonts-main/ -name \"*.ttf\" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \\; || return 1\n\necho \"Updating the font cache\"\nfc-cache -f &gt; /dev/null\n\n# clean up, but only the .tar.gz, the user may need the folder\nrm -f $_gf.tar.gz\n\necho \"Done.\""
+    "section": "",
+    "text": "Script to install Google Fonts\n\n# Original author: Michalis Georgiou &lt;mechmg93@gmail.comr&gt;\n# Modified by Andrew http://www.webupd8.org &lt;andrew@webupd8.org&gt;\n\n_wgeturl=\"https://github.com/google/fonts/archive/master.tar.gz\"\n_gf=\"google-fonts\"\n\n# install wget\nsudo apt-get install wget\n\n# make sure a file with the same name doesn't already exist\nrm -f $_gf.tar.gz\n\necho \"Connecting to Github server...\"\nwget $_wgeturl -O $_gf.tar.gz\n\necho \"Extracting the downloaded archive...\"\ntar -xf $_gf.tar.gz\n\necho \"Creating the /usr/share/fonts/truetype/$_gf folder\"\nsudo mkdir -p /usr/share/fonts/truetype/$_gf\n\necho \"Installing all .ttf fonts in /usr/share/fonts/truetype/$_gf\"\nfind $PWD/fonts-main/ -name \"*.ttf\" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \\; || return 1\n\necho \"Updating the font cache\"\nfc-cache -f &gt; /dev/null\n\n# clean up, but only the .tar.gz, the user may need the folder\nrm -f $_gf.tar.gz\n\necho \"Done.\"",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
+    ]
   },
   {
     "objectID": "misc.html#swapiness-swap-usage",
     "href": "misc.html#swapiness-swap-usage",
     "title": "8  Misc",
     "section": "8.2 Swapiness (swap usage)",
-    "text": "8.2 Swapiness (swap usage)\nChange the value of the swapiness, so the kernel use memory primarily instead of the disk.\n\nHow to change the swapiness"
+    "text": "8.2 Swapiness (swap usage)\nChange the value of the swapiness, so the kernel use memory primarily instead of the disk.\n\nHow to change the swapiness",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
+    ]
   },
   {
     "objectID": "misc.html#zotero",
     "href": "misc.html#zotero",
     "title": "8  Misc",
     "section": "8.3 Zotero",
-    "text": "8.3 Zotero\n\n8.3.1 Installation\nhttps://linux.how2shout.com/how-to-install-zotero-on-ubuntu-22-04-or-20-04-lts/\ncurl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash\nsudo apt update \nsudo apt install zotero\n\n\n8.3.2 Citation key\n\nUse better bibtex and set the citation key format as auth.capitalize+year."
+    "text": "8.3 Zotero\n\n8.3.1 Installation\nhttps://linux.how2shout.com/how-to-install-zotero-on-ubuntu-22-04-or-20-04-lts/\ncurl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash\nsudo apt update \nsudo apt install zotero\n\n\n8.3.2 Citation key\n\nUse better bibtex and set the citation key format as auth.capitalize+year.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
+    ]
   },
   {
     "objectID": "misc.html#act",
     "href": "misc.html#act",
     "title": "8  Misc",
     "section": "8.4 act",
-    "text": "8.4 act\nRun your GitHub Actions locally!"
+    "text": "8.4 act\nRun your GitHub Actions locally!",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
+    ]
   },
   {
     "objectID": "misc.html#make-using-multiple-cores",
     "href": "misc.html#make-using-multiple-cores",
     "title": "8  Misc",
     "section": "8.5 Make using multiple cores",
-    "text": "8.5 Make using multiple cores\nOpen the .zshrc file and set the number of core to be used with make. This will also work when installing R packages from source.\nnvim ~/.zshrc\nexport MAKE=\"make -j24\"\nR packages will install much faster."
+    "text": "8.5 Make using multiple cores\nOpen the .zshrc file and set the number of core to be used with make. This will also work when installing R packages from source.\nnvim ~/.zshrc\nexport MAKE=\"make -j24\"\nR packages will install much faster.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
+    ]
   },
   {
     "objectID": "misc.html#image-viewer",
     "href": "misc.html#image-viewer",
     "title": "8  Misc",
     "section": "8.6 Image viewer",
-    "text": "8.6 Image viewer\n\nNomacs"
+    "text": "8.6 Image viewer\n\nNomacs",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
+    ]
   },
   {
     "objectID": "misc.html#duckdb",
     "href": "misc.html#duckdb",
     "title": "8  Misc",
     "section": "8.7 duckdb",
-    "text": "8.7 duckdb\nhttps://duckdb.org/docs/installation/index\nwget https://github.com/duckdb/duckdb/releases/download/v0.9.1/duckdb_cli-linux-amd64.zip\nsudo unzip duckdb_cli-linux-amd64.zip -d /usr/local/bin/\nrm duckdb_cli-linux-amd64.zip"
+    "text": "8.7 duckdb\nhttps://duckdb.org/docs/installation/index\nwget https://github.com/duckdb/duckdb/releases/download/v0.9.1/duckdb_cli-linux-amd64.zip\nsudo unzip duckdb_cli-linux-amd64.zip -d /usr/local/bin/\nrm duckdb_cli-linux-amd64.zip",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
+    ]
   },
   {
     "objectID": "rust.html",
     "href": "rust.html",
     "title": "9  Rust",
     "section": "",
-    "text": "rustup update stable\ncargo install evcxr_repl  \nThen run:\nevcxr"
+    "text": "rustup update stable\ncargo install evcxr_repl  \nThen run:\nevcxr",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Rust</span>"
+    ]
   },
   {
-    "objectID": "dotfiles.html#installation",
-    "href": "dotfiles.html#installation",
+    "objectID": "dotfiles.html",
+    "href": "dotfiles.html",
     "title": "10  Managing my dotfiles",
-    "section": "10.1 Installation",
-    "text": "10.1 Installation\nBinary installation"
+    "section": "",
+    "text": "10.1 Installation\nBinary installation",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Managing my dotfiles</span>"
+    ]
   },
   {
     "objectID": "dotfiles.html#usage",
     "href": "dotfiles.html#usage",
     "title": "10  Managing my dotfiles",
     "section": "10.2 Usage",
-    "text": "10.2 Usage\nFirst, I have to add/track files using:\nchezmoi add [ files ]\nThen I can edit my dotfiles using:\nchezmoi edit\nOr use this to go to the dotfiles directory. This is where the changes should me made.\nchezmoi cd\nThis will open (ex. (n)vim) so I can make changes. Once I am done, I can use this apply the changes  to the local directory (where the actual dotfiles are located).\nchezmoi -v apply \nFinally, I can push the dotfiles directory to GitHub:\ngit add .\ngit commit -m \"...\"\ngit push"
+    "text": "10.2 Usage\nFirst, I have to add/track files using:\nchezmoi add [ files ]\nThen I can edit my dotfiles using:\nchezmoi edit\nOr use this to go to the dotfiles directory. This is where the changes should me made.\nchezmoi cd\nThis will open (ex. (n)vim) so I can make changes. Once I am done, I can use this apply the changes  to the local directory (where the actual dotfiles are located).\nchezmoi -v apply \nFinally, I can push the dotfiles directory to GitHub:\ngit add .\ngit commit -m \"...\"\ngit push",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Managing my dotfiles</span>"
+    ]
   }
 ]

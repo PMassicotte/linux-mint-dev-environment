@@ -364,7 +364,7 @@
     "href": "misc.html#zotero",
     "title": "8  Misc",
     "section": "8.3 Zotero",
-    "text": "8.3 Zotero\n\n8.3.1 Installation\nhttps://linux.how2shout.com/how-to-install-zotero-on-ubuntu-22-04-or-20-04-lts/\ncurl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash\nsudo apt update \nsudo apt install zotero\n\n\n8.3.2 Citation key\n\nUse better bibtex and set the citation key format as auth.capitalize+year.",
+    "text": "8.3 Zotero\n\n8.3.1 Installation\nhttps://linux.how2shout.com/how-to-install-zotero-on-ubuntu-22-04-or-20-04-lts/\ncurl -sL https://raw.githubusercontent.com/retorquere/zotero-deb/master/install.sh | sudo bash\nsudo apt update\nsudo apt install zotero\n\n\n8.3.2 Citation key\n\nUse better bibtex and set the citation key format as auth.capitalize+year.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
     ]

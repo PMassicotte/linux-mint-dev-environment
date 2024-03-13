@@ -201,3 +201,7 @@ cargo install --locked broot
 ### lazygit
 
 - https://github.com/jesseduffield/lazygit/tree/master
+
+### zoxide
+
+- https://github.com/ajeetdsouza/zoxide

@@ -86,7 +86,11 @@ R packages will install much faster.
 https://duckdb.org/docs/installation/index
 
 ```bash
-wget https://github.com/duckdb/duckdb/releases/download/v0.10.0/duckdb_cli-linux-amd64.zip
+wget https://github.com/duckdb/duckdb/releases/download/v0.10.1/duckdb_cli-linux-amd64.zip
 sudo unzip duckdb_cli-linux-amd64.zip -d /usr/local/bin/
 rm duckdb_cli-linux-amd64.zip
 ```
+
+## Keyboard
+
+- Configure using VIA: https://github.com/the-via/releases/releases/

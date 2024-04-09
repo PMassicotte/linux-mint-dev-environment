@@ -94,3 +94,4 @@ rm duckdb_cli-linux-amd64.zip
 ## Keyboard
 
 - Configure using VIA: https://github.com/the-via/releases/releases/
+- https://config.qmk.fm/#/test

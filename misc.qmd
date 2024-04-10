@@ -95,3 +95,20 @@ rm duckdb_cli-linux-amd64.zip
 
 - Configure using VIA: https://github.com/the-via/releases/releases/
 - https://config.qmk.fm/#/test
+- http://keyboards.jargon-file.org/
+
+Download this [file](http://keyboards.jargon-file.org/altinter.klc)
+
+```bash
+sudo cp your_klc_file.klc /usr/share/X11/xkb/symbols/
+```
+
+Update the XKB configuration: After copying the file, you may need to update the XKB configuration cache. You can do this by running:
+
+```bash
+sudo dpkg-reconfigure xkb-data
+```
+
+Not, the dead key is set up to AtlGr (right Alt).
+
+![](images/keyboard_input_lang.png)

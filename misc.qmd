@@ -97,10 +97,10 @@ rm duckdb_cli-linux-amd64.zip
 - https://config.qmk.fm/#/test
 - http://keyboards.jargon-file.org/
 
-Download this [file](http://keyboards.jargon-file.org/altinter.klc)
+Download this [file](http://keyboards.jargon-file.org/altinter.klc):
 
 ```bash
-sudo cp your_klc_file.klc /usr/share/X11/xkb/symbols/
+sudo cp altinter.klc /usr/share/X11/xkb/symbols/
 ```
 
 Update the XKB configuration: After copying the file, you may need to update the XKB configuration cache. You can do this by running:

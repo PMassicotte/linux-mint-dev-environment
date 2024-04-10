@@ -343,7 +343,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Configure using VIA: https://github.com/the-via/releases/releases/</li>
 <li>https://config.qmk.fm/#/test</li>
+<li>http://keyboards.jargon-file.org/</li>
 </ul>
+<p>Download this <a href="http://keyboards.jargon-file.org/altinter.klc">file</a></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp your_klc_file.klc /usr/share/X11/xkb/symbols/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Update the XKB configuration: After copying the file, you may need to update the XKB configuration cache. You can do this by running:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg-reconfigure xkb-data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Not, the dead key is set up to AtlGr (right Alt).</p>
+<p><img src="images/keyboard_input_lang.png" class="img-fluid"></p>
 
 
 </section>

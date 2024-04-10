@@ -414,7 +414,7 @@
     "href": "misc.html#keyboard",
     "title": "8  Misc",
     "section": "8.8 Keyboard",
-    "text": "8.8 Keyboard\n\nConfigure using VIA: https://github.com/the-via/releases/releases/\nhttps://config.qmk.fm/#/test",
+    "text": "8.8 Keyboard\n\nConfigure using VIA: https://github.com/the-via/releases/releases/\nhttps://config.qmk.fm/#/test\nhttp://keyboards.jargon-file.org/\n\nDownload this file\nsudo cp your_klc_file.klc /usr/share/X11/xkb/symbols/\nUpdate the XKB configuration: After copying the file, you may need to update the XKB configuration cache. You can do this by running:\nsudo dpkg-reconfigure xkb-data\nNot, the dead key is set up to AtlGr (right Alt).",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
     ]

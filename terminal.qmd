@@ -113,10 +113,12 @@ sudo apt install tldr
 tldr --update
 ```
 
-### exa
+### eza
 
 ```bash
-cargo install exa
+git clone https://github.com/eza-community/eza.git
+cd eza
+cargo install --path .
 ```
 
 ### bat
@@ -134,10 +136,10 @@ nano ~/.zshrc
 Add these alias to the file.
 
 ```bash
-alias ls='exa --icons'
-alias l='exa'
-alias la='exa -a'
-alias ll='exa -lahF --icons'
+alias ls='eza --icons'
+alias l='eza'
+alias la='eza -a'
+alias ll='eza -lahF --icons'
 alias cat=bat
 ```
 

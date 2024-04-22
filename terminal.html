@@ -235,7 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#useful-tools" id="toc-useful-tools" class="nav-link" data-scroll-target="#useful-tools"><span class="header-section-number">1.4</span> Useful tools</a>
   <ul class="collapse">
   <li><a href="#tldr" id="toc-tldr" class="nav-link" data-scroll-target="#tldr"><span class="header-section-number">1.4.1</span> tldr</a></li>
-  <li><a href="#exa" id="toc-exa" class="nav-link" data-scroll-target="#exa"><span class="header-section-number">1.4.2</span> exa</a></li>
+  <li><a href="#eza" id="toc-eza" class="nav-link" data-scroll-target="#eza"><span class="header-section-number">1.4.2</span> eza</a></li>
   <li><a href="#bat" id="toc-bat" class="nav-link" data-scroll-target="#bat"><span class="header-section-number">1.4.3</span> bat</a></li>
   <li><a href="#creating-alias" id="toc-creating-alias" class="nav-link" data-scroll-target="#creating-alias"><span class="header-section-number">1.4.4</span> Creating alias</a></li>
   <li><a href="#fzf" id="toc-fzf" class="nav-link" data-scroll-target="#fzf"><span class="header-section-number">1.4.5</span> fzf</a></li>
@@ -352,9 +352,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install tldr</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tldr</span> <span class="at">--update</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="exa" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="exa"><span class="header-section-number">1.4.2</span> exa</h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install exa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="eza" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="eza"><span class="header-section-number">1.4.2</span> eza</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/eza-community/eza.git</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> eza</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install <span class="at">--path</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="bat" class="level3" data-number="1.4.3">
 <h3 data-number="1.4.3" class="anchored" data-anchor-id="bat"><span class="header-section-number">1.4.3</span> bat</h3>
@@ -364,10 +366,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="1.4.4" class="anchored" data-anchor-id="creating-alias"><span class="header-section-number">1.4.4</span> Creating alias</h3>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/.zshrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Add these alias to the file.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ls=<span class="st">'exa --icons'</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> l=<span class="st">'exa'</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> la=<span class="st">'exa -a'</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ll=<span class="st">'exa -lahF --icons'</span></span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ls=<span class="st">'eza --icons'</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> l=<span class="st">'eza'</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> la=<span class="st">'eza -a'</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> ll=<span class="st">'eza -lahF --icons'</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> cat=bat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="fzf" class="level3" data-number="1.4.5">

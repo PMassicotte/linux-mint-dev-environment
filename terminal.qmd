@@ -35,8 +35,8 @@ edit-in-kitt filename
 To download a file from a remote server:
 
 ```bash
-<local computer>  $ kitten ssh my-remote-computer
-<remote computer> $ kitten transfer some-file /path/on/local/computer
+<local computer >$ kitten ssh my-remote-computer
+<remote computer >$ kitten transfer some-file /path/on/local/computer
 ```
 
 Example:
@@ -207,3 +207,7 @@ cargo install --locked broot
 ### zoxide
 
 - https://github.com/ajeetdsouza/zoxide
+
+### Yazi
+
+- https://yazi-rs.github.io/

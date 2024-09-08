@@ -204,6 +204,10 @@ cargo install --locked broot
 
 - https://github.com/jesseduffield/lazygit/tree/master
 
+#### Delta pager
+
+- https://github.com/dandavison/delta
+
 ### zoxide
 
 - https://github.com/ajeetdsouza/zoxide

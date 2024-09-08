@@ -30,7 +30,7 @@ echo "Installing all .ttf fonts in /usr/share/fonts/truetype/$_gf"
 find $PWD/fonts-main/ -name "*.ttf" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \; || return 1
 
 echo "Updating the font cache"
-fc-cache -f > /dev/null
+fc-cache -f >/dev/null
 
 # clean up, but only the .tar.gz, the user may need the folder
 rm -f $_gf.tar.gz
@@ -112,3 +112,9 @@ sudo dpkg-reconfigure xkb-data
 Not, the dead key is set up to AtlGr (right Alt).
 
 ![](images/keyboard_input_lang.png)
+
+## cbonsai
+
+```bash
+cbonsai -l -i -p -m "Be right back"
+```

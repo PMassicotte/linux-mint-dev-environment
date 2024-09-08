@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -228,6 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#image-viewer" id="toc-image-viewer" class="nav-link" data-scroll-target="#image-viewer"><span class="header-section-number">8.6</span> Image viewer</a></li>
   <li><a href="#duckdb" id="toc-duckdb" class="nav-link" data-scroll-target="#duckdb"><span class="header-section-number">8.7</span> duckdb</a></li>
   <li><a href="#keyboard" id="toc-keyboard" class="nav-link" data-scroll-target="#keyboard"><span class="header-section-number">8.8</span> Keyboard</a></li>
+  <li><a href="#cbonsai" id="toc-cbonsai" class="nav-link" data-scroll-target="#cbonsai"><span class="header-section-number">8.9</span> cbonsai</a></li>
   </ul>
 </nav>
     </div>
@@ -283,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">find</span> <span class="va">$PWD</span>/fonts-main/ <span class="at">-name</span> <span class="st">"*.ttf"</span> <span class="at">-exec</span> sudo install <span class="at">-m644</span> {} /usr/share/fonts/truetype/google-fonts/ <span class="dt">\;</span> <span class="kw">||</span> <span class="cf">return</span> <span class="dv">1</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"Updating the font cache"</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ex">fc-cache</span> <span class="at">-f</span> <span class="op">&gt;</span> /dev/null</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ex">fc-cache</span> <span class="at">-f</span> <span class="op">&gt;</span>/dev/null</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up, but only the .tar.gz, the user may need the folder</span></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> <span class="va">$_gf</span>.tar.gz</span>
@@ -351,6 +352,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg-reconfigure xkb-data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Not, the dead key is set up to AtlGr (right Alt).</p>
 <p><img src="images/keyboard_input_lang.png" class="img-fluid"></p>
+</section>
+<section id="cbonsai" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="cbonsai"><span class="header-section-number">8.9</span> cbonsai</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cbonsai</span> <span class="at">-l</span> <span class="at">-i</span> <span class="at">-p</span> <span class="at">-m</span> <span class="st">"Be right back"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

@@ -26,7 +26,7 @@ kitty +kitten themes
 
 ```bash
 kitty +kitten ssh filoche@beluga.computecanada.ca
-edit-in-kitt filename
+edit-in-kitty filename
 ```
 
 - https://sw.kovidgoyal.net/kitty/kittens/remote_file/

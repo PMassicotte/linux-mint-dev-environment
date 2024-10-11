@@ -91,6 +91,20 @@ sudo unzip duckdb_cli-linux-amd64.zip -d /usr/local/bin/
 rm duckdb_cli-linux-amd64.zip
 ```
 
+### Using duckfetch
+
+To install it from crates.io:
+
+```bash
+cargo install duckfetch
+```
+
+Or the development version:
+
+```bash
+cargo install --git https://github.com/pmassicotte/duckfetch
+```
+
 ## Keyboard
 
 - Configure using VIA: https://github.com/the-via/releases/releases/

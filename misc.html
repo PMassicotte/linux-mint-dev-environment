@@ -226,7 +226,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#act" id="toc-act" class="nav-link" data-scroll-target="#act"><span class="header-section-number">8.4</span> act</a></li>
   <li><a href="#make-using-multiple-cores" id="toc-make-using-multiple-cores" class="nav-link" data-scroll-target="#make-using-multiple-cores"><span class="header-section-number">8.5</span> Make using multiple cores</a></li>
   <li><a href="#image-viewer" id="toc-image-viewer" class="nav-link" data-scroll-target="#image-viewer"><span class="header-section-number">8.6</span> Image viewer</a></li>
-  <li><a href="#duckdb" id="toc-duckdb" class="nav-link" data-scroll-target="#duckdb"><span class="header-section-number">8.7</span> duckdb</a></li>
+  <li><a href="#duckdb" id="toc-duckdb" class="nav-link" data-scroll-target="#duckdb"><span class="header-section-number">8.7</span> duckdb</a>
+  <ul class="collapse">
+  <li><a href="#using-duckfetch" id="toc-using-duckfetch" class="nav-link" data-scroll-target="#using-duckfetch"><span class="header-section-number">8.7.1</span> Using duckfetch</a></li>
+  </ul></li>
   <li><a href="#keyboard" id="toc-keyboard" class="nav-link" data-scroll-target="#keyboard"><span class="header-section-number">8.8</span> Keyboard</a></li>
   <li><a href="#cbonsai" id="toc-cbonsai" class="nav-link" data-scroll-target="#cbonsai"><span class="header-section-number">8.9</span> cbonsai</a></li>
   </ul>
@@ -338,6 +341,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://github.com/duckdb/duckdb/releases/download/v1.0.0/duckdb_cli-linux-amd64.zip</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> unzip duckdb_cli-linux-amd64.zip <span class="at">-d</span> /usr/local/bin/</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> duckdb_cli-linux-amd64.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="using-duckfetch" class="level3" data-number="8.7.1">
+<h3 data-number="8.7.1" class="anchored" data-anchor-id="using-duckfetch"><span class="header-section-number">8.7.1</span> Using duckfetch</h3>
+<p>To install it from crates.io:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install duckfetch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or the development version:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> install <span class="at">--git</span> https://github.com/pmassicotte/duckfetch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </section>
 <section id="keyboard" class="level2" data-number="8.8">
 <h2 data-number="8.8" class="anchored" data-anchor-id="keyboard"><span class="header-section-number">8.8</span> Keyboard</h2>
@@ -347,15 +357,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>http://keyboards.jargon-file.org/</li>
 </ul>
 <p>Download this <a href="http://keyboards.jargon-file.org/altinter.klc">file</a>:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp altinter.klc /usr/share/X11/xkb/symbols/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp altinter.klc /usr/share/X11/xkb/symbols/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Update the XKB configuration: After copying the file, you may need to update the XKB configuration cache. You can do this by running:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg-reconfigure xkb-data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dpkg-reconfigure xkb-data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Not, the dead key is set up to AtlGr (right Alt).</p>
 <p><img src="images/keyboard_input_lang.png" class="img-fluid"></p>
 </section>
 <section id="cbonsai" class="level2" data-number="8.9">
 <h2 data-number="8.9" class="anchored" data-anchor-id="cbonsai"><span class="header-section-number">8.9</span> cbonsai</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cbonsai</span> <span class="at">-l</span> <span class="at">-i</span> <span class="at">-p</span> <span class="at">-m</span> <span class="st">"Be right back"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cbonsai</span> <span class="at">-l</span> <span class="at">-i</span> <span class="at">-p</span> <span class="at">-m</span> <span class="st">"Be right back"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>

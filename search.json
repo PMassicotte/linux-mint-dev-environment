@@ -404,7 +404,7 @@
     "href": "misc.html#duckdb",
     "title": "8  Misc",
     "section": "8.7 duckdb",
-    "text": "8.7 duckdb\nhttps://duckdb.org/docs/installation/index\nwget https://github.com/duckdb/duckdb/releases/download/v1.0.0/duckdb_cli-linux-amd64.zip\nsudo unzip duckdb_cli-linux-amd64.zip -d /usr/local/bin/\nrm duckdb_cli-linux-amd64.zip",
+    "text": "8.7 duckdb\nhttps://duckdb.org/docs/installation/index\nwget https://github.com/duckdb/duckdb/releases/download/v1.0.0/duckdb_cli-linux-amd64.zip\nsudo unzip duckdb_cli-linux-amd64.zip -d /usr/local/bin/\nrm duckdb_cli-linux-amd64.zip\n\n8.7.1 Using duckfetch\nTo install it from crates.io:\ncargo install duckfetch\nOr the development version:\ncargo install --git https://github.com/pmassicotte/duckfetch",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
     ]

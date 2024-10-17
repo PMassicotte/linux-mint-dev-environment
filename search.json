@@ -134,7 +134,7 @@
     "href": "gis.html#gdal",
     "title": "3  QGIS and gdal",
     "section": "3.2 GDAL",
-    "text": "3.2 GDAL\nDownload the latest version of gdal. Then configure and install:\ntar xvf gdal-3.6.2.tar.gz\ncd gdal-3.6.2\nmkdir build\ncd build\n\ncmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release\ncmake --build .\ncmake --build . --target install\nIt is also possible to install it like this (on Linux Mint for example):\ncd gdal-x.x.x\nmkdir build\ncd build\n\ncmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr\nmake -j24\nsudo make install",
+    "text": "3.2 GDAL\nDownload the latest version of gdal. Then configure and install:\ntar xvf gdal-3.6.2.tar.gz\ncd gdal-3.6.2\nmkdir build\ncd build\n\ncmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release\ncmake --build .\ncmake --build . --target install",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>QGIS and gdal</span>"
     ]

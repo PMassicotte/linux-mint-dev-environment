@@ -132,3 +132,7 @@ Not, the dead key is set up to AtlGr (right Alt).
 ```bash
 cbonsai -l -i -p -m "Be right back"
 ```
+
+## Everforest cursor
+
+https://github.com/talwat/everforest-cursors

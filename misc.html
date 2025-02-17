@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-96a9af1154454a98783757c5e4583a48.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -233,6 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#keyboard" id="toc-keyboard" class="nav-link" data-scroll-target="#keyboard"><span class="header-section-number">8.8</span> Keyboard</a></li>
   <li><a href="#cbonsai" id="toc-cbonsai" class="nav-link" data-scroll-target="#cbonsai"><span class="header-section-number">8.9</span> cbonsai</a></li>
   <li><a href="#everforest-cursor" id="toc-everforest-cursor" class="nav-link" data-scroll-target="#everforest-cursor"><span class="header-section-number">8.10</span> Everforest cursor</a></li>
+  <li><a href="#zen-browser" id="toc-zen-browser" class="nav-link" data-scroll-target="#zen-browser"><span class="header-section-number">8.11</span> Zen browser</a></li>
   </ul>
 </nav>
     </div>
@@ -371,6 +372,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="everforest-cursor" class="level2" data-number="8.10">
 <h2 data-number="8.10" class="anchored" data-anchor-id="everforest-cursor"><span class="header-section-number">8.10</span> Everforest cursor</h2>
 <p>https://github.com/talwat/everforest-cursors</p>
+</section>
+<section id="zen-browser" class="level2" data-number="8.11">
+<h2 data-number="8.11" class="anchored" data-anchor-id="zen-browser"><span class="header-section-number">8.11</span> Zen browser</h2>
+<p>Install with:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> <span class="op">&lt;(</span><span class="ex">curl</span> https://updates.zen-browser.app/appimage.sh<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -458,8 +464,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -570,7 +574,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

@@ -14,7 +14,7 @@
     "href": "terminal.html",
     "title": "1  Terminal",
     "section": "",
-    "text": "1.1 kitty terminal emulator\nI am using kitty as my terminal emulator. See the dotfiles",
+    "text": "1.1 kitty terminal emulator\nSetting up my terminal environment. The dimensions of my terminal is 150 columns by 35 rows.\nI am using kitty as my terminal emulator. See the dotfiles",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Terminal</span>"
     ]
@@ -164,7 +164,7 @@
     "href": "installr.html",
     "title": "4  Installing R",
     "section": "",
-    "text": "4.1 Installing the latest R version\nThese instructions are from how to set up R on Ubuntu.\nFirst, open sources.list:\nThen add this:\nFinally, install R:",
+    "text": "4.1 Installing the latest R version\nNote: Before installing R, make sure that you have the latest gdal, geos libraries installed so terra, sf and other R packages compile correctly.\nThese instructions are from how to set up R on Ubuntu.\nFirst, open sources.list:\nThen add this:\nFinally, install R:",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Installing R</span>"
     ]
@@ -324,7 +324,7 @@
     "href": "backup.html",
     "title": "7  Backup",
     "section": "",
-    "text": "7.1 VALERIA\nSetting the endpoint on S3 (in this case, VALERIA).",
+    "text": "7.1 VALERIA\nDaily backup is made with Duplicati.\nSetting the endpoint on S3 (in this case, VALERIA).",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Backup</span>"
     ]
@@ -440,6 +440,16 @@
     ]
   },
   {
+    "objectID": "misc.html#zen-browser",
+    "href": "misc.html#zen-browser",
+    "title": "8  Misc",
+    "section": "8.11 Zen browser",
+    "text": "8.11 Zen browser\nInstall with:\nbash &lt;(curl https://updates.zen-browser.app/appimage.sh)",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
+    ]
+  },
+  {
     "objectID": "rust.html",
     "href": "rust.html",
     "title": "9  Rust",
@@ -454,7 +464,7 @@
     "href": "dotfiles.html",
     "title": "10  Managing my dotfiles",
     "section": "",
-    "text": "10.1 Installation\nBinary installation",
+    "text": "10.1 Installation\nI am using chezmoi to manage my dotfiles.\nBinary installation",
     "crumbs": [
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Managing my dotfiles</span>"
     ]

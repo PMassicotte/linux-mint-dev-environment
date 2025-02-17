@@ -136,3 +136,11 @@ cbonsai -l -i -p -m "Be right back"
 ## Everforest cursor
 
 https://github.com/talwat/everforest-cursors
+
+## Zen browser
+
+Install with:
+
+```bash
+bash <(curl https://updates.zen-browser.app/appimage.sh)
+```

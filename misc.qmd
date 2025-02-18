@@ -144,3 +144,11 @@ Install with:
 ```bash
 bash <(curl https://updates.zen-browser.app/appimage.sh)
 ```
+
+## csvlens
+
+[Install](https://github.com/YS-L/csvlens) with:
+
+```bash
+cargo install csvlens
+```

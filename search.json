@@ -450,6 +450,16 @@
     ]
   },
   {
+    "objectID": "misc.html#csvlens",
+    "href": "misc.html#csvlens",
+    "title": "8  Misc",
+    "section": "8.12 csvlens",
+    "text": "8.12 csvlens\nInstall with:\ncargo install csvlens",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Misc</span>"
+    ]
+  },
+  {
     "objectID": "rust.html",
     "href": "rust.html",
     "title": "9  Rust",

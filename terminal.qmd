@@ -215,3 +215,9 @@ cargo install --locked broot
 ### Yazi
 
 - https://yazi-rs.github.io/
+
+### Greenclip
+
+```bash
+wget https://github.com/erebe/greenclip/releases/download/v4.3/greenclip -O ~/bin/greenclip && chmod +x ~/bin/greenclip
+```

@@ -219,5 +219,8 @@ cargo install --locked broot
 ### Greenclip
 
 ```bash
+wget https://github.com/erebe/greenclip/releases/download/v4.2/greenclip -O ~/bin/greenclip && chmod +x ~/bin/greenclip
+
+# Getting a segfault with 4.3, so using 4.2 for now
 wget https://github.com/erebe/greenclip/releases/download/v4.3/greenclip -O ~/bin/greenclip && chmod +x ~/bin/greenclip
 ```

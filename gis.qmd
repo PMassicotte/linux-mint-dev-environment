@@ -57,6 +57,34 @@ cmake --build .
 cmake --build . --target install
 ```
 
+Note, I needed to install `libpsl-dev`.
+
+```bash
+sudo apt-get install libpsl-dev
+```
+
+After installation, you might want to reinstall R packages that depend on GDAL, such as `sf` and `terra`.
+
+```r
+# Force installation from source with build options
+# This ensures packages are compiled from source code rather than using pre-compiled binaries
+
+# Set repository (optional but recommended for consistency)
+repos <- "https://cloud.r-project.org"
+
+# Install packages from source with specific build options
+install.packages(
+  c("terra", "sf"),
+  type = "source",
+  repos = repos,
+  configure.args = list(
+    sf = "--with-proj-lib=/usr/local/lib/",
+    terra = "--with-gdal-config=/usr/local/bin/gdal-config"
+  ),
+  INSTALL_opts = c("--no-multiarch", "--with-keep.source")
+)
+```
+
 ## GEOS
 
 See https://libgeos.org/usage/download/

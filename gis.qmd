@@ -52,6 +52,7 @@ cd gdal-3.6.2
 mkdir build
 cd build
 
+# Use which gdal-config to find the path and change the path accordingly
 cmake .. -DCMAKE_PREFIX_PATH=/usr/bin -DCMAKE_BUILD_TYPE=Release
 cmake --build .
 cmake --build . --target install
